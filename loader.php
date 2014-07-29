@@ -55,7 +55,7 @@ class BP_Project_Framework {
 	
 	
 	/**
-	 * includes function.
+	 * actions function.
 	 * 
 	 * @access private
 	 * @return void
