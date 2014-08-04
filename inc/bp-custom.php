@@ -61,28 +61,6 @@ function bp_change_profile_tab_order() {
 add_action( 'bp_setup_nav', 'bp_change_profile_tab_order', 999 );
 
 
-/**
- * bp_change_settings_subnav function.
- *
- * how to change profile nav item default
- *
- * @access public
- * @return void
- */
-function bp_custom_subnav_default() {
-
-    // if you change this the first link will no longer be usable
-    $args = array(
-        'parent_slug' => 'settings',
-        'screen_function' => 'bp_core_screen_notification_settings',
-        'subnav_slug' => 'notifications'
-    );
-
-    bp_core_new_nav_default($args);
-}
-add_action('bp_setup_nav', 'bp_custom_subnav_default', 5);
-
-
 
 /**
  * bp_change_settings_subnav function.
