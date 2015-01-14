@@ -99,3 +99,22 @@ add_action('bp_setup_nav', 'bp_custom_user_nav_item', 99);
        echo 'the custom content';
 
     }
+
+/**
+ * bp_group_remove_tabs function.
+ *
+ * how to remove tabs from groups
+ *
+ * @access public
+ * @return void
+ */
+    
+function bp_group_remove_tabs() {
+	global $bp;
+	if (isset($bp->groups->current_group->slug) && $bp->groups->current_group->slug == $bp->current_item) 
+	{
+	// Duplicate the line below replacing 'home' with the name of each tab you wish to remove	 
+         $bp->bp_options_nav[$bp->groups->current_group->slug]['home'] = false;		 		 
+	}
+}
+add_action( 'bp_setup_nav', 'bp_group_remove_tabs', 999 );
