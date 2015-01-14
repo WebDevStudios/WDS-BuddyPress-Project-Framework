@@ -18,16 +18,21 @@
 			<?php bp_loggedin_user_avatar( 'width=' . bp_core_avatar_thumb_width() . '&height=' . bp_core_avatar_thumb_height() ); ?>
 		</a>
 	</div>
-	
+
 	<p class="activity-greeting"><?php if ( bp_is_group() )
-		printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname() );
+		printf( __( "What's new in %s, %s?", 'buddypress' ), bp_get_group_name(), bp_get_user_firstname( bp_get_loggedin_user_fullname() ) );
 	else
-		printf( __( "What's new, %s?", 'buddypress' ), bp_get_user_firstname() );
+		printf( __( "What's new, %s?", 'buddypress' ), bp_get_user_firstname( bp_get_loggedin_user_fullname() ) );
 	?></p>
 
 	<div id="whats-new-content">
 		<div id="whats-new-textarea">
-			<textarea name="whats-new" id="whats-new" cols="50" rows="10"><?php if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_textarea( $_GET['r'] ); ?> <?php endif; ?></textarea>
+			<textarea class="bp-suggestions" name="whats-new" id="whats-new" cols="50" rows="10" 
+			<?php
+			if ( bp_is_group() ) : ?>data-suggestions-group-id="<?php echo esc_attr( (int) bp_get_current_group_id() ); ?>" <?php endif;
+			if ( isset( $_GET['r'] ) ) : ?>@<?php echo esc_textarea( $_GET['r'] ); ?> <?php endif;
+ 			?>
+ 			></textarea>
 		</div>
 
 		<div id="whats-new-options">

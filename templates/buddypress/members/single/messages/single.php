@@ -9,26 +9,30 @@
 		<p id="message-recipients">
 			<span class="highlight">
 
-				<?php if ( !bp_get_the_thread_recipients() ) : ?>
+				<?php if ( 1 <= bp_get_thread_recipients_count() ) : ?>
 
 					<?php _e( 'You are alone in this conversation.', 'buddypress' ); ?>
 
+				<?php elseif ( 5 <= bp_get_thread_recipients_count() ) : ?>
+
+					<?php printf( __( 'Conversation between %s recipients.', 'buddypress' ), number_format_i18n( bp_get_thread_recipients_count() ) ); ?>
+
 				<?php else : ?>
 
-					<?php printf( __( 'Conversation between %s and you.', 'buddypress' ), bp_get_the_thread_recipients() ); ?>
+					<?php printf( __( 'Conversation between %s and you.', 'buddypress' ), bp_get_thread_recipients_list() ); ?>
 
 				<?php endif; ?>
 
 			</span>
 
-			<a class="button confirm" href="<?php bp_the_thread_delete_link(); ?>" title="<?php esc_attr_e( "Delete Message", "buddypress" ); ?>"><?php _e( 'Delete', 'buddypress' ); ?></a> &nbsp;
+			<a class="button confirm" href="<?php bp_the_thread_delete_link(); ?>" title="<?php esc_attr_e( "Delete Conversation", "buddypress" ); ?>"><?php _e( 'Delete', 'buddypress' ); ?></a>
 		</p>
 
 		<?php do_action( 'bp_before_message_thread_list' ); ?>
 
 		<?php while ( bp_thread_messages() ) : bp_thread_the_message(); ?>
 
-			<div class="message-box <?php bp_the_thread_message_alt_class(); ?>">
+			<div class="message-box <?php bp_the_thread_message_css_class(); ?>">
 
 				<div class="message-metadata">
 

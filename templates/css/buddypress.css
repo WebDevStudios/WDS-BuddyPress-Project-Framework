@@ -38,7 +38,7 @@ Hello, this is the BuddyPress Legacy stylesheet.
 	background: transparent;
 	border: none;
 	color: #888;
-	font-size: 90%;
+	font-size: small;
 	margin: 0;
 	position: relative;
 	display: block;
@@ -126,7 +126,7 @@ Hello, this is the BuddyPress Legacy stylesheet.
 	background: #fff;
 	color: #555;
 	font-family: inherit;
-	font-size: 90%;
+	font-size: medium;
 	height: 20px;
 	padding: 6px;
 	width: 98%;
@@ -512,6 +512,7 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 }
 #buddypress div#message.updated {
 	clear: both;
+	display: block;
 }
 #buddypress div#message p,
 #sitewide-notice p {
@@ -529,6 +530,41 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 	background-color: #efc;
 	border: 1px solid #591;
 	color: #250;
+}
+#buddypress #pass-strength-result {
+	background-color: #eee;
+	border-color: #ddd;
+	border-style: solid;
+	border-width: 1px;
+	display: none;
+	margin: 5px 5px 5px 0;
+	padding: 5px;
+	text-align: center;
+	width: 150px;
+}
+#buddypress .standard-form #basic-details-section #pass-strength-result {
+	width: 35%;
+}
+#buddypress #pass-strength-result.error,
+#buddypress #pass-strength-result.bad {
+	background-color: #ffb78c;
+	border-color: #ff853c !important;
+	display: block;
+}
+#buddypress #pass-strength-result.good {
+	background-color: #ffec8b;
+	border-color: #fc0 !important;
+	display: block;
+}
+#buddypress #pass-strength-result.short {
+	background-color: #ffa0a0;
+	border-color: #f04040 !important;
+	display: block;
+}
+#buddypress #pass-strength-result.strong {
+	background-color: #c3ff88;
+	border-color: #8dff1c !important;
+	display: block;
 }
 #buddypress .standard-form#signup_form div div.error {
 	background: #faa;
@@ -609,6 +645,7 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 	display: block;
 	font-weight: bold;
 	margin: 15px 0 5px 0;
+	width: auto;
 }
 #buddypress .standard-form div.checkbox label:nth-child(n+2),
 #buddypress .standard-form div.radio div label {
@@ -692,8 +729,17 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 #buddypress .standard-form #profile-details-section {
 	float: right;
 }
-#buddypress .standard-form #blog-details-section {
+#buddypress .standard-form #blog-details-section,
+#buddypress #notifications-bulk-management {
 	clear: left;
+}
+body.no-js #buddypress #notifications-bulk-management #select-all-notifications,
+body.no-js #buddypress label[for="message-type-select"],
+body.no-js #buddypress #message-type-select,
+body.no-js #buddypress #delete_inbox_messages,
+body.no-js #buddypress #delete_sentbox_messages,
+body.no-js #buddypress #messages-bulk-management #select-all-messages {
+	display: none;
 }
 #buddypress .standard-form input:focus,
 #buddypress .standard-form textarea:focus,
@@ -724,7 +770,7 @@ a.bp-title-button {
 	background: #fff; /* Old browsers */
 	border: 1px solid #ccc;
 	color: #777;
-	font-size: .8rem;
+	font-size: small;
 	cursor: pointer;
 	outline: none;
 	padding: 4px 10px;
@@ -782,6 +828,17 @@ a.bp-title-button {
 #buddypress .wp-editor-wrap input[type=reset] {
 	padding: 0 10px 1px;
 }
+
+/* Form classes & generic attr styling */
+#buddypress form *[disabled="disabled"]{
+	cursor: default;
+	opacity: .4;
+ }
+.bp-screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+}
+
 /*--------------------------------------------------------------
 3.6 - Ajax Loading
 --------------------------------------------------------------*/
@@ -826,6 +883,7 @@ a.bp-title-button {
 #buddypress input[type="submit"].disabled,
 #buddypress input[type="button"].disabled,
 #buddypress input[type="reset"].disabled,
+#buddypress input[type="submit"][disabled=disabled],
 #buddypress button.pending,
 #buddypress button.disabled,
 #buddypress div.pending a,
@@ -916,8 +974,6 @@ a.bp-title-button {
 }
 #buddypress table#message-threads {
 	clear: both;
-	margin: 0;
-	width: auto;
 }
 #buddypress table.profile-fields {
 	margin-bottom: 20px;
@@ -956,6 +1012,9 @@ a.bp-title-button {
 	border-right: 1px solid #eaeaea;
 	font-weight: bold;
 	width: 25%;
+}
+#buddypress #message-threads .thread-info {
+	min-width: 40%;
 }
 #buddypress table tr td.thread-info p {
 	margin: 0;
@@ -1073,7 +1132,7 @@ a.bp-title-button {
 }
 #buddypress span.activity {
 	display: inline-block;
-	font-size: 80%;
+	font-size: small;
 	opacity: 0.8;
 	padding: 0;
 }
@@ -1091,7 +1150,6 @@ a.bp-title-button {
 	background-color: #ffd;
 	border: 1px solid #cb2;
 	color: #440;
-	
 }
 #buddypress div#item-header {
 	overflow: hidden;
@@ -1263,7 +1321,7 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	margin-top: 4px;
 }
 #buddypress div.item-list-tabs ul li.last select {
-	max-width: 175px;
+	max-width: 185px;
 }
 #buddypress div.item-list-tabs ul li a,
 #buddypress div.item-list-tabs ul li span {
@@ -1327,6 +1385,11 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	border-bottom: 1px solid #ffe8c4;
 	font-weight: bold;
 }
+#buddypress table#message-threads tr.unread td .thread-excerpt,
+#buddypress table#message-threads tr.unread td .activity,
+#buddypress table#message-threads tr.unread td.thread-options {
+	font-weight: normal;
+}
 #buddypress li span.unread-count,
 #buddypress tr.unread span.unread-count {
 	background: #dd0000;
@@ -1337,13 +1400,6 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 #buddypress div.item-list-tabs ul li a span.unread-count {
 	padding: 1px 6px;
 	color: #fff;
-}
-#buddypress div.messages-options-nav {
-	background: #eee;
-	font-size: 80%;
-	margin: 0;
-	padding: 5px 15px;
-	text-align: right;
 }
 #buddypress div#message-thread div.message-box {
 	margin: 0;
@@ -1452,7 +1508,7 @@ body.register #buddypress div.page ul {
 
 .widget.buddypress span.activity {
 	display: inline-block;
-	font-size: 80%;
+	font-size: small;
 	opacity: 0.8;
 	padding: 0;
 }
@@ -1470,13 +1526,13 @@ body.register #buddypress div.page ul {
 .widget.buddypress div.item-meta,
 .widget.buddypress div.item-content {
 	font-size: 11px;
-	margin-left: 38px;
+	margin-left: 50px;
 }
 
 .widget.buddypress ul.item-list img.avatar {
-	height: 20px;
+	height: 40px;
 	margin-right: 10px;
-	width: 20px;
+	width: 40px;
 }
 .widget.buddypress div.item-avatar img {
 	height: 40px;
@@ -1499,7 +1555,7 @@ body.register #buddypress div.page ul {
 
 .widget.buddypress .bp-login-widget-user-avatar {
 	float: left;
-	width: 60px;
+	width: 40px;
 }
 
 .widget.buddypress .bp-login-widget-user-links > div {
@@ -1514,15 +1570,25 @@ body.register #buddypress div.page ul {
 	font-weight: bold;
 }
 
+.widget.buddypress #groups-list,
+.widget.buddypress #members-list,
+.widget.buddypress #friends-list {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.widget.buddypress #groups-list li,
+.widget.buddypress #members-list li,
+.widget.buddypress #friends-list li {
+	list-style-type: none;
+}
+
 /*--------------------------------------------------------------
 4.0 - Media Queries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 4.1 - Smartphones - landscape
 --------------------------------------------------------------*/
-@media screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2) {
-	-webkit-text-size-adjust: none;
-}
 @media only screen and (max-width: 480px ){
 	#buddypress div.dir-search {
 		float: right;

@@ -13,7 +13,7 @@
 				<p><?php _e( 'User registration is currently not allowed.', 'buddypress' ); ?></p>
 
 			<?php do_action( 'bp_after_registration_disabled' ); ?>
-		<?php endif; // registration-disabled signup setp ?>
+		<?php endif; // registration-disabled signup step ?>
 
 		<?php if ( 'request-details' == bp_get_current_signup_step() ) : ?>
 
@@ -31,19 +31,20 @@
 
 				<label for="signup_username"><?php _e( 'Username', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
 				<?php do_action( 'bp_signup_username_errors' ); ?>
-				<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value(); ?>" />
+				<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value(); ?>" <?php bp_form_field_attributes( 'username' ); ?>/>
 
 				<label for="signup_email"><?php _e( 'Email Address', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
 				<?php do_action( 'bp_signup_email_errors' ); ?>
-				<input type="text" name="signup_email" id="signup_email" value="<?php bp_signup_email_value(); ?>" />
+				<input type="email" name="signup_email" id="signup_email" value="<?php bp_signup_email_value(); ?>" <?php bp_form_field_attributes( 'email' ); ?>/>
 
 				<label for="signup_password"><?php _e( 'Choose a Password', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
 				<?php do_action( 'bp_signup_password_errors' ); ?>
-				<input type="password" name="signup_password" id="signup_password" value="" />
+				<input type="password" name="signup_password" id="signup_password" value="" class="password-entry" <?php bp_form_field_attributes( 'password' ); ?>/>
+				<div id="pass-strength-result"></div>
 
 				<label for="signup_password_confirm"><?php _e( 'Confirm Password', 'buddypress' ); ?> <?php _e( '(required)', 'buddypress' ); ?></label>
 				<?php do_action( 'bp_signup_password_confirm_errors' ); ?>
-				<input type="password" name="signup_password_confirm" id="signup_password_confirm" value="" />
+				<input type="password" name="signup_password_confirm" id="signup_password_confirm" value="" class="password-entry-confirm" <?php bp_form_field_attributes( 'password' ); ?>/>
 
 				<?php do_action( 'bp_account_details_fields' ); ?>
 
@@ -66,7 +67,7 @@
 
 					<?php while ( bp_profile_fields() ) : bp_the_profile_field(); ?>
 
-						<div class="editfield">
+						<div<?php bp_field_css_class( 'editfield' ); ?>>
 
 							<?php
 							$field_type = bp_xprofile_create_field_type( bp_get_the_profile_field_type() );
@@ -103,7 +104,7 @@
 
 					<?php endwhile; ?>
 
-					<input type="hidden" name="signup_profile_field_ids" id="signup_profile_field_ids" value="<?php bp_the_profile_group_field_ids(); ?>" />
+					<input type="hidden" name="signup_profile_field_ids" id="signup_profile_field_ids" value="<?php bp_the_profile_field_ids(); ?>" />
 
 					<?php endwhile; endif; endif; ?>
 
@@ -133,7 +134,7 @@
 						<?php do_action( 'bp_signup_blog_url_errors' ); ?>
 
 						<?php if ( is_subdomain_install() ) : ?>
-							http:// <input type="text" name="signup_blog_url" id="signup_blog_url" value="<?php bp_signup_blog_url_value(); ?>" /> .<?php bp_blogs_subdomain_base(); ?>
+							http:// <input type="text" name="signup_blog_url" id="signup_blog_url" value="<?php bp_signup_blog_url_value(); ?>" /> .<?php bp_signup_subdomain_base(); ?>
 						<?php else : ?>
 							<?php echo home_url( '/' ); ?> <input type="text" name="signup_blog_url" id="signup_blog_url" value="<?php bp_signup_blog_url_value(); ?>" />
 						<?php endif; ?>
@@ -142,7 +143,7 @@
 						<?php do_action( 'bp_signup_blog_title_errors' ); ?>
 						<input type="text" name="signup_blog_title" id="signup_blog_title" value="<?php bp_signup_blog_title_value(); ?>" />
 
-						<span class="label"><?php _e( 'I would like my site to appear in search engines, and in public listings around this network.', 'buddypress' ); ?>:</span>
+						<span class="label"><?php _e( 'I would like my site to appear in search engines, and in public listings around this network.', 'buddypress' ); ?></span>
 						<?php do_action( 'bp_signup_blog_privacy_errors' ); ?>
 
 						<label><input type="radio" name="signup_blog_privacy" id="signup_blog_privacy_public" value="public"<?php if ( 'public' == bp_get_signup_blog_privacy_value() || !bp_get_signup_blog_privacy_value() ) : ?> checked="checked"<?php endif; ?> /> <?php _e( 'Yes', 'buddypress' ); ?></label>
