@@ -5,7 +5,7 @@ Plugin URI: https://github.com/WebDevStudios/BP-Project-Framework
 Description: A boilerplate for custom BuddyPress development.
 Text Domain: buddypress
 Domain Path: /languages
-Version: 1.0
+Version: 1.1
 Author: WDS Team
 Author URI: http://webdevstudios.com
 License: GPLv2
@@ -52,11 +52,11 @@ class BP_Project_Framework {
      * @return \BP_Project_Framework
      */
 	private function __construct() { /* Do nothing here */ }
-	
-	
+
+
 	/**
 	 * actions function.
-	 * 
+	 *
 	 * @access private
 	 * @return void
 	 */
@@ -70,11 +70,11 @@ class BP_Project_Framework {
 		add_filter( 'pre_option__bp_theme_package_id', array( $this, 'bp_custom_templatepack_package_id' ) );
 		add_action( 'wp', array( $this, 'bp_templatepack_kill_legacy_js_and_css' ), 999 );
 	}
-		
-	
+
+
 	/**
 	 * includes function.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -84,8 +84,8 @@ class BP_Project_Framework {
             include $filename;
         }
 	}
-	
-	
+
+
 	/**
 	 * templatepack_work function.
 	 *
@@ -93,7 +93,7 @@ class BP_Project_Framework {
 	 * @return void
 	 */
 	public function bp_custom_templatepack_work() {
-	
+
 		bp_register_theme_package( array(
 				'id'		 => 'templates',
 				'name'	 => __( 'BuddyPress Templates', 'buddypress' ),
@@ -101,10 +101,10 @@ class BP_Project_Framework {
 				'dir'	 => plugin_dir_path( __FILE__ ) . '/templates',
 				'url'	 => plugin_dir_url( __FILE__ ) . '/templates'
 			) );
-	
+
 	}
-	
-	
+
+
 	/**
 	 * templatepack_package_id function.
 	 *
@@ -115,8 +115,8 @@ class BP_Project_Framework {
 	public function bp_custom_templatepack_package_id( $package_id ) {
 		return 'templates';
 	}
-	
-	
+
+
 	// Proposed BP core change: see http://buddypress.trac.wordpress.org/ticket/3741#comment:43
 	/**
 	 * templatepack_kill_legacy_js_and_css function.
@@ -128,14 +128,14 @@ class BP_Project_Framework {
 		wp_dequeue_script( 'groups_widget_groups_list-js' );
 		wp_dequeue_script( 'bp_core_widget_members-js' );
 	}
-	
-	
+
+
 }
 
 
 /**
  * bp_custom_template_stack function.
- * 
+ *
  * @access public
  * @return void
  */
