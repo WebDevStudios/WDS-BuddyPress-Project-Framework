@@ -5,7 +5,7 @@ Plugin URI: https://github.com/WebDevStudios/BP-Project-Framework
 Description: A boilerplate for custom BuddyPress development.
 Text Domain: buddypress
 Domain Path: /languages
-Version: 1.1
+Version: 1.1.1
 Author: WDS Team
 Author URI: http://webdevstudios.com
 License: GPLv2

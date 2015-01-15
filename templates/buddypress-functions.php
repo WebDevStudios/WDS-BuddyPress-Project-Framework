@@ -9,7 +9,7 @@
  */
 
 // Exit if accessed directly
-if ( !defined( 'ABSPATH' ) ) exit;
+defined( 'ABSPATH' ) || exit;
 
 /** Theme Setup ***************************************************************/
 
@@ -215,7 +215,7 @@ class BP_Legacy extends BP_Theme_Compat {
 				wp_style_add_data( $asset['handle'], 'suffix', $min );
 			}
 		}
-		
+
 		wp_enqueue_style( 'custom', plugins_url( 'css/bp-custom.css' , __FILE__ ), array(), $this->version, 'screen' );
 	}
 
@@ -273,7 +273,7 @@ class BP_Legacy extends BP_Theme_Compat {
 			// Enqueue script
 			wp_enqueue_script( $asset['handle'] . '-password-verify', $asset['location'], $dependencies, $this->version);
 		}
-		
+
 		wp_enqueue_script( 'bp-custom', plugins_url( 'js/bp-custom.js' , __FILE__ ), array(), $this->version );
 	}
 
