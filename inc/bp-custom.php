@@ -57,13 +57,17 @@ function bp_change_profile_tab_order() {
 
     // this is how you change tab names
     $bp->bp_nav['activity']['name'] = 'Stuff';
+    
+    $bp->bp_options_nav['activity']['friends']['name'] = 'wwww';
+    
+    
 }
 add_action( 'bp_setup_nav', 'bp_change_profile_tab_order', 999 );
 
 
 
 /**
- * bp_change_settings_subnav function.
+ * bp_custom_user_nav_item function.
  *
  * how to add new tabs to profile and show custom content
  *
@@ -87,18 +91,18 @@ function bp_custom_user_nav_item() {
 }
 add_action('bp_setup_nav', 'bp_custom_user_nav_item', 99);
 
-    // these are bp actions that will show a custom page on the tab created in bp_custom_user_nav_item()
-    function bp_custom_user_nav_item_screen() {
-        add_action( 'bp_template_content', 'bp_custom_screen_content' );
-        bp_core_load_template( apply_filters( 'bp_core_template_plugin', 'members/single/plugins' ) );
-    }
+// these are bp actions that will show a custom page on the tab created in bp_custom_user_nav_item()
+function bp_custom_user_nav_item_screen() {
+    add_action( 'bp_template_content', 'bp_custom_screen_content' );
+    bp_core_load_template( apply_filters( 'bp_core_template_plugin', 'members/single/plugins' ) );
+}
 
-    // this will show content when you visit the tab
-    function bp_custom_screen_content() {
+// this will show content when you visit the tab
+function bp_custom_screen_content() {
 
-       echo 'the custom content';
+   echo 'the custom content';
 
-    }
+}
 
 /**
  * bp_group_remove_tabs function.
@@ -118,3 +122,4 @@ function bp_group_remove_tabs() {
 	}
 }
 add_action( 'bp_setup_nav', 'bp_group_remove_tabs', 999 );
+
