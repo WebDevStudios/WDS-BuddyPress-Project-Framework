@@ -28,14 +28,10 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     style: 'expanded',
-                    lineNumbers: true,
-                    loadPath: [
-                        'bower_components/bourbon/app/assets/stylesheets',
-                        'bower_components/neat/app/assets/stylesheets'
-                    ]
+                    lineNumbers: true
                 },
                 files: {
-                    'style.css': 'sass/style.scss'
+                    'style.css': 'templates/sass/buddypress.scss'
                 }
             }
         },
@@ -45,7 +41,7 @@ module.exports = function(grunt) {
                 browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
             },
             dist: {
-                src:  'style.css'
+                src:  'templates/css/buddypress.css'
             }
         },
 
@@ -55,7 +51,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'style.css': 'style.css'
+                    'style.css': 'templates/css/buddypress.css'
                 }
             }
         },
@@ -73,7 +69,7 @@ module.exports = function(grunt) {
         watch: {
 
             css: {
-                files: ['sass/**/*.scss'],
+                files: ['templates/sass/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false,
@@ -89,7 +85,7 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            css: ['style.css', 'style.min.css']
+            css: ['templates/css/buddypress.css', 'templates/css/buddypress.min.css']
         }
 
     });
