@@ -1,0 +1,35 @@
+{
+  "name": "WDS-BuddyPress-Project-Framework",
+  "version": "1.0.0",
+  "description": "A plugin boilerplate for new custom BuddyPress projects for WebDevStudios.",
+  "author": "WebDevStudios",
+  "homepage": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework",
+  "bugs": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ebDevStudios/WDS-BuddyPress-Project-Framework.git"
+  },
+  "licenses": [
+    {
+      "type": "GPL-2.0+"
+    }
+  ],
+  "contributors": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework/graphs/contributors",
+  "devDependencies": {
+    "css-parse": "latest",
+    "glob": "latest",
+    "grunt": "latest",
+    "grunt-autoprefixer": "latest",
+    "grunt-combine-media-queries": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-csscomb": "latest",
+    "grunt-githooks": "latest",
+    "grunt-newer": "latest",
+    "grunt-shell": "latest",
+    "load-grunt-tasks": "latest"
+  }
+}
