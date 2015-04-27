@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                     lineNumbers: true
                 },
                 files: {
-                    'style.css': 'templates/sass/buddypress.scss'
+                    'templates/css/bp-custom.css': 'templates/sass/bp-custom.scss'
                 }
             }
         },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'style.css': 'templates/css/bp-custom.css'
+                    'templates/css/bp-custom.css': 'templates/css/bp-custom.css'
                 }
             }
         },
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            css: ['templates/css/bp-custom.css', 'templates/css/bp-custom.min.css']
+            css: ['templates/css/bp-custom.css', 'templates/css/bp-custom.css']
         }
 
     });
