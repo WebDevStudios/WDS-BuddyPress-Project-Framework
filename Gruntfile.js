@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
             },
             dist: {
-                src:  'templates/css/buddypress.css'
+                src:  'templates/css/bp-custom.css'
             }
         },
 
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'style.css': 'templates/css/buddypress.css'
+                    'style.css': 'templates/css/bp-custom.css'
                 }
             }
         },
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            css: ['templates/css/buddypress.css', 'templates/css/buddypress.min.css']
+            css: ['templates/css/bp-custom.css', 'templates/css/bp-custom.min.css']
         }
 
     });
