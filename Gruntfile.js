@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                     lineNumbers: true
                 },
                 files: {
-                    'templates/css/bp-custom.css': 'templates/sass/bp-custom.scss'
+                    'templates/css/bp-custom.css': 'templates/sass/index.scss'
                 }
             }
         },
