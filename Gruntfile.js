@@ -82,9 +82,9 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'js/',
+                    cwd: 'templates/js/',
                     src: ['**/*.js', '!**/*.min.js', '!concat/*.js'],
-                    dest: 'js/',
+                    dest: 'templates/js/',
                     ext: '.min.js'
                 }]
             }
@@ -118,7 +118,8 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            css: ['templates/css/bp-custom.css', 'templates/css/bp-custom.css']
+            js: ['templates/js/project*', 'js/**/*.min.js'],
+            css: ['templates/css/bp-custom.css', 'templates/css/bp-custom.min.css']
         }
 
     });
