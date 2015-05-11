@@ -92,6 +92,15 @@ module.exports = function(grunt) {
 
         watch: {
 
+            scripts: {
+                files: ['templates/js/**/*.js'],
+                tasks: ['javascript'],
+                options: {
+                    spawn: false,
+                    livereload: true
+                }
+            },
+
             css: {
                 files: ['templates/sass/**/*.scss'],
                 tasks: ['sass'],
