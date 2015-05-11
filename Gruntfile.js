@@ -116,6 +116,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('styles', ['sass', 'autoprefixer', 'cmq', 'csscomb', 'cssmin']);
     grint.registerTask('javascript', ['concat', 'uglify'])
-    grunt.registerTask('default', ['styles']);
+    grunt.registerTask('default', ['styles', 'javascript']);
 
 };
