@@ -66,6 +66,30 @@ module.exports = function(grunt) {
             }
         },
 
+        concat: {
+            dist: {
+                src: [
+                    'templates/js/concat/*.js'
+                ],
+                dest: 'templates/js/bp-custom.js'
+            }
+        },
+
+        uglify: {
+            build: {
+                options: {
+                    mangle: false
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'js/',
+                    src: ['**/*.js', '!**/*.min.js', '!concat/*.js'],
+                    dest: 'js/',
+                    ext: '.min.js'
+                }]
+            }
+        },
+
         watch: {
 
             css: {
@@ -91,6 +115,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('styles', ['sass', 'autoprefixer', 'cmq', 'csscomb', 'cssmin']);
+    grint.registerTask('javascript', ['concat', 'uglify'])
     grunt.registerTask('default', ['styles']);
 
 };
