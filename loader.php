@@ -69,6 +69,8 @@ class BP_Project_Framework {
 		add_action( 'bp_register_theme_packages', array( $this, 'bp_custom_templatepack_work' ) );
 		add_filter( 'pre_option__bp_theme_package_id', array( $this, 'bp_custom_templatepack_package_id' ) );
 		add_action( 'wp', array( $this, 'bp_templatepack_kill_legacy_js_and_css' ), 999 );
+		
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 	}
 
 
@@ -83,6 +85,20 @@ class BP_Project_Framework {
         foreach( glob(  plugin_dir_path(__FILE__) . 'inc/*.php' ) as $filename ) {
             include $filename;
         }
+	}
+	
+	
+	/**
+	 * enqueue_scripts function.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function enqueue_scripts() {
+	
+
+		wp_enqueue_style( 'bp-custom-css', plugins_url( 'inc/bp-custom.css' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'inc/bp-custom.css' ) );
+		wp_enqueue_script( 'bp-custom-js', plugins_url( 'inc/bp-custom.js' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'inc/bp-custom.js' ) );
 	}
 
 
