@@ -71,7 +71,7 @@ module.exports = function(grunt) {
                 src: [
                     'inc/js/concat/*.js'
                 ],
-                dest: 'inc/js/bp-custom.js'
+                dest: 'inc/bp-custom.js'
             }
         },
 
