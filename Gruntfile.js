@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                     lineNumbers: true
                 },
                 files: {
-                    'templates/css/bp-custom.css': 'templates/sass/index.scss'
+                    'inc/bp-custom.css': 'inc/sass/index.scss'
                 }
             }
         },
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 browsers: ['last 2 versions', 'ie 9']
             },
             dist: {
-                src:  'templates/css/bp-custom.css'
+                src:  'inc/bp-custom.css'
             }
         },
 
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'templates/css/bp-custom.css': 'templates/css/bp-custom.css'
+                    'inc/bp-custom.css': 'inc/bp-custom.css'
                 }
             }
         },
@@ -69,9 +69,9 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
-                    'templates/js/concat/*.js'
+                    'inc/js/concat/*.js'
                 ],
-                dest: 'templates/js/bp-custom.js'
+                dest: 'inc/js/bp-custom.js'
             }
         },
 
@@ -82,9 +82,9 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'templates/js/',
+                    cwd: 'inc/js/',
                     src: ['**/*.js', '!**/*.min.js', '!concat/*.js'],
-                    dest: 'templates/js/',
+                    dest: 'inc/js/',
                     ext: '.min.js'
                 }]
             }
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
         watch: {
 
             scripts: {
-                files: ['templates/js/**/*.js'],
+                files: ['inc/js/**/*.js'],
                 tasks: ['javascript'],
                 options: {
                     spawn: false,
@@ -102,7 +102,7 @@ module.exports = function(grunt) {
             },
 
             css: {
-                files: ['templates/sass/**/*.scss'],
+                files: ['inc/sass/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false,
@@ -118,8 +118,8 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            js: ['templates/js/project*', 'js/**/*.min.js'],
-            css: ['templates/css/bp-custom.css', 'templates/css/bp-custom.min.css']
+            js: ['inc/js/project*', 'js/**/*.min.js'],
+            css: ['inc/bp-custom.css', 'inc/bp-custom.min.css']
         }
 
     });
