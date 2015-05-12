@@ -66,40 +66,7 @@ module.exports = function(grunt) {
             }
         },
 
-        concat: {
-            dist: {
-                src: [
-                    'inc/js/concat/*.js'
-                ],
-                dest: 'inc/bp-custom.js'
-            }
-        },
-
-        uglify: {
-            build: {
-                options: {
-                    mangle: false
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'inc/js/',
-                    src: ['**/*.js', '!**/*.min.js', '!concat/*.js'],
-                    dest: 'inc/js/',
-                    ext: '.min.js'
-                }]
-            }
-        },
-
         watch: {
-
-            scripts: {
-                files: ['inc/js/**/*.js'],
-                tasks: ['javascript'],
-                options: {
-                    spawn: false,
-                    livereload: true
-                }
-            },
 
             css: {
                 files: ['inc/sass/**/*.scss'],
@@ -125,7 +92,6 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('styles', ['sass', 'autoprefixer', 'cmq', 'csscomb', 'cssmin']);
-    grunt.registerTask('javascript', ['concat', 'uglify'])
-    grunt.registerTask('default', ['styles', 'javascript']);
+    grunt.registerTask('default', ['styles']);
 
 };
