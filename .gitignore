@@ -1,0 +1,5 @@
+.idea/
+node_modules/
+.sass-cache/
+.DS_Store
+bower_components/
