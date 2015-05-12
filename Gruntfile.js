@@ -25,15 +25,15 @@ module.exports = function(grunt) {
         },
 
         sass: {
+            options: {
+                style: 'expanded',
+                lineNumbers: true,
+                includePaths: [
+                    'bower_components/bourbon/app/assets/stylesheets',
+                    'bower_components/neat/app/assets/stylesheets'
+                ]
+            },
             dist: {
-                options: {
-                    style: 'expanded',
-                    lineNumbers: true,
-                    loadPath: [
-                        'bower_components/bourbon/app/assets/stylesheets',
-                        'bower_components/neat/app/assets/stylesheets'
-                    ]
-                },
                 files: {
                     'inc/bp-custom.css': 'inc/sass/index.scss'
                 }

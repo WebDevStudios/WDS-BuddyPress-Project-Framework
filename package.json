@@ -25,12 +25,12 @@
     "grunt-contrib-concat": "latest",
     "grunt-contrib-connect": "latest",
     "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-sass": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-csscomb": "latest",
     "grunt-githooks": "latest",
     "grunt-newer": "latest",
+    "grunt-sass": "latest",
     "grunt-shell": "latest",
     "load-grunt-tasks": "latest"
   }
