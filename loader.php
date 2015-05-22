@@ -97,8 +97,8 @@ class BP_Project_Framework {
 	public function enqueue_scripts() {
 	
 
-		wp_enqueue_style( 'bp-custom-css', plugins_url( 'inc/bp-custom.css' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'inc/bp-custom.css' ) );
-		wp_enqueue_script( 'bp-custom-js', plugins_url( 'inc/bp-custom.js' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'inc/bp-custom.js' ) );
+		wp_enqueue_style( 'bp-custom-css', plugins_url( 'assets/css/bp-custom.css' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'assets/css/bp-custom.css' ) );
+		wp_enqueue_script( 'bp-custom-js', plugins_url( 'assets/js/bp-custom.js' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'assets/js/bp-custom.js' ) );
 	}
 
 

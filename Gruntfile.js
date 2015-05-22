@@ -35,7 +35,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'inc/bp-custom.css': 'inc/sass/index.scss'
+                    'assets/css/bp-custom.css': 'assets/sass/index.scss'
                 }
             }
         },
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                 browsers: ['last 2 versions', 'ie 9']
             },
             dist: {
-                src:  'inc/bp-custom.css'
+                src:  'assets/css/bp-custom.css'
             }
         },
 
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'inc/bp-custom.css': 'inc/bp-custom.css'
+                    'assets/css/bp-custom.css': 'assets/css/bp-custom.css'
                 }
             }
         },
@@ -73,7 +73,7 @@ module.exports = function(grunt) {
         watch: {
 
             css: {
-                files: ['inc/sass/**/*.scss'],
+                files: ['assets/sass/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     spawn: false,
@@ -89,8 +89,7 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            js: ['inc/js/project*', 'js/**/*.min.js'],
-            css: ['inc/bp-custom.css', 'inc/bp-custom.min.css']
+            css: ['assets/css/bp-custom.css', 'assets/css/bp-custom.min.css']
         }
 
     });
