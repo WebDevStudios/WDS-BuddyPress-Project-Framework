@@ -1,6 +1,13 @@
 <h4><?php _e( 'Change Profile Photo', 'buddypress' ); ?></h4>
 
-<?php do_action( 'bp_before_profile_avatar_upload_content' ); ?>
+<?php
+
+/**
+ * Fires before the display of profile avatar upload content.
+ *
+ * @since BuddyPress (1.1.0)
+ */
+do_action( 'bp_before_profile_avatar_upload_content' ); ?>
 
 <?php if ( !(int)bp_get_option( 'bp-disable-avatar-uploads' ) ) : ?>
 
@@ -50,10 +57,25 @@
 
 	</form>
 
+	<?php
+	/**
+	 * Load the Avatar UI templates
+	 *
+	 * @since  BuddyPress (2.3.0)
+	 */
+	bp_avatar_get_templates(); ?>
+
 <?php else : ?>
 
 	<p><?php _e( 'Your profile photo will be used on your profile and throughout the site. To change your profile photo, please create an account with <a href="http://gravatar.com">Gravatar</a> using the same email address as you used to register with this site.', 'buddypress' ); ?></p>
 
 <?php endif; ?>
 
-<?php do_action( 'bp_after_profile_avatar_upload_content' ); ?>
+<?php
+
+/**
+ * Fires after the display of profile avatar upload content.
+ *
+ * @since BuddyPress (1.1.0)
+ */
+do_action( 'bp_after_profile_avatar_upload_content' ); ?>

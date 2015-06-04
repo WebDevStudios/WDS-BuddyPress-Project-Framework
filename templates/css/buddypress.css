@@ -496,7 +496,9 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 	font-size: 90%;
 	padding: 1px 3px;
 }
-
+#buddypress .current-member-type {
+	font-style: italic;
+}
 #buddypress .dir-form {
 	clear: both;
 }
@@ -523,6 +525,12 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 #buddypress div#message.error p {
 	background-color: #fdc;
 	border: 1px solid #a00;
+	clear: left;
+	color: #800;
+}
+#buddypress div#message.warning p {
+	background-color: #ffe0af;
+	border: 1px solid #ffd087;
 	clear: left;
 	color: #800;
 }
@@ -1279,6 +1287,9 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	margin: 10px 0 0 60px;
 	width: 50%;
 }
+#buddypress ul.item-list li.group-no-avatar div.item-desc {
+	margin-left: 0;
+}
 #buddypress ul.item-list li div.action {
 	position: absolute;
 	top: 15px;
@@ -1441,6 +1452,40 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 #buddypress div.message-search {
 	float: right;
 	margin: 0 20px;
+}
+
+.message-metadata {
+	position: relative;
+}
+.message-star-actions {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#buddypress a.message-action-star,
+#buddypress a.message-action-unstar {
+	border-bottom: 0;
+	text-decoration: none;
+	outline: none;
+}
+a.message-action-star {
+	opacity: .7;
+}
+a.message-action-star:hover {
+	opacity: 1;
+}
+.message-action-star span.icon:before,
+.message-action-unstar span.icon:before {
+	font-family: dashicons;
+	font-size: 18px;
+}
+.message-action-star span.icon:before {
+	color: #aaa;
+	content: "\f154";
+}
+.message-action-unstar span.icon:before {
+	color: #FCDD77;
+	content: "\f155";
 }
 
 /*--------------------------------------------------------------

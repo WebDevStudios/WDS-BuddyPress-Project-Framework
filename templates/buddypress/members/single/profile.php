@@ -15,9 +15,16 @@
 	</ul>
 </div><!-- .item-list-tabs -->
 
-<?php do_action( 'bp_before_profile_content' ); ?>
+<?php
 
-<div class="profile" role="main">
+/**
+ * Fires before the display of member profile content.
+ *
+ * @since BuddyPress (1.1.0)
+ */
+do_action( 'bp_before_profile_content' ); ?>
+
+<div class="profile">
 
 <?php switch ( bp_current_action() ) :
 
@@ -51,4 +58,11 @@
 endswitch; ?>
 </div><!-- .profile -->
 
-<?php do_action( 'bp_after_profile_content' ); ?>
+<?php
+
+/**
+ * Fires after the display of member profile content.
+ *
+ * @since BuddyPress (1.1.0)
+ */
+do_action( 'bp_after_profile_content' ); ?>
