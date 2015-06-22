@@ -10,3 +10,7 @@ There are also files to place custom javascript and css. Place custom javascript
 Install
 -----
 To install you upload bp-project-framework folder to your WordPress and activate. There are currently no settings, although there maybe options in the future. After activating the plugin you can start adding custom code, css, javascript and edit the markup of the templates.
+
+Sass
+-----
+Project framework now contains sass scaffolding for each component in the assets folder. The bp-custom.js and bp-custom.css files are now in the assets folder. 
