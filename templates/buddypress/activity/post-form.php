@@ -62,6 +62,7 @@
 						endif; ?>
 
 					</select>
+					<?php do_action( 'bp_activity_post_form_post_options' ); ?>
 				</div>
 				<input type="hidden" id="whats-new-post-object" name="whats-new-post-object" value="groups" />
 
@@ -71,7 +72,7 @@
 				<input type="hidden" id="whats-new-post-in" name="whats-new-post-in" value="<?php bp_group_id(); ?>" />
 
 			<?php endif; ?>
-
+			
 			<?php
 
 			/**
