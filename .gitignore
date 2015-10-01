@@ -1,5 +1,10 @@
-.idea/
 node_modules/
-.sass-cache/
+.idea/
+
+.htaccess
+.sass-cache
+compass_app_log.txt
 .DS_Store
-bower_components/
+.AppleDouble
+.LSOverride
+*.sublime-workspace
