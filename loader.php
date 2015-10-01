@@ -69,7 +69,7 @@ class BP_Project_Framework {
 		add_action( 'bp_register_theme_packages', array( $this, 'bp_custom_templatepack_work' ) );
 		add_filter( 'pre_option__bp_theme_package_id', array( $this, 'bp_custom_templatepack_package_id' ) );
 		add_action( 'wp', array( $this, 'bp_templatepack_kill_legacy_js_and_css' ), 999 );
-		
+
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 	}
 
@@ -86,19 +86,20 @@ class BP_Project_Framework {
             include $filename;
         }
 	}
-	
-	
+
+
 	/**
 	 * enqueue_scripts function.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-	
+		wp_register_style( 'bp-custom-css', plugins_url( 'templates/css/buddypress.css' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'templates/css/buddypress.css' ) );
+		wp_register_script( 'bp-custom-js', plugins_url( 'assets/js/bp-custom.js' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'assets/js/bp-custom.js' ) );
 
-		wp_enqueue_style( 'bp-custom-css', plugins_url( 'assets/css/bp-custom.css' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'assets/css/bp-custom.css' ) );
-		wp_enqueue_script( 'bp-custom-js', plugins_url( 'assets/js/bp-custom.js' , __FILE__ ), array(), filemtime( plugin_dir_path( __FILE__ ) . 'assets/js/bp-custom.js' ) );
+		wp_enqueue_style( 'bp-custom-css' );
+		wp_enqueue_script( 'bp-custom-js' );
 	}
 
 
