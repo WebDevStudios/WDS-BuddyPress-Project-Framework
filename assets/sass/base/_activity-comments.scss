@@ -1,0 +1,218 @@
+//--------------------------------------------------------------
+// Activity Comments
+//--------------------------------------------------------------
+
+.activity-meta {
+	margin: rem(18) 0 0;
+
+	a {
+		padding: rem(4) rem(8);
+	}
+}
+
+a.activity-time-since {
+	color: $color-light-gray;
+	text-decoration: none;
+
+	&:hover {
+		color: $color-jumbo;
+		text-decoration: underline;
+	}
+}
+
+.activity-comments {
+	clear: both;
+	margin: 0 0 0 rem(70);
+	overflow: hidden; // ie hack
+	position: relative;
+	width: auto;
+
+	> ul {
+		padding: 0 0 0 rem(10);
+	}
+
+	ul,
+	ul li {
+		border: none;
+		list-style: none;
+	}
+
+	ul {
+		clear: both;
+		margin: 0;
+	}
+
+	ul li {
+		border-top: 1px solid $color-silver-felt;
+		padding: rem(10) 0 0;
+	}
+
+	> ul > li:first-child {
+		border-top: none;
+	}
+
+	ul li:last-child {
+		margin-bottom: 0;
+	}
+
+	ul li > ul {
+		margin-left: rem(30);
+		margin-top: 0;
+		padding-left: rem(10);
+	}
+
+	.acomment-avatar img {
+		@include size(rem(25) rem(25));
+
+		border-width: 1px;
+		float: left;
+		margin-right: rem(10);
+	}
+
+	.acomment-content {
+		font-size: 80%;
+		margin: rem(5) 0 0 rem(40);
+	}
+
+	.acomment-meta {
+		color: $color-jumbo;
+		font-size: 80%;
+	}
+
+	form.ac-form {
+		display: none;
+		padding: rem(10);
+	}
+
+	li form.ac-form {
+		clear: both;
+		margin-right: rem(15);
+	}
+
+	form.root {
+		margin-left: 0;
+	}
+
+	div#message {
+		margin-bottom: 0;
+		margin-top: rem(15);
+	}
+
+	form .ac-textarea {
+		background: $color-white;
+		border: 1px inset $color-iron;
+		margin-bottom: rem(10);
+		padding: rem(8);
+	}
+
+	form textarea {
+		@include margin-padding-reset;
+		@include size(100% rem(60));
+
+		background: transparent;
+		border: none;
+		box-shadow: none;
+		color: $color-dark-gray;
+		font-family: inherit;
+		font-size: 100%;
+		outline: none;
+	}
+
+	form input {
+		margin-top: rem(5);
+	}
+
+	form .ac-reply-avatar {
+		float: left;
+	}
+
+	form .ac-reply-content {
+		color: $color-jumbo;
+		margin-left: rem(50);
+		padding-left: rem(15);
+	}
+
+	form .ac-reply-content a {
+		text-decoration: none;
+	}
+}
+
+.acomment-content .time-since,
+.acomment-content .activity-delete-link,
+.acomment-content .comment-header {
+	display: none;
+}
+
+body.activity-permalink {
+
+	.activity-comments {
+		background: none;
+		margin-left: rem(170);
+		width: auto;
+
+		.acomment-content {
+			font-size: 90%;
+		}
+	}
+
+	.activity-meta {
+		margin-bottom: rem(6);
+	}
+
+	.activity-list li.mini .activity-comments {
+		clear: none;
+		margin-top: 0;
+	}
+
+	.activity-comments ul li {
+		border-width: 1px;
+		padding: rem(10) 0 0 0;
+	}
+
+	.activity-comments ul li > ul {
+		margin-top: rem(10);
+	}
+
+	.activity-comments > ul {
+		padding: 0 rem(10) 0 rem(15);
+	}
+}
+
+.ac-reply-avatar img {
+	border: 1px solid $color-silver-felt;
+}
+
+.acomment-options {
+	float: left;
+	margin: rem(5) 0 rem(5) rem(40);
+
+	a {
+		color: $color-aluminum;
+
+		&:hover {
+			color: inherit;
+		}
+	}
+}
+
+a.bp-primary-action,
+#reply-title small a {
+	font-size: 80%;
+	margin-right: rem(5);
+	text-decoration: none;
+}
+
+a.bp-primary-action span,
+#reply-title small a span {
+	background: $color-aluminum;
+	color: $color-white;
+	font-size: 90%;
+	margin-left: rem(2);
+	padding: 0 rem(5);
+}
+
+a.bp-primary-action:hover span,
+#reply-title small a:hover span {
+	background: $color-dark-gray;
+	color: $color-white;
+}

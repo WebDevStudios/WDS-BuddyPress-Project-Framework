@@ -1,0 +1,298 @@
+//-------------------------------------------------------------------------
+// Headers, Lists and Tabs - Activity, Groups, Blogs, Forums, Profiles
+//-------------------------------------------------------------------------
+
+.item-body {
+	margin: rem(20) 0;
+}
+
+.activity {
+	display: inline-block;
+	font-size: small;
+	opacity: 0.8;
+	padding: 0;
+}
+
+.user-nicename {
+	color: $color-monsoon;
+	display: inline-block;
+	font-size: 120%;
+	font-weight: 700;
+}
+
+#message p,
+#sitewide-notice p {
+	background-color: $color-pink-lace;
+	border: 1px solid ;
+	color: $color-loulou;
+	font-weight: normal;
+	margin-top: rem(3);
+	text-decoration: none;
+}
+
+#item-header {
+	overflow: hidden;
+
+	#item-header-content {
+		float: left;
+		margin-left: 0;
+	}
+
+	h2 {
+		line-height: 120%;
+		margin: 0 0 rem(15) 0;
+	}
+
+	h2 a {
+		color: $color-monsoon;
+		text-decoration: none;
+	}
+
+	img.avatar {
+		float: left;
+		margin: 0 rem(15) rem(19) 0;
+	}
+
+	h2 {
+		margin-bottom: rem(5);
+	}
+
+	h2 span.highlight {
+		display: inline-block;
+		font-size: 60%;
+		font-weight: normal;
+		line-height: 170%;
+		vertical-align: middle;
+	}
+
+	h2 span.highlight span {
+		background: $color-sail;
+		color: $color-white;
+		cursor: pointer;
+		font-size: 80%;
+		font-weight: 700;
+		margin-bottom: rem(2);
+		padding: rem(1) rem(4);
+		position: relative;
+		right: rem(-2);
+		top: rem(-2);
+		vertical-align: middle;
+	}
+
+	#item-meta {
+		color: $color-light-gray;
+		font-size: 80%;
+		margin: rem(15) 0 rem(5) 0;
+		overflow: hidden;
+		padding-bottom: rem(10);
+	}
+
+	#item-actions {
+		float: right;
+		margin: 0 0 rem(15) rem(15);
+		text-align: right;
+		width: 20%;
+	}
+
+	#item-actions h3 {
+		margin: 0 0 rem(5) 0;
+	}
+
+	ul {
+		margin-bottom: rem(15);
+		overflow: hidden;
+	}
+
+	ul h5,
+	ul span,
+	ul hr {
+		display: none;
+	}
+
+	ul li {
+		float: right;
+		list-style: none;
+	}
+
+	ul img.avatar,
+	ul.avatars img.avatar {
+		@include size(rem(30) rem(30));
+
+		margin: rem(2);
+	}
+
+	div.generic-button,
+	a.button {
+		float: left;
+		margin: rem(10) rem(10) 0 0;
+	}
+
+	div#message.info {
+		line-height: 80%;
+	}
+}
+
+ul.single-line li {
+	border: none;
+}
+
+body.activity-permalink ul.item-list,
+body.activity-permalink ul.item-list li.activity-item {
+	border: none;
+}
+
+ul.item-list {
+	@include list-reset;
+
+	border-top: 1px solid $color-lily-white;
+	width: 100%;
+
+	li {
+		border-bottom: 1px solid $color-lily-white;
+		list-style: none;
+		margin: 0;
+		padding: rem(15) 0;
+		position: relative;
+
+		img.avatar {
+			float: left;
+			margin: 0 rem(10) 0 0;
+		}
+
+		.item-title,
+		h4 {
+			font-size: 90%;
+			font-weight: normal;
+			margin: 0;
+			width: 75%;
+		}
+
+		.item-title span {
+			color: $color-aluminum;
+			font-size: 80%;
+		}
+
+		.item-desc {
+			color: $color-jumbo;
+			font-size: 80%;
+			margin: rem(10) 0 0 rem(60);
+			width: 50%;
+		}
+
+		&.group-no-avatar .item-desc {
+			margin-left: 0;
+		}
+
+		.action {
+			position: absolute;
+			right: 0;
+			text-align: right;
+			top: rem(15);
+		}
+
+		.meta {
+			color: $color-jumbo;
+			font-size: 80%;
+			margin-top: rem(10);
+		}
+
+		h5 span.small {
+			float: right;
+			font-size: 80%;
+			font-weight: normal;
+		}
+	}
+}
+
+.item-list-tabs {
+	background: transparent;
+	clear: left;
+	overflow: hidden;
+
+	ul {
+		@include margin-padding-reset;
+	}
+
+	ul li {
+		float: left;
+		margin: 0;
+		list-style: none;
+	}
+
+	#subnav ul li {
+		margin-top: 0;
+	}
+
+	ul li.last {
+		float: right;
+		margin: rem(7) 0 0;
+	}
+
+	#subnav ul li.last {
+		margin-top: rem(4);
+	}
+
+	ul li.last select {
+		max-width: rem(185);
+	}
+
+	ul li a,
+	ul li span {
+		display: block;
+		padding: rem(5) rem(10);
+		text-decoration: none;
+	}
+
+	ul li a span {
+		background: $color-silver-felt;
+		border-radius: 50%;
+		border: 1px solid $color-iron;
+		color: $color-aluminum;
+		display: inline;
+		font-size: 70%;
+		margin-left: rem(2);
+		padding: rem(3) rem(6);
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	ul li.selected a,
+	ul li.current a {
+		background-color: $color-silver-felt;
+		color: $color-dark-gray;
+		font-weight: 700;
+		opacity: .8;
+	}
+
+	ul li.selected a span,
+	ul li.current a span,
+	ul li a:hover span {
+		background-color: $color-silver-felt;
+	}
+
+	ul li.selected a span,
+	ul li.current a span {
+		background-color: $color-white;
+	}
+}
+
+#item-nav ul li.loading a {
+	background-position: 88% 50%;
+}
+
+.item-list-tabs#object-nav {
+	margin-top: 0;
+}
+
+.item-list-tabs#subnav {
+	background: transparent;
+	margin: rem(10) 0 rem(10);
+	overflow: hidden;
+}
+
+#admins-list li,
+#mods-list li,
+#members-list li {
+	list-style: none;
+	overflow: auto;
+}

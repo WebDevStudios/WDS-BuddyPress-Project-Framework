@@ -1,0 +1,97 @@
+//--------------------------------------------------------------
+// Widgets
+//--------------------------------------------------------------
+
+.widget.buddypress {
+
+	.item-avatar {
+
+		.avatar {
+			float: left;
+			margin: 0 rem(10) rem(15) 0;
+		}
+
+		img {
+			@include size(rem(40) rem(40));
+
+			margin: rem(1);
+		}
+	}
+
+	.activity {
+		display: inline-block;
+		font-size: small;
+		opacity: 0.8;
+		padding: 0;
+	}
+
+	.item-options {
+		font-size: 90%;
+		margin: 0 0 rem(16) 0;
+		padding: rem(16) 0;
+	}
+
+	.item {
+		margin: 0 0 rem(16) 0;
+	}
+
+	.item-meta,
+	.item-content {
+		font-size: rem(11);
+		margin-left: rem(50);
+	}
+
+	ul.item-list .avatar {
+		@include size(rem(40) rem(40));
+
+		margin-right: rem(10);
+	}
+
+	.avatar-block {
+		overflow: hidden;
+	}
+
+	#bp-login-widget-form {
+
+		label {
+			display: block;
+			margin: rem(16) 0 rem(8);
+		}
+
+		#bp-login-widget-submit {
+			margin-right: rem(10);
+		}
+	}
+
+	.bp-login-widget-user-avatar {
+		float: left;
+
+		img.avatar {
+			@include size(rem(40) rem(40));
+		}
+	}
+
+	.bp-login-widget-user-links {
+
+		> div {
+			margin-bottom: rem(8);
+			padding-left: rem(60);
+		}
+
+		> div.bp-login-widget-user-link a {
+			font-weight: 700;
+		}
+	}
+
+	#groups-list,
+	#members-list,
+	#friends-list {
+		margin-left: 0;
+		padding-left: 0;
+
+		li {
+			clear: both;
+			list-style-type: none;
+		}
+	}
+}

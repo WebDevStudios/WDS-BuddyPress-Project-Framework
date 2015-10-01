@@ -1,0 +1,82 @@
+//--------------------------------------------------------------
+// Activity
+//--------------------------------------------------------------
+
+#activity-stream {
+	margin-top: rem(-5);
+
+	p {
+		margin: rem(5) 0;
+	}
+}
+
+#item-body form#whats-new-form {
+	@include margin-padding-reset;
+}
+
+.home-page form#whats-new-form {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+form#whats-new-form {
+
+	#whats-new-avatar {
+		float: left;
+	}
+
+	#whats-new-content {
+		margin-left: rem(55);
+		padding: 0 0 rem(20) rem(20);
+	}
+
+	p.activity-greeting {
+		line-height: rem(8);
+		margin-bottom: rem(15);
+		margin-left: rem(75);
+	}
+
+	textarea {
+		@include size(98% rem(20));
+
+		background: $color-white;
+		color: $color-dark-gray;
+		font-family: inherit;
+		font-size: medium;
+		padding: rem(6);
+	}
+}
+
+body.no-js {
+
+	form#whats-new-form textarea {
+		height: rem(50);
+	}
+
+	#whats-new-options {
+		height: auto;
+	}
+}
+
+form#whats-new-form {
+
+	#whats-new-options select {
+		margin-top: rem(12);
+		max-width: rem(200);
+	}
+
+	form#whats-new-form #whats-new-submit {
+		float: right;
+		margin-top: rem(12);
+	}
+}
+
+#whats-new-options {
+	height: 0;
+	overflow: auto;
+
+	&:focus {
+		border-color: rgba(31, 179, 221, 0.9) !important;
+		outline-color: rgba(31, 179, 221, 0.9);
+	}
+}

@@ -1,0 +1,48 @@
+//------------------------------------------------------------------------------
+// Navigation
+//------------------------------------------------------------------------------
+
+.pagination {
+	background: transparent;
+	border: none;
+	color: $color-jumbo;
+	display: block;
+	float: left;
+	font-size: small;
+	margin: 0;
+	padding: rem(10) 0;
+	position: relative;
+	width: 100%;
+
+	.pag-count {
+		float: left;
+		margin-left: rem(10);
+	}
+
+	.pagination-links {
+		float: right;
+		margin-right: rem(10);
+
+		span,
+		a {
+			font-size: 90%;
+			padding: 0 rem(5);
+		}
+
+		a:hover {
+			font-weight: 700;
+		}
+	}
+}
+
+noscript div.pagination {
+	margin-bottom: rem(15);
+}
+
+#nav-above {
+	display: none;
+}
+
+.paged #nav-above {
+	display: block;
+}

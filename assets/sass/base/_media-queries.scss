@@ -1,0 +1,95 @@
+//--------------------------------------------------------------
+// Media Queries
+//--------------------------------------------------------------
+
+// Smartphones - landscape
+@media only screen and ( max-width: rem(480) ) {
+	#buddypress div.dir-search {
+		float: right;
+		margin-top: rem(-50);
+		text-align: right;
+	}
+	#buddypress div.dir-search input[type="text"] {
+		margin-bottom: rem(16);
+		width: 50%;
+	}
+	a.bp-title-button {
+		margin-left: rem(10);
+	}
+	#buddypress form.standard-form .main-column div.action{
+		margin-bottom: rem(16);
+		position: relative;
+	}
+	#buddypress form.standard-form .main-column ul#friend-list h4{
+		width: 100%;
+	}
+}
+
+// Smartphones - portrait
+@media only screen and ( max-width: rem(320) ) {
+	#buddypress div.dir-search {
+		clear: left;
+		float: left;
+		margin-top: 0;
+		text-align: left;
+	}
+	#buddypress li#groups-order-select {
+		clear: left;
+		float: left;
+	}
+	#buddypress ul.item-list li div.action {
+		clear: left;
+		float: left;
+		margin-left: rem(70);
+		margin-top: 0;
+		position: relative;
+		right: 0;
+		text-align: left;
+		top: 0;
+	}
+	#buddypress ul.item-list li div.item-desc {
+		clear: left;
+		float: left;
+		margin: rem(10) 0 0;
+		width: auto;
+	}
+	#buddypress li div.item {
+		margin-left: rem(70);
+		width: auto;
+	}
+	#buddypress ul.item-list li div.meta {
+		margin-top: 0;
+	}
+	#buddypress .item-desc p {
+		margin: 0 0 rem(10);
+	}
+	#buddypress div.pagination .pag-count {
+		margin-left: 0;
+	}
+}
+
+// Smartphones - smaller screen sizes
+@media only screen and ( max-width: rem(240) ) {
+	#buddypress div.dir-search {
+		float: left;
+		margin: 0;
+	}
+	#buddypress div.dir-search input[type="text"] {
+		width: 50%;
+	}
+	#buddypress li#groups-order-select {
+		float: left;
+	}
+	#buddypress ul.item-list li img.avatar {
+		@include size(rem(30) auto);
+	}
+	#buddypress ul.item-list li div.action,
+	#buddypress li div.item{
+		margin-left: rem(45);
+	}
+	h1 a.bp-title-button {
+		clear: left;
+		float: left;
+		margin: rem(10) 0 rem(20);
+	}
+}
