@@ -1,100 +1,127 @@
 module.exports = function(grunt) {
 
-    // load all grunt tasks in package.json matching the `grunt-*` pattern
-    require('load-grunt-tasks')(grunt);
+	// load all grunt tasks in package.json matching the `grunt-*` pattern
+	require('load-grunt-tasks')(grunt);
 
-    grunt.initConfig({
+	grunt.initConfig({
 
-        pkg: grunt.file.readJSON('package.json'),
+		pkg: grunt.file.readJSON('package.json'),
 
-        githooks: {
-            all: {
-                'pre-commit': 'default'
-            }
-        },
+		githooks: {
+			all: {
+				'pre-commit': 'default'
+			}
+		},
 
-        csscomb: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '',
-                    src: ['**/*.css'],
-                    dest: '',
-                }]
-            }
-        },
+		sass: {
+			options: {
+				style: 'expanded',
+				lineNumbers: true,
+				includePaths: [
+					'bower_components/bourbon/app/assets/stylesheets',
+					'bower_components/neat/app/assets/stylesheets'
+				]
+			},
+			dist: {
+				files: {
+					'templates/css/buddypress.css': 'assets/sass/buddypress.scss'
+				}
+			}
+		},
 
-        sass: {
-            options: {
-                style: 'expanded',
-                lineNumbers: true,
-                includePaths: [
-                    'bower_components/bourbon/app/assets/stylesheets',
-                    'bower_components/neat/app/assets/stylesheets'
-                ]
-            },
-            dist: {
-                files: {
-                    'assets/css/bp-custom.css': 'assets/sass/index.scss'
-                }
-            }
-        },
+		autoprefixer: {
+			options: {
+				browsers: ['last 2 versions', 'ie 9'],
+				map: {
+					inline: false,
+					sourcesContent: false
+				}
+			},
+			dist: {
+				src: ['templates/css/buddypress.css']
+			}
+		},
 
-        autoprefixer: {
-            options: {
-                browsers: ['last 2 versions', 'ie 9']
-            },
-            dist: {
-                src:  'assets/css/bp-custom.css'
-            }
-        },
+		cmq: {
+			options: {
+				log: false
+			},
+			dist: {
+				files: {
+					'templates/css/buddypress.css': 'templates/css/buddypress.css'
+				}
+			}
+		},
 
-        cmq: {
-            options: {
-                log: false
-            },
-            dist: {
-                files: {
-                    'assets/css/bp-custom.css': 'assets/css/bp-custom.css'
-                }
-            }
-        },
+		cssmin: {
+			minify: {
+				expand: true,
+				cwd: '',
+				src: ['templates/css/buddypress.css', '!*.min.css'],
+				dest: '',
+				ext: '.min.css'
+			}
+		},
 
-        cssmin: {
-            minify: {
-                expand: true,
-                cwd: '',
-                src: ['*.css', '!*.min.css'],
-                dest: '',
-                ext: '.min.css'
-            }
-        },
+		csscomb: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '',
+					src: ['templates/css/buddypress.css'],
+					dest: '',
+				}]
+			}
+		},
 
-        watch: {
+		concat: {
+			dist: {
+				src: ['assets/js/concat/*.js'],
+				dest: 'assets/js/bp-custom.js',
+			}
+		},
 
-            css: {
-                files: ['assets/sass/**/*.scss'],
-                tasks: ['sass'],
-                options: {
-                    spawn: false,
-                    livereload: true,
-                },
-            },
-        },
+		uglify: {
+			build: {
+				options: {
+					mangle: false
+				},
+				files: [{
+					expand: true,
+					cwd: 'assets/js/',
+					src: ['**/*.js', '!**/*.min.js', '!concat/*.js'],
+					dest: 'js/',
+					ext: '.min.js'
+				}]
+			}
+		},
 
-        shell: {
-            grunt: {
-                command: '',
-            }
-        },
+		watch: {
 
-        clean: {
-            css: ['assets/css/bp-custom.css', 'assets/css/bp-custom.min.css']
-        }
+			css: {
+				files: ['assets/sass/**/*.scss'],
+				tasks: ['sass'],
+				options: {
+					spawn: false,
+					livereload: true,
+				},
+			},
+		},
 
-    });
+		shell: {
+			grunt: {
+				command: '',
+			}
+		},
 
-    grunt.registerTask('styles', ['sass', 'autoprefixer', 'cmq', 'csscomb', 'cssmin']);
-    grunt.registerTask('default', ['styles']);
+		clean: {
+			css: ['templates/css/buddypress.css', 'templates/css/buddypress.min.css']
+		}
+
+	});
+
+	grunt.registerTask('styles', ['sass', 'autoprefixer', 'cmq', 'csscomb', 'cssmin']);
+	grunt.registerTask('javascript', ['concat', 'uglify']);
+	grunt.registerTask('default', ['styles']);
 
 };
