@@ -2,6 +2,14 @@
 // Activity Listing
 //--------------------------------------------------------------
 
+#activity-stream {
+	margin-top: rem(-5);
+
+	p {
+		margin: rem(5) 0;
+	}
+}
+
 ul.activity-list li {
 	overflow: hidden;
 	padding: rem(15) 0 0;
