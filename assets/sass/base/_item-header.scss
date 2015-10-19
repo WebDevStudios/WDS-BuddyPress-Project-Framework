@@ -1,0 +1,107 @@
+//--------------------------------------------------------------
+// Item Header
+// This shows on /groups activity page and is the header area
+// for the group
+//--------------------------------------------------------------
+
+#item-header {
+	overflow: hidden;
+
+	#item-header-content {
+		float: left;
+		margin-left: 0;
+	}
+
+	h2 {
+		line-height: 120%;
+		margin: 0 0 rem(15) 0;
+	}
+
+	h2 a {
+		color: $color-monsoon;
+		text-decoration: none;
+	}
+
+	img.avatar {
+		float: left;
+		margin: 0 rem(15) rem(19) 0;
+	}
+
+	h2 {
+		margin-bottom: rem(5);
+	}
+
+	h2 span.highlight {
+		display: inline-block;
+		font-size: 60%;
+		font-weight: normal;
+		line-height: 170%;
+		vertical-align: middle;
+	}
+
+	h2 span.highlight span {
+		background: $color-sail;
+		color: $color-white;
+		cursor: pointer;
+		font-size: 80%;
+		font-weight: 700;
+		margin-bottom: rem(2);
+		padding: rem(1) rem(4);
+		position: relative;
+		right: rem(-2);
+		top: rem(-2);
+		vertical-align: middle;
+	}
+
+	#item-meta {
+		color: $color-light-gray;
+		font-size: 80%;
+		margin: rem(15) 0 rem(5) 0;
+		overflow: hidden;
+		padding-bottom: rem(10);
+	}
+
+	#item-actions {
+		float: right;
+		margin: 0 0 rem(15) rem(15);
+		text-align: right;
+		width: 20%;
+	}
+
+	#item-actions h3 {
+		margin: 0 0 rem(5) 0;
+	}
+
+	ul {
+		margin-bottom: rem(15);
+		overflow: hidden;
+	}
+
+	ul h5,
+	ul span,
+	ul hr {
+		display: none;
+	}
+
+	ul li {
+		float: right;
+		list-style: none;
+	}
+
+	ul img.avatar,
+	ul.avatars img.avatar {
+		@include size(rem(30) rem(30));
+
+		margin: rem(2);
+	}
+
+	div.generic-button,
+	a.button {
+		float: left;
+		margin: rem(10) rem(10) 0 0;
+	}
+
+	div#message.info {
+		line-height: 80%;
+	}
+}
