@@ -1,4 +1,10 @@
 <?php
+/**
+ * BuddyPress - Members Single Profile
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
 /** This action is documented in bp-templates/bp-legacy/buddypress/members/single/settings/profile.php */
 do_action( 'bp_before_member_settings_template' ); ?>
@@ -18,6 +24,7 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	<label for="pass1"><?php _e( 'Change Password <span>(leave blank for no change)</span>', 'buddypress' ); ?></label>
 	<input type="password" name="pass1" id="pass1" size="16" value="" class="settings-input small password-entry" <?php bp_form_field_attributes( 'password' ); ?>/> &nbsp;<?php _e( 'New Password', 'buddypress' ); ?><br />
 	<div id="pass-strength-result"></div>
+	<label for="pass2" class="bp-screen-reader-text"><?php _e( 'Repeat New Password', 'buddypress' ); ?></label>
 	<input type="password" name="pass2" id="pass2" size="16" value="" class="settings-input small password-entry-confirm" <?php bp_form_field_attributes( 'password' ); ?>/> &nbsp;<?php _e( 'Repeat New Password', 'buddypress' ); ?>
 
 	<?php
@@ -25,7 +32,7 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	/**
 	 * Fires before the display of the submit button for user general settings saving.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_core_general_settings_before_submit' ); ?>
 
@@ -38,7 +45,7 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	/**
 	 * Fires after the display of the submit button for user general settings saving.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_core_general_settings_after_submit' ); ?>
 

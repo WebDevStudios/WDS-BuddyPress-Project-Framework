@@ -60,6 +60,8 @@ jq(document).ready( function() {
 		});
 		jq('#aw-whats-new-submit').prop('disabled', false);
 
+		jq( '#whats-new-content' ).addClass( 'active' );
+
 		var $whats_new_form = jq('form#whats-new-form'),
 			$activity_all = jq( '#activity-all' );
 
@@ -93,6 +95,7 @@ jq(document).ready( function() {
 					height:'20px'
 				});
 				jq('#aw-whats-new-submit').prop('disabled', true);
+				jq( '#whats-new-content' ).removeClass( 'active' );
 			}
 		}
 	});
@@ -215,6 +218,7 @@ jq(document).ready( function() {
 				height:'20px'
 			});
 			jq('#aw-whats-new-submit').prop('disabled', true).removeClass('loading');
+			jq( '#whats-new-content' ).removeClass( 'active' );
 		});
 
 		return false;
@@ -1808,12 +1812,12 @@ function bp_init_activity() {
 		path: '/'
 	} );
 
-	if ( null !== jq.cookie('bp-activity-filter') && jq('#activity-filter-select').length ) {
+	if ( undefined !== jq.cookie('bp-activity-filter') && jq('#activity-filter-select').length ) {
 		jq('#activity-filter-select select option[value="' + jq.cookie('bp-activity-filter') + '"]').prop( 'selected', true );
 	}
 
 	/* Activity Tab Set */
-	if ( null !== jq.cookie('bp-activity-scope') && jq('.activity-type-tabs').length ) {
+	if ( undefined !== jq.cookie('bp-activity-scope') && jq('.activity-type-tabs').length ) {
 		jq('.activity-type-tabs li').each( function() {
 			jq(this).removeClass('selected');
 		});
@@ -1824,11 +1828,11 @@ function bp_init_activity() {
 /* Setup object scope and filter based on the current cookie settings for the object. */
 function bp_init_objects(objects) {
 	jq(objects).each( function(i) {
-		if ( null !== jq.cookie('bp-' + objects[i] + '-filter') && jq('#' + objects[i] + '-order-select select').length ) {
+		if ( undefined !== jq.cookie('bp-' + objects[i] + '-filter') && jq('#' + objects[i] + '-order-select select').length ) {
 			jq('#' + objects[i] + '-order-select select option[value="' + jq.cookie('bp-' + objects[i] + '-filter') + '"]').prop( 'selected', true );
 		}
 
-		if ( null !== jq.cookie('bp-' + objects[i] + '-scope') && jq('div.' + objects[i]).length ) {
+		if ( undefined !== jq.cookie('bp-' + objects[i] + '-scope') && jq('div.' + objects[i]).length ) {
 			jq('.item-list-tabs li').each( function() {
 				jq(this).removeClass('selected');
 			});
@@ -1911,12 +1915,16 @@ function bp_filter_request( object, filter, scope, target, search_terms, page, e
 /* Activity Loop Requesting */
 function bp_activity_request(scope, filter) {
 	/* Save the type and filter to a session cookie */
-	jq.cookie( 'bp-activity-scope', scope, {
-		path: '/'
-	} );
-	jq.cookie( 'bp-activity-filter', filter, {
-		path: '/'
-	} );
+	if ( null !== scope ) {
+		jq.cookie( 'bp-activity-scope', scope, {
+			path: '/'
+		} );
+	}
+	if ( null !== filter ) {
+		jq.cookie( 'bp-activity-filter', filter, {
+			path: '/'
+		} );
+	}
 	jq.cookie( 'bp-activity-oldestpage', 1, {
 		path: '/'
 	} );
@@ -1957,7 +1965,7 @@ function bp_activity_request(scope, filter) {
 		});
 
 		/* Update the feed link */
-		if ( null !== response.feed_url ) {
+		if ( undefined !== response.feed_url ) {
 			jq('.directory #subnav li.feed a, .home-page #subnav li.feed a').attr('href', response.feed_url);
 		}
 
@@ -2026,7 +2034,7 @@ function checkAll() {
  * Deselects any select options or input options for the specified field element.
  *
  * @param {String} container HTML ID of the field
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 function clear( container ) {
 	container = document.getElementById( container );

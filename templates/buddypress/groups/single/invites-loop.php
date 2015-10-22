@@ -1,4 +1,12 @@
+<?php
+/**
+ * BuddyPress - Group Invites Loop
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
+?>
 <div class="left-menu">
 
 	<div id="invite-list">
@@ -20,7 +28,7 @@
 	/**
 	 * Fires before the display of the group send invites list.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 */
 	do_action( 'bp_before_group_send_invites_list' ); ?>
 
@@ -58,7 +66,7 @@
 				/**
 				 * Fires inside the invite item listing.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_group_send_invites_item' ); ?>
 
@@ -70,7 +78,7 @@
 					/**
 					 * Fires inside the action area for a send invites item.
 					 *
-					 * @since BuddyPress (1.1.0)
+					 * @since 1.1.0
 					 */
 					do_action( 'bp_group_send_invites_item_action' ); ?>
 				</div>
@@ -109,7 +117,7 @@
 /**
  * Fires after the display of the group send invites list.
  *
- * @since BuddyPress (1.1.0)
+ * @since 1.1.0
  */
 do_action( 'bp_after_group_send_invites_list' ); ?>
 

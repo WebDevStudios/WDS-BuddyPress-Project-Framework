@@ -1,9 +1,15 @@
 <?php
+/**
+ * BuddyPress - Groups Single Forum Edit.
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
 /**
  * Fires at the top of the group forum edit form.
  *
- * @since BuddyPress (1.2.4)
+ * @since 1.2.4
  */
 do_action( 'bp_before_group_forum_edit_form' ); ?>
 
@@ -46,7 +52,7 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 			/**
 			 * Fires at the end of the group forum topic meta section.
 			 *
-			 * @since BuddyPress (1.2.5)
+			 * @since 1.2.5
 			 */
 			do_action( 'bp_group_forum_topic_meta' ); ?>
 
@@ -61,7 +67,7 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 				/**
 				 * Fires before the group forum topic form fields.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_group_before_edit_forum_topic' ); ?>
 
@@ -71,7 +77,7 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 				<label for="topic_text"><?php _e( 'Content:', 'buddypress' ); ?></label>
 				<textarea name="topic_text" id="topic_text"><?php bp_the_topic_text(); ?></textarea>
 
-				<label><?php _e( 'Tags (comma separated):', 'buddypress' ); ?></label>
+				<label for="topic_tags"><?php _e( 'Tags (comma separated):', 'buddypress' ); ?></label>
 				<input type="text" name="topic_tags" id="topic_tags" value="<?php bp_forum_topic_tag_list(); ?>" />
 
 				<?php
@@ -79,7 +85,7 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 				/**
 				 * Fires after the group forum topic form fields.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_group_after_edit_forum_topic' ); ?>
 
@@ -98,10 +104,11 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 				/**
 				 * Fires before the group edit forum textarea.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_group_before_edit_forum_post' ); ?>
 
+				<label for="post_text" class="bp-screen-reader-text"><?php _e( 'Edit text', 'buddypress' ); ?></label>
 				<textarea name="post_text" id="post_text"><?php bp_the_topic_post_edit_text(); ?></textarea>
 
 				<?php
@@ -109,7 +116,7 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 				/**
 				 * Fires after the group edit forum textarea.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_group_after_edit_forum_post' ); ?>
 
@@ -136,6 +143,6 @@ do_action( 'bp_before_group_forum_edit_form' ); ?>
 /**
  * Fires at the end of the group forum edit form.
  *
- * @since BuddyPress (1.2.4)
+ * @since 1.2.4
  */
 do_action( 'bp_after_group_forum_edit_form' ); ?>

@@ -1,4 +1,10 @@
 <?php
+/**
+ * BuddyPress - Members Settings Capabilities
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
 /** This action is documented in bp-templates/bp-legacy/buddypress/members/single/settings/profile.php */
 do_action( 'bp_before_member_settings_template' ); ?>
@@ -10,11 +16,11 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	/**
 	 * Fires before the display of the submit button for user capabilities saving.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 */
 	do_action( 'bp_members_capabilities_account_before_submit' ); ?>
 
-	<label>
+	<label for="user-spammer">
 		<input type="checkbox" name="user-spammer" id="user-spammer" value="1" <?php checked( bp_is_user_spammer( bp_displayed_user_id() ) ); ?> />
 		 <?php _e( 'This user is a spammer.', 'buddypress' ); ?>
 	</label>
@@ -28,7 +34,7 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	/**
 	 * Fires after the display of the submit button for user capabilities saving.
 	 *
-	 * @since BuddyPress (1.6.0)
+	 * @since 1.6.0
 	 */
 	do_action( 'bp_members_capabilities_account_after_submit' ); ?>
 
