@@ -1,4 +1,10 @@
 <?php
+/**
+ * BuddyPress - Members Profile Loop
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
 /** This action is documented in bp-templates/bp-legacy/buddypress/members/single/profile/profile-wp.php */
 do_action( 'bp_before_profile_loop_content' ); ?>
@@ -39,7 +45,7 @@ do_action( 'bp_before_profile_loop_content' ); ?>
 						/**
 						 * Fires after the display of a field table row for profile data.
 						 *
-						 * @since BuddyPress (1.1.0)
+						 * @since 1.1.0
 						 */
 						do_action( 'bp_profile_field_item' ); ?>
 

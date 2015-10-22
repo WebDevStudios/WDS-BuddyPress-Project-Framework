@@ -1,9 +1,15 @@
 <?php
+/**
+ * BuddyPress - Members Messages Loop
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
 /**
  * Fires before the members messages loop.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_before_member_messages_loop' ); ?>
 
@@ -26,7 +32,7 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 	/**
 	 * Fires after the members messages pagination display.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 */
 	do_action( 'bp_after_member_messages_pagination' ); ?>
 
@@ -35,7 +41,7 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 	/**
 	 * Fires before the members messages threads.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 */
 	do_action( 'bp_before_member_messages_threads' ); ?>
 
@@ -45,7 +51,7 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 
 			<thead>
 				<tr>
-					<th scope="col" class="thread-checkbox bulk-select-all"><label class="bp-screen-reader-text" for="select-all-messages"><?php _e( 'Select all', 'buddypress' ); ?></label><input id="select-all-messages" type="checkbox"></th>
+					<th scope="col" class="thread-checkbox bulk-select-all"><input id="select-all-messages" type="checkbox"><label class="bp-screen-reader-text" for="select-all-messages"><?php _e( 'Select all', 'buddypress' ); ?></label></th>
 					<th scope="col" class="thread-from"><?php _e( 'From', 'buddypress' ); ?></th>
 					<th scope="col" class="thread-info"><?php _e( 'Subject', 'buddypress' ); ?></th>
 
@@ -57,7 +63,7 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 					 * This is to primarily add a <th> cell to the messages box table header. Use
 					 * the related 'bp_messages_inbox_list_item' hook to add a <td> cell.
 					 *
-					 * @since BuddyPress (2.3.0)
+					 * @since 2.3.0
 					 */
 					do_action( 'bp_messages_inbox_list_header' ); ?>
 
@@ -75,7 +81,7 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 
 					<tr id="m-<?php bp_message_thread_id(); ?>" class="<?php bp_message_css_class(); ?><?php if ( bp_message_thread_has_unread() ) : ?> unread<?php else: ?> read<?php endif; ?>">
 						<td class="bulk-select-check">
-							<input type="checkbox" name="message_ids[]" class="message-check" value="<?php bp_message_thread_id(); ?>" />
+							<label for="bp-message-thread-<?php bp_message_thread_id(); ?>"><input type="checkbox" name="message_ids[]" id="bp-message-thread-<?php bp_message_thread_id(); ?>" class="message-check" value="<?php bp_message_thread_id(); ?>" /><span class="bp-screen-reader-text"><?php _e( 'Select this message', 'buddypress' ); ?></span></label>
 						</td>
 
 						<?php if ( 'sentbox' != bp_current_action() ) : ?>
@@ -107,7 +113,7 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 						 * This is to primarily add a <td> cell to the message box table. Use the
 						 * related 'bp_messages_inbox_list_header' hook to add a <th> header cell.
 						 *
-						 * @since BuddyPress (1.1.0)
+						 * @since 1.1.0
 						 */
 						do_action( 'bp_messages_inbox_list_item' ); ?>
 
@@ -146,7 +152,7 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 	/**
 	 * Fires after the members messages threads.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 */
 	do_action( 'bp_after_member_messages_threads' ); ?>
 
@@ -155,7 +161,7 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 	/**
 	 * Fires and displays member messages options.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 */
 	do_action( 'bp_after_member_messages_options' ); ?>
 
@@ -172,6 +178,6 @@ do_action( 'bp_before_member_messages_loop' ); ?>
 /**
  * Fires after the members messages loop.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_after_member_messages_loop' ); ?>

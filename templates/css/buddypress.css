@@ -19,6 +19,7 @@ Hello, this is the BuddyPress Legacy stylesheet.
 	3.6 - Ajax Loading
 	3.7 - Topics and Tables - Forums and General
 	3.8 - Headers, Lists and Tabs - Activity, Groups, Blogs, Forums
+		3.8.1 - Cover Image
 	3.9 - Private Messaging Threads
 	3.10 - Extended Profiles
 	3.11 - Widgets
@@ -655,6 +656,11 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 	margin: 15px 0 5px 0;
 	width: auto;
 }
+#buddypress .standard-form p label,
+#buddypress .standard-form #invite-list label {
+	font-weight: normal;
+	margin: auto;
+}
 #buddypress .standard-form div.checkbox label:nth-child(n+2),
 #buddypress .standard-form div.radio div label {
 	color: #888;
@@ -772,7 +778,7 @@ body.no-js #buddypress #messages-bulk-management #select-all-messages {
 #buddypress input[type=button],
 #buddypress input[type=reset],
 #buddypress ul.button-nav li a,
-#buddypress div.generic-button a,
+#buddypress .generic-button a,
 #buddypress .comment-reply-link,
 a.bp-title-button {
 	background: #fff; /* Old browsers */
@@ -834,17 +840,25 @@ a.bp-title-button {
 #buddypress .wp-editor-wrap input[type=submit],
 #buddypress .wp-editor-wrap input[type=button],
 #buddypress .wp-editor-wrap input[type=reset] {
-	padding: 0 10px 1px;
+	padding: 0 8px 1px;
 }
 
 /* Form classes & generic attr styling */
 #buddypress form *[disabled="disabled"]{
 	cursor: default;
 	opacity: .4;
- }
+}
+
 .bp-screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute;
+	margin: -1px;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	border: 0;
+	word-wrap: normal !important;
 }
 
 /*--------------------------------------------------------------
@@ -1161,6 +1175,7 @@ a.bp-title-button {
 }
 #buddypress div#item-header {
 	overflow: hidden;
+	position: relative;
 }
 #buddypress div#item-header div#item-header-content {
 	float: left;
@@ -1240,6 +1255,9 @@ a.bp-title-button {
 #buddypress div#item-header a.button {
 	float: left;
 	margin: 10px 10px 0 0;
+}
+body.no-js #buddypress div#item-header .js-self-profile-button {
+	display:none;
 }
 #buddypress div#item-header div#message.info {
 	line-height: 80%;
@@ -1386,6 +1404,31 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	list-style: none;
 }
 
+/*--------------------------------------------------------------
+3.8.1 - Cover Image
+--------------------------------------------------------------*/
+
+#buddypress #header-cover-image {
+	background-color: #c5c5c5;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 0;
+	display: block;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+#buddypress #item-header-cover-image {
+	padding: 0 1em;
+	position: relative;
+	z-index: 999;
+}
 
 /*--------------------------------------------------------------
 3.9 - Private Messaging Threads
@@ -1540,6 +1583,26 @@ body.register #buddypress div.page ul {
 }
 #buddypress .field-visibility select {
 	margin: 0;
+}
+#buddypress .wp-editor-container {
+	border: 1px solid #dedede;
+}
+#buddypress .html-active button.switch-html {
+	border-bottom-color: transparent;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background: #f5f5f5;
+}
+#buddypress .tmce-active button.switch-tmce {
+	border-bottom-color: transparent;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	background: #f5f5f5;
+}
+#buddypress .standard-form .wp-editor-container textarea {
+	width: 100%;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 /*--------------------------------------------------------------

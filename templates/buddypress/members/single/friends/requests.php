@@ -1,9 +1,15 @@
 <?php
+/**
+ * BuddyPress - Members Friends Requests
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
 /**
  * Fires before the display of member friend requests content.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_before_member_friend_requests_content' ); ?>
 
@@ -36,16 +42,16 @@ do_action( 'bp_before_member_friend_requests_content' ); ?>
 				<div class="item">
 					<div class="item-title"><a href="<?php bp_member_link(); ?>"><?php bp_member_name(); ?></a></div>
 					<div class="item-meta"><span class="activity"><?php bp_member_last_active(); ?></span></div>
+
+					<?php
+					/**
+					 * Fires inside the display of a member friend request item.
+					 *
+					 * @since 1.1.0
+					 */
+					do_action( 'bp_friend_requests_item' );
+					?>
 				</div>
-
-				<?php
-
-				/**
-				 * Fires inside the display of a member friend request item.
-				 *
-				 * @since BuddyPress (1.1.0)
-				 */
-				do_action( 'bp_friend_requests_item' ); ?>
 
 				<div class="action">
 					<a class="button accept" href="<?php bp_friend_accept_request_link(); ?>"><?php _e( 'Accept', 'buddypress' ); ?></a> &nbsp;
@@ -56,7 +62,7 @@ do_action( 'bp_before_member_friend_requests_content' ); ?>
 					/**
 					 * Fires inside the member friend request actions markup.
 					 *
-					 * @since BuddyPress (1.1.0)
+					 * @since 1.1.0
 					 */
 					do_action( 'bp_friend_requests_item_action' ); ?>
 				</div>
@@ -70,7 +76,7 @@ do_action( 'bp_before_member_friend_requests_content' ); ?>
 	/**
 	 * Fires and displays the member friend requests content.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 */
 	do_action( 'bp_friend_requests_content' ); ?>
 
@@ -103,6 +109,6 @@ do_action( 'bp_before_member_friend_requests_content' ); ?>
 /**
  * Fires after the display of member friend requests content.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_after_member_friend_requests_content' ); ?>

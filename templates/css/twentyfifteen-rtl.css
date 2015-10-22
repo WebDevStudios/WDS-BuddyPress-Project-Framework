@@ -955,7 +955,6 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 	width: 100%;
 }
 
-.bp-user #buddypress #item-header #item-header-avatar img.avatar,
 .bp-user #buddypress #item-header #item-header-avatar a {
 	border-bottom: 0;
 	display: inline-block;
@@ -1707,6 +1706,14 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 
 #buddypress select {
 	border: 1px solid rgba(153, 153, 153, 0.5);
+}
+
+#buddypress .wp-editor-wrap a.button,
+#buddypress .wp-editor-wrap button,
+#buddypress .wp-editor-wrap input[type=submit],
+#buddypress .wp-editor-wrap input[type=button],
+#buddypress .wp-editor-wrap input[type=reset] {
+	padding: 0 5px 1px;
 }
 
 #buddypress .standard-form li,
