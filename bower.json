@@ -1,5 +1,5 @@
 {
-  "name": "BP Project Template",
+  "name": "wds-buddypress-project-framework",
   "description": "A plugin boilerplate for new custom BuddyPress projects for WebDevStudios.",
   "version": "1.0.0",
   "main": [
