@@ -464,12 +464,9 @@ html
     padding: 0 0 0 .625rem;
 }
 
-.buddypress .activity-comments ul,
-.buddypress .activity-comments ul li
+.buddypress .activity-comments > ul > li:first-child
 {
-    list-style: none;
-
-    border: none;
+    border-top: none;
 }
 
 .buddypress .activity-comments ul
@@ -477,18 +474,20 @@ html
     clear: both;
 
     margin: 0;
+
+    list-style: none;
+
+    border: none;
 }
 
 .buddypress .activity-comments ul li
 {
     padding: .625rem 0 0;
 
-    border-top: 1px solid #eee;
-}
+    list-style: none;
 
-.buddypress .activity-comments > ul > li:first-child
-{
-    border-top: none;
+    border: none;
+    border-top: 1px solid #eee;
 }
 
 .buddypress .activity-comments ul li:last-child
@@ -521,6 +520,13 @@ html
     margin: .3125rem 0 0 2.5rem;
 }
 
+.buddypress .activity-comments .acomment-content .time-since,
+.buddypress .activity-comments .acomment-content .activity-delete-link,
+.buddypress .activity-comments .acomment-content .comment-header
+{
+    display: none;
+}
+
 .buddypress .activity-comments .acomment-meta
 {
     font-size: 80%;
@@ -528,32 +534,21 @@ html
     color: #888;
 }
 
-.buddypress .activity-comments form.ac-form
+.buddypress .activity-comments .ac-form
 {
     display: none;
-
-    padding: .625rem;
-}
-
-.buddypress .activity-comments li form.ac-form
-{
     clear: both;
 
     margin-right: .9375rem;
+    padding: .625rem;
 }
 
-.buddypress .activity-comments form.root
+.buddypress .activity-comments .ac-form.root
 {
     margin-left: 0;
 }
 
-.buddypress .activity-comments div#message
-{
-    margin-top: .9375rem;
-    margin-bottom: 0;
-}
-
-.buddypress .activity-comments form .ac-textarea
+.buddypress .activity-comments .ac-form .ac-textarea
 {
     margin-bottom: .625rem;
     padding: .5rem;
@@ -562,7 +557,7 @@ html
     background: #fff;
 }
 
-.buddypress .activity-comments form textarea
+.buddypress .activity-comments .ac-form textarea
 {
     font-family: inherit;
     font-size: 100%;
@@ -579,17 +574,17 @@ html
     box-shadow: none;
 }
 
-.buddypress .activity-comments form input
+.buddypress .activity-comments .ac-form input
 {
     margin-top: .3125rem;
 }
 
-.buddypress .activity-comments form .ac-reply-avatar
+.buddypress .activity-comments .ac-form .ac-reply-avatar
 {
     float: left;
 }
 
-.buddypress .activity-comments form .ac-reply-content
+.buddypress .activity-comments .ac-form .ac-reply-content
 {
     margin-left: 3.125rem;
     padding-left: .9375rem;
@@ -597,16 +592,15 @@ html
     color: #888;
 }
 
-.buddypress .activity-comments form .ac-reply-content a
+.buddypress .activity-comments .ac-form .ac-reply-content a
 {
     text-decoration: none;
 }
 
-.buddypress .acomment-content .time-since,
-.buddypress .acomment-content .activity-delete-link,
-.buddypress .acomment-content .comment-header
+.buddypress .activity-comments div#message
 {
-    display: none;
+    margin-top: .9375rem;
+    margin-bottom: 0;
 }
 
 .buddypress body.activity-permalink .activity-comments
@@ -1542,7 +1536,7 @@ html
 {
     font-size: small;
 
-    display: inline-block;
+    display: block;
 
     padding: 0;
 
