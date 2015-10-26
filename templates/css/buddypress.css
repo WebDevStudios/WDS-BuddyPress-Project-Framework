@@ -97,41 +97,31 @@ html
     clear: both;
 }
 
-.buddypress #activity-stream
-{
-    margin-top: -.3125rem;
-}
-
-.buddypress #activity-stream p
-{
-    margin: .3125rem 0;
-}
-
-.buddypress #item-body form#whats-new-form
+#item-body .buddypress #whats-new-form
 {
     margin: 0;
     padding: 0;
 }
 
-.buddypress .home-page form#whats-new-form
+.home-page .buddypress #whats-new-form
 {
     padding-bottom: 0;
 
     border-bottom: none;
 }
 
-.buddypress form#whats-new-form #whats-new-avatar
+.buddypress #whats-new-form #whats-new-avatar
 {
     float: left;
 }
 
-.buddypress form#whats-new-form #whats-new-content
+.buddypress #whats-new-form #whats-new-content
 {
     margin-left: 3.4375rem;
     padding: 0 0 1.25rem 1.25rem;
 }
 
-.buddypress form#whats-new-form p.activity-greeting
+.buddypress #whats-new-form p.activity-greeting
 {
     line-height: .5rem;
 
@@ -139,7 +129,7 @@ html
     margin-left: 4.6875rem;
 }
 
-.buddypress form#whats-new-form textarea
+.buddypress #whats-new-form textarea
 {
     font-family: inherit;
     font-size: medium;
@@ -152,40 +142,50 @@ html
     background: #fff;
 }
 
-.buddypress body.no-js form#whats-new-form textarea
-{
-    height: 3.125rem;
-}
-
-.buddypress body.no-js #whats-new-options
-{
-    height: auto;
-}
-
-.buddypress form#whats-new-form #whats-new-options select
+.buddypress #whats-new-form #whats-new-options select
 {
     max-width: 12.5rem;
     margin-top: .75rem;
 }
 
-.buddypress form#whats-new-form form#whats-new-form #whats-new-submit
+.buddypress #whats-new-form #whats-new-submit
 {
     float: right;
 
     margin-top: .75rem;
 }
 
-.buddypress #whats-new-options
+.buddypress #whats-new-form #whats-new-options
 {
     overflow: auto;
 
     height: 0;
 }
 
-.buddypress #whats-new-options:focus
+.buddypress #whats-new-form #whats-new-options:focus
 {
     border-color: rgba(31, 179, 221, .9) !important;
     outline-color: rgba(31, 179, 221, .9);
+}
+
+.buddypress.no-js #whats-new-form textarea
+{
+    height: 3.125rem;
+}
+
+.buddypress.no-js #whats-new-form #whats-new-options
+{
+    height: 3.75rem;
+}
+
+.buddypress #activity-stream
+{
+    margin-top: -.3125rem;
+}
+
+.buddypress #activity-stream p
+{
+    margin: .3125rem 0;
 }
 
 .buddypress ul.activity-list li
@@ -1573,143 +1573,6 @@ html
     background-color: #ffdffd;
 }
 
-.buddypress #item-header
-{
-    overflow: hidden;
-}
-
-.buddypress #item-header #item-header-content
-{
-    float: left;
-
-    margin-left: 0;
-}
-
-.buddypress #item-header h2
-{
-    line-height: 120%;
-
-    margin: 0 0 .9375rem 0;
-}
-
-.buddypress #item-header h2 a
-{
-    text-decoration: none;
-
-    color: #777;
-}
-
-.buddypress #item-header img.avatar
-{
-    float: left;
-
-    margin: 0 .9375rem 1.1875rem 0;
-}
-
-.buddypress #item-header h2
-{
-    margin-bottom: .3125rem;
-}
-
-.buddypress #item-header h2 span.highlight
-{
-    font-size: 60%;
-    font-weight: normal;
-    line-height: 170%;
-
-    display: inline-block;
-
-    vertical-align: middle;
-}
-
-.buddypress #item-header h2 span.highlight span
-{
-    font-size: 80%;
-    font-weight: 700;
-
-    position: relative;
-    top: -.125rem;
-    right: -.125rem;
-
-    margin-bottom: .125rem;
-    padding: .0625rem .25rem;
-
-    cursor: pointer;
-    vertical-align: middle;
-
-    color: #fff;
-    background: #a1dcfa;
-}
-
-.buddypress #item-header #item-meta
-{
-    font-size: 80%;
-
-    overflow: hidden;
-
-    margin: .9375rem 0 .3125rem 0;
-    padding-bottom: .625rem;
-
-    color: #aaa;
-}
-
-.buddypress #item-header #item-actions
-{
-    float: right;
-
-    width: 20%;
-    margin: 0 0 .9375rem .9375rem;
-
-    text-align: right;
-}
-
-.buddypress #item-header #item-actions h3
-{
-    margin: 0 0 .3125rem 0;
-}
-
-.buddypress #item-header ul
-{
-    overflow: hidden;
-
-    margin-bottom: .9375rem;
-}
-
-.buddypress #item-header ul h5,
-.buddypress #item-header ul span,
-.buddypress #item-header ul hr
-{
-    display: none;
-}
-
-.buddypress #item-header ul li
-{
-    float: right;
-
-    list-style: none;
-}
-
-.buddypress #item-header ul img.avatar,
-.buddypress #item-header ul.avatars img.avatar
-{
-    width: 1.875rem;
-    height: 1.875rem;
-    margin: .125rem;
-}
-
-.buddypress #item-header div.generic-button,
-.buddypress #item-header a.button
-{
-    float: left;
-
-    margin: .625rem .625rem 0 0;
-}
-
-.buddypress #item-header div#message.info
-{
-    line-height: 80%;
-}
-
 .buddypress ul.single-line li
 {
     border: none;
@@ -1817,6 +1680,178 @@ html
     float: right;
 }
 
+.buddypress #item-nav ul li.loading a
+{
+    background-position: 88% 50%;
+}
+
+.buddypress .item-list-tabs#object-nav
+{
+    margin-top: 0;
+}
+
+.buddypress .item-list-tabs#subnav
+{
+    overflow: hidden;
+
+    margin: .625rem 0 .625rem;
+
+    background: transparent;
+}
+
+.buddypress #admins-list li,
+.buddypress #mods-list li,
+.buddypress #members-list li
+{
+    overflow: auto;
+
+    list-style: none;
+}
+
+.buddypress #item-header
+{
+    overflow: hidden;
+}
+
+.buddypress #item-header #item-header-content
+{
+    float: left;
+
+    margin-left: 0;
+}
+
+.buddypress #item-header h2
+{
+    line-height: 120%;
+
+    margin: 0 0 .3125rem 0;
+}
+
+.buddypress #item-header h2 a
+{
+    text-decoration: none;
+
+    color: #777;
+}
+
+.buddypress #item-header h2 span.highlight
+{
+    font-size: 60%;
+    font-weight: normal;
+    line-height: 170%;
+
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.buddypress #item-header h2 span.highlight span
+{
+    font-size: 80%;
+    font-weight: 700;
+
+    position: relative;
+    top: -.125rem;
+    right: -.125rem;
+
+    margin-bottom: .125rem;
+    padding: .0625rem .25rem;
+
+    cursor: pointer;
+    vertical-align: middle;
+
+    color: #fff;
+    background: #a1dcfa;
+}
+
+.buddypress #item-header img.avatar
+{
+    float: left;
+
+    margin: 0 .9375rem 1.1875rem 0;
+}
+
+.buddypress #item-header #item-meta
+{
+    font-size: 80%;
+
+    overflow: hidden;
+
+    margin: .9375rem 0 .3125rem 0;
+    padding-bottom: .625rem;
+
+    color: #aaa;
+}
+
+.buddypress #item-header #item-actions
+{
+    float: right;
+
+    width: 20%;
+    margin: 0 0 .9375rem .9375rem;
+
+    text-align: right;
+}
+
+.buddypress #item-header #item-actions h3
+{
+    margin: 0 0 .3125rem 0;
+}
+
+.buddypress #item-header ul
+{
+    overflow: hidden;
+
+    margin-bottom: .9375rem;
+}
+
+.buddypress #item-header ul h5,
+.buddypress #item-header ul span,
+.buddypress #item-header ul hr
+{
+    display: none;
+}
+
+.buddypress #item-header ul li
+{
+    float: right;
+
+    list-style: none;
+}
+
+.buddypress #item-header ul img.avatar
+{
+    width: 1.875rem;
+    height: 1.875rem;
+    margin: .125rem;
+}
+
+.buddypress #item-header ul.avatars img.avatar
+{
+    width: 1.875rem;
+    height: 1.875rem;
+    margin: .125rem;
+}
+
+.buddypress #item-header div.generic-button
+{
+    float: left;
+
+    margin: .625rem .625rem 0 0;
+}
+
+.buddypress #item-header div#message.info
+{
+    line-height: 80%;
+}
+
+.buddypress #item-header a.button
+{
+    float: left;
+
+    margin: .625rem .625rem 0 0;
+}
+
 .buddypress .item-list-tabs
 {
     clear: left;
@@ -1838,28 +1873,6 @@ html
     margin: 0;
 
     list-style: none;
-}
-
-.buddypress .item-list-tabs #subnav ul li
-{
-    margin-top: 0;
-}
-
-.buddypress .item-list-tabs ul li.last
-{
-    float: right;
-
-    margin: .4375rem 0 0;
-}
-
-.buddypress .item-list-tabs #subnav ul li.last
-{
-    margin-top: .25rem;
-}
-
-.buddypress .item-list-tabs ul li.last select
-{
-    max-width: 11.5625rem;
 }
 
 .buddypress .item-list-tabs ul li a,
@@ -1890,6 +1903,11 @@ html
     background: #eee;
 }
 
+.buddypress .item-list-tabs ul li a:hover span
+{
+    background-color: #eee;
+}
+
 .buddypress .item-list-tabs ul li.selected a,
 .buddypress .item-list-tabs ul li.current a
 {
@@ -1901,44 +1919,31 @@ html
 }
 
 .buddypress .item-list-tabs ul li.selected a span,
-.buddypress .item-list-tabs ul li.current a span,
-.buddypress .item-list-tabs ul li a:hover span
-{
-    background-color: #eee;
-}
-
-.buddypress .item-list-tabs ul li.selected a span,
 .buddypress .item-list-tabs ul li.current a span
 {
     background-color: #fff;
 }
 
-.buddypress #item-nav ul li.loading a
+.buddypress .item-list-tabs ul li.last
 {
-    background-position: 88% 50%;
+    float: right;
+
+    margin: .4375rem 0 0;
 }
 
-.buddypress .item-list-tabs#object-nav
+.buddypress .item-list-tabs ul li.last select
+{
+    max-width: 11.5625rem;
+}
+
+.buddypress #subnav ul li
 {
     margin-top: 0;
 }
 
-.buddypress .item-list-tabs#subnav
+.buddypress #subnav ul li.last
 {
-    overflow: hidden;
-
-    margin: .625rem 0 .625rem;
-
-    background: transparent;
-}
-
-.buddypress #admins-list li,
-.buddypress #mods-list li,
-.buddypress #members-list li
-{
-    overflow: auto;
-
-    list-style: none;
+    margin-top: .25rem;
 }
 
 .buddypress table#message-threads tr.unread td

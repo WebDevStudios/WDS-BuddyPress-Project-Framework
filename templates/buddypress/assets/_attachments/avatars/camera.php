@@ -1,14 +1,15 @@
 <?php
 /**
- * BuddyPress Avatars camera template
+ * BuddyPress Avatars camera template.
  *
- * This template is used to create the camera Backbone views
+ * This template is used to create the camera Backbone views.
  *
- * @since 2.3
+ * @since 2.3.0
  *
  * @package BuddyPress
  * @subpackage bp-attachments
  */
+
 ?>
 <script id="tmpl-bp-avatar-webcam" type="text/html">
 	<# if ( ! data.user_media ) { #>

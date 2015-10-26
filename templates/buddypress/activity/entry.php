@@ -1,5 +1,4 @@
 <?php
-
 /**
  * BuddyPress - Activity Stream (Single Item)
  *
@@ -10,14 +9,10 @@
  * @subpackage bp-legacy
  */
 
-?>
-
-<?php
-
 /**
  * Fires before the display of an activity entry.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_before_activity_entry' ); ?>
 
@@ -53,7 +48,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 		/**
 		 * Fires after the display of an activity entry content.
 		 *
-		 * @since BuddyPress (1.2.0)
+		 * @since 1.2.0
 		 */
 		do_action( 'bp_activity_entry_content' ); ?>
 
@@ -69,7 +64,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 
 				<?php if ( bp_activity_can_comment() ) : ?>
 
-					<a href="<?php bp_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment <span>%s</span>', 'buddypress' ), bp_activity_get_comment_count() ); ?></a>
+					<a href="<?php bp_activity_comment_link(); ?>" class="button acomment-reply bp-primary-action" id="acomment-comment-<?php bp_activity_id(); ?>"><?php printf( __( 'Comment %s', 'buddypress' ), '<span>' . bp_activity_get_comment_count() . '</span>' ); ?></a>
 
 				<?php endif; ?>
 
@@ -94,7 +89,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 				/**
 				 * Fires at the end of the activity entry meta data area.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_activity_entry_meta' ); ?>
 
@@ -109,7 +104,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 	/**
 	 * Fires before the display of the activity entry comments.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 */
 	do_action( 'bp_before_activity_entry_comments' ); ?>
 
@@ -125,6 +120,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 					<div class="ac-reply-avatar"><?php bp_loggedin_user_avatar( 'width=' . BP_AVATAR_THUMB_WIDTH . '&height=' . BP_AVATAR_THUMB_HEIGHT ); ?></div>
 					<div class="ac-reply-content">
 						<div class="ac-textarea">
+							<label for="ac-input-<?php bp_activity_id(); ?>" class="bp-screen-reader-text"><?php _e( 'Comment', 'buddypress' ); ?></label>
 							<textarea id="ac-input-<?php bp_activity_id(); ?>" class="ac-input bp-suggestions" name="ac_input_<?php bp_activity_id(); ?>"></textarea>
 						</div>
 						<input type="submit" name="ac_form_submit" value="<?php esc_attr_e( 'Post', 'buddypress' ); ?>" /> &nbsp; <a href="#" class="ac-reply-cancel"><?php _e( 'Cancel', 'buddypress' ); ?></a>
@@ -136,7 +132,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 					/**
 					 * Fires after the activity entry comment form.
 					 *
-					 * @since BuddyPress (1.5.0)
+					 * @since 1.5.0
 					 */
 					do_action( 'bp_activity_entry_comments' ); ?>
 
@@ -155,7 +151,7 @@ do_action( 'bp_before_activity_entry' ); ?>
 	/**
 	 * Fires after the display of the activity entry comments.
 	 *
-	 * @since BuddyPress (1.2.0)
+	 * @since 1.2.0
 	 */
 	do_action( 'bp_after_activity_entry_comments' ); ?>
 
@@ -166,6 +162,6 @@ do_action( 'bp_before_activity_entry' ); ?>
 /**
  * Fires after the display of an activity entry.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_after_activity_entry' ); ?>

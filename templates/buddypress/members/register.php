@@ -1,3 +1,13 @@
+<?php
+/**
+ * BuddyPress - Members Register
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
+
+?>
+
 <div id="buddypress">
 
 	<?php
@@ -5,7 +15,7 @@
 	/**
 	 * Fires at the top of the BuddyPress member registration page template.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 */
 	do_action( 'bp_before_register_page' ); ?>
 
@@ -23,7 +33,7 @@
 			/**
 			 * Fires before the display of the registration disabled message.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 */
 			do_action( 'bp_before_registration_disabled' ); ?>
 
@@ -34,7 +44,7 @@
 			/**
 			 * Fires after the display of the registration disabled message.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 */
 			do_action( 'bp_after_registration_disabled' ); ?>
 		<?php endif; // registration-disabled signup step ?>
@@ -53,7 +63,7 @@
 			/**
 			 * Fires before the display of member registration account details fields.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 */
 			do_action( 'bp_before_account_details_fields' ); ?>
 
@@ -69,7 +79,7 @@
 				/**
 				 * Fires and displays any member registration username errors.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_signup_username_errors' ); ?>
 				<input type="text" name="signup_username" id="signup_username" value="<?php bp_signup_username_value(); ?>" <?php bp_form_field_attributes( 'username' ); ?>/>
@@ -80,7 +90,7 @@
 				/**
 				 * Fires and displays any member registration email errors.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_signup_email_errors' ); ?>
 				<input type="email" name="signup_email" id="signup_email" value="<?php bp_signup_email_value(); ?>" <?php bp_form_field_attributes( 'email' ); ?>/>
@@ -91,7 +101,7 @@
 				/**
 				 * Fires and displays any member registration password errors.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_signup_password_errors' ); ?>
 				<input type="password" name="signup_password" id="signup_password" value="" class="password-entry" <?php bp_form_field_attributes( 'password' ); ?>/>
@@ -103,7 +113,7 @@
 				/**
 				 * Fires and displays any member registration password confirmation errors.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_signup_password_confirm_errors' ); ?>
 				<input type="password" name="signup_password_confirm" id="signup_password_confirm" value="" class="password-entry-confirm" <?php bp_form_field_attributes( 'password' ); ?>/>
@@ -113,7 +123,7 @@
 				/**
 				 * Fires and displays any extra member registration details fields.
 				 *
-				 * @since BuddyPress (1.9.0)
+				 * @since 1.9.0
 				 */
 				do_action( 'bp_account_details_fields' ); ?>
 
@@ -124,7 +134,7 @@
 			/**
 			 * Fires after the display of member registration account details fields.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 */
 			do_action( 'bp_after_account_details_fields' ); ?>
 
@@ -137,7 +147,7 @@
 				/**
 				 * Fires before the display of member registration xprofile fields.
 				 *
-				 * @since BuddyPress (1.2.4)
+				 * @since 1.2.4
 				 */
 				do_action( 'bp_before_signup_profile_fields' ); ?>
 
@@ -159,13 +169,19 @@
 							/**
 							 * Fires before the display of the visibility options for xprofile fields.
 							 *
-							 * @since BuddyPress (1.7.0)
+							 * @since 1.7.0
 							 */
 							do_action( 'bp_custom_profile_edit_fields_pre_visibility' );
 
 							if ( bp_current_user_can( 'bp_xprofile_change_field_visibility' ) ) : ?>
 								<p class="field-visibility-settings-toggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
-									<?php printf( __( 'This field can be seen by: <span class="current-visibility-level">%s</span>', 'buddypress' ), bp_get_the_profile_field_visibility_level_label() ) ?> <a href="#" class="visibility-toggle-link"><?php _ex( 'Change', 'Change profile field visibility level', 'buddypress' ); ?></a>
+									<?php
+									printf(
+										__( 'This field can be seen by: %s', 'buddypress' ),
+										'<span class="current-visibility-level">' . bp_get_the_profile_field_visibility_level_label() . '</span>'
+									);
+									?>
+									<a href="#" class="visibility-toggle-link"><?php _ex( 'Change', 'Change profile field visibility level', 'buddypress' ); ?></a>
 								</p>
 
 								<div class="field-visibility-settings" id="field-visibility-settings-<?php bp_the_profile_field_id() ?>">
@@ -180,7 +196,12 @@
 								</div>
 							<?php else : ?>
 								<p class="field-visibility-settings-notoggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
-									<?php printf( __( 'This field can be seen by: <span class="current-visibility-level">%s</span>', 'buddypress' ), bp_get_the_profile_field_visibility_level_label() ) ?>
+									<?php
+									printf(
+										__( 'This field can be seen by: %s', 'buddypress' ),
+										'<span class="current-visibility-level">' . bp_get_the_profile_field_visibility_level_label() . '</span>'
+									);
+									?>
 								</p>
 							<?php endif ?>
 
@@ -189,7 +210,7 @@
 							/**
 							 * Fires after the display of the visibility options for xprofile fields.
 							 *
-							 * @since BuddyPress (1.1.0)
+							 * @since 1.1.0
 							 */
 							do_action( 'bp_custom_profile_edit_fields' ); ?>
 
@@ -208,7 +229,7 @@
 					/**
 					 * Fires and displays any extra member registration xprofile fields.
 					 *
-					 * @since BuddyPress (1.9.0)
+					 * @since 1.9.0
 					 */
 					do_action( 'bp_signup_profile_fields' ); ?>
 
@@ -219,7 +240,7 @@
 				/**
 				 * Fires after the display of member registration xprofile fields.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_after_signup_profile_fields' ); ?>
 
@@ -232,7 +253,7 @@
 				/**
 				 * Fires before the display of member registration blog details fields.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_before_blog_details_fields' ); ?>
 
@@ -242,7 +263,7 @@
 
 					<h4><?php _e( 'Blog Details', 'buddypress' ); ?></h4>
 
-					<p><input type="checkbox" name="signup_with_blog" id="signup_with_blog" value="1"<?php if ( (int) bp_get_signup_with_blog_value() ) : ?> checked="checked"<?php endif; ?> /> <?php _e( 'Yes, I\'d like to create a new site', 'buddypress' ); ?></p>
+					<p><label for="signup_with_blog"><input type="checkbox" name="signup_with_blog" id="signup_with_blog" value="1"<?php if ( (int) bp_get_signup_with_blog_value() ) : ?> checked="checked"<?php endif; ?> /> <?php _e( 'Yes, I\'d like to create a new site', 'buddypress' ); ?></label></p>
 
 					<div id="blog-details"<?php if ( (int) bp_get_signup_with_blog_value() ) : ?>class="show"<?php endif; ?>>
 
@@ -252,7 +273,7 @@
 						/**
 						 * Fires and displays any member registration blog URL errors.
 						 *
-						 * @since BuddyPress (1.1.0)
+						 * @since 1.1.0
 						 */
 						do_action( 'bp_signup_blog_url_errors' ); ?>
 
@@ -268,7 +289,7 @@
 						/**
 						 * Fires and displays any member registration blog title errors.
 						 *
-						 * @since BuddyPress (1.1.0)
+						 * @since 1.1.0
 						 */
 						do_action( 'bp_signup_blog_title_errors' ); ?>
 						<input type="text" name="signup_blog_title" id="signup_blog_title" value="<?php bp_signup_blog_title_value(); ?>" />
@@ -279,19 +300,19 @@
 						/**
 						 * Fires and displays any member registration blog privacy errors.
 						 *
-						 * @since BuddyPress (1.1.0)
+						 * @since 1.1.0
 						 */
 						do_action( 'bp_signup_blog_privacy_errors' ); ?>
 
-						<label><input type="radio" name="signup_blog_privacy" id="signup_blog_privacy_public" value="public"<?php if ( 'public' == bp_get_signup_blog_privacy_value() || !bp_get_signup_blog_privacy_value() ) : ?> checked="checked"<?php endif; ?> /> <?php _e( 'Yes', 'buddypress' ); ?></label>
-						<label><input type="radio" name="signup_blog_privacy" id="signup_blog_privacy_private" value="private"<?php if ( 'private' == bp_get_signup_blog_privacy_value() ) : ?> checked="checked"<?php endif; ?> /> <?php _e( 'No', 'buddypress' ); ?></label>
+						<label for="signup_blog_privacy_public"><input type="radio" name="signup_blog_privacy" id="signup_blog_privacy_public" value="public"<?php if ( 'public' == bp_get_signup_blog_privacy_value() || !bp_get_signup_blog_privacy_value() ) : ?> checked="checked"<?php endif; ?> /> <?php _e( 'Yes', 'buddypress' ); ?></label>
+						<label for="signup_blog_privacy_private"><input type="radio" name="signup_blog_privacy" id="signup_blog_privacy_private" value="private"<?php if ( 'private' == bp_get_signup_blog_privacy_value() ) : ?> checked="checked"<?php endif; ?> /> <?php _e( 'No', 'buddypress' ); ?></label>
 
 						<?php
 
 						/**
 						 * Fires and displays any extra member registration blog details fields.
 						 *
-						 * @since BuddyPress (1.9.0)
+						 * @since 1.9.0
 						 */
 						do_action( 'bp_blog_details_fields' ); ?>
 
@@ -304,7 +325,7 @@
 				/**
 				 * Fires after the display of member registration blog details fields.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_after_blog_details_fields' ); ?>
 
@@ -315,7 +336,7 @@
 			/**
 			 * Fires before the display of the registration submit buttons.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 */
 			do_action( 'bp_before_registration_submit_buttons' ); ?>
 
@@ -328,7 +349,7 @@
 			/**
 			 * Fires after the display of the registration submit buttons.
 			 *
-			 * @since BuddyPress (1.1.0)
+			 * @since 1.1.0
 			 */
 			do_action( 'bp_after_registration_submit_buttons' ); ?>
 
@@ -347,7 +368,7 @@
 			/**
 			 * Fires before the display of the registration confirmed messages.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 */
 			do_action( 'bp_before_registration_confirmed' ); ?>
 
@@ -362,7 +383,7 @@
 			/**
 			 * Fires after the display of the registration confirmed messages.
 			 *
-			 * @since BuddyPress (1.5.0)
+			 * @since 1.5.0
 			 */
 			do_action( 'bp_after_registration_confirmed' ); ?>
 
@@ -373,7 +394,7 @@
 		/**
 		 * Fires and displays any custom signup steps.
 		 *
-		 * @since BuddyPress (1.1.0)
+		 * @since 1.1.0
 		 */
 		do_action( 'bp_custom_signup_steps' ); ?>
 
@@ -386,7 +407,7 @@
 	/**
 	 * Fires at the bottom of the BuddyPress member registration page template.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 */
 	do_action( 'bp_after_register_page' ); ?>
 

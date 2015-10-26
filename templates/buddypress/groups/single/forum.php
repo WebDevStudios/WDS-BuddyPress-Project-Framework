@@ -1,9 +1,15 @@
 <?php
+/**
+ * BuddyPress - Groups Single Forum
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
 /**
  * Fires before the display of a group's forum content.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_before_group_forum_content' );
 
@@ -70,7 +76,7 @@ else : ?>
 /**
  * Fires after the display of a group's forum content.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_after_group_forum_content' ); ?>
 
@@ -86,7 +92,7 @@ do_action( 'bp_after_group_forum_content' ); ?>
 				/**
 				 * Fires before the display of a group forum new post form.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_before_group_forum_post_new' ); ?>
 
@@ -97,13 +103,13 @@ do_action( 'bp_after_group_forum_content' ); ?>
 				<p id="post-new"></p>
 				<h4><?php _e( 'Post a New Topic:', 'buddypress' ); ?></h4>
 
-				<label><?php _e( 'Title:', 'buddypress' ); ?></label>
+				<label for="topic_title"><?php _e( 'Title:', 'buddypress' ); ?></label>
 				<input type="text" name="topic_title" id="topic_title" value="" maxlength="100" />
 
-				<label><?php _e( 'Content:', 'buddypress' ); ?></label>
+				<label for="topic_text"><?php _e( 'Content:', 'buddypress' ); ?></label>
 				<textarea name="topic_text" id="topic_text"></textarea>
 
-				<label><?php _e( 'Tags (comma separated):', 'buddypress' ); ?></label>
+				<label for="topic_tags"><?php _e( 'Tags (comma separated):', 'buddypress' ); ?></label>
 				<input type="text" name="topic_tags" id="topic_tags" value="" />
 
 				<?php
@@ -111,7 +117,7 @@ do_action( 'bp_after_group_forum_content' ); ?>
 				/**
 				 * Fires after the display of a group forum new post form.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_after_group_forum_post_new' ); ?>
 

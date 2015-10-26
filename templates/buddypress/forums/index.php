@@ -1,3 +1,12 @@
+<?php
+/**
+ * BuddyPress - Forums
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
+
+?>
 <div id="buddypress">
 
 	<?php
@@ -5,7 +14,7 @@
 	/**
 	 * Fires at the start of the forums template.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_before_directory_forums' ); ?>
 
@@ -16,7 +25,7 @@
 		/**
 		 * Fires before the display of the forums content.
 		 *
-		 * @since BuddyPress (1.1.0)
+		 * @since 1.1.0
 		 */
 		do_action( 'bp_before_directory_forums_content' ); ?>
 
@@ -32,7 +41,7 @@
 	/**
 	 * Fires before the display of the forum topics.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_before_topics' ); ?>
 
@@ -40,11 +49,11 @@
 
 		<div class="item-list-tabs" role="navigation">
 			<ul>
-				<li class="selected" id="forums-all"><a href="<?php echo trailingslashit( bp_get_root_domain() . '/' . bp_get_forums_root_slug() ); ?>"><?php printf( __( 'All Topics <span>%s</span>', 'buddypress' ), bp_get_forum_topic_count() ); ?></a></li>
+				<li class="selected" id="forums-all"><a href="<?php echo trailingslashit( bp_get_root_domain() . '/' . bp_get_forums_root_slug() ); ?>"><?php printf( __( 'All Topics %s', 'buddypress' ), '<span>' . bp_get_forum_topic_count() . '</span>' ); ?></a></li>
 
 				<?php if ( is_user_logged_in() && bp_get_forum_topic_count_for_user( bp_loggedin_user_id() ) ) : ?>
 
-					<li id="forums-personal"><a href="<?php echo trailingslashit( bp_loggedin_user_domain() . bp_get_forums_slug() . '/topics' ); ?>"><?php printf( __( 'My Topics <span>%s</span>', 'buddypress' ), bp_get_forum_topic_count_for_user( bp_loggedin_user_id() ) ); ?></a></li>
+					<li id="forums-personal"><a href="<?php echo trailingslashit( bp_loggedin_user_domain() . bp_get_forums_slug() . '/topics' ); ?>"><?php printf( __( 'My Topics %s', 'buddypress' ), '<span>' . bp_get_forum_topic_count_for_user( bp_loggedin_user_id() ) . '</span>' ); ?></a></li>
 
 				<?php endif; ?>
 
@@ -53,7 +62,7 @@
 				/**
 				 * Fires inside the forum group types list.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_forums_directory_group_types' ); ?>
 
@@ -68,7 +77,7 @@
 				/**
 				 * Fires inside the forum group sub-types list.
 				 *
-				 * @since BuddyPress (1.5.0)
+				 * @since 1.5.0
 				 */
 				do_action( 'bp_forums_directory_group_sub_types' ); ?>
 
@@ -85,7 +94,7 @@
 						/**
 						 * Fires inside the select input for forums order options.
 						 *
-						 * @since BuddyPress (1.2.0)
+						 * @since 1.2.0
 						 */
 						do_action( 'bp_forums_directory_order_options' ); ?>
 
@@ -105,7 +114,7 @@
 		/**
 		 * Fires and displays the forums content.
 		 *
-		 * @since BuddyPress (1.1.0)
+		 * @since 1.1.0
 		 */
 		do_action( 'bp_directory_forums_content' ); ?>
 
@@ -118,7 +127,7 @@
 	/**
 	 * Fires after the display of the forums.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_after_directory_forums' ); ?>
 
@@ -127,7 +136,7 @@
 	/**
 	 * Fires before the display of the new topic form.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_before_new_topic_form' ); ?>
 
@@ -144,7 +153,7 @@
 					/**
 					 * Fires inside the new topic form tag and before input display.
 					 *
-					 * @since BuddyPress (1.0.0)
+					 * @since 1.0.0
 					 */
 					do_action( 'groups_forum_new_topic_before' ); ?>
 
@@ -156,16 +165,16 @@
 					/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
 					do_action( 'template_notices' ); ?>
 
-					<label><?php _e( 'Title:', 'buddypress' ); ?></label>
+					<label for="topic_title"><?php _e( 'Title:', 'buddypress' ); ?></label>
 					<input type="text" name="topic_title" id="topic_title" value="" maxlength="100" />
 
-					<label><?php _e( 'Content:', 'buddypress' ); ?></label>
+					<label for="topic_text"><?php _e( 'Content:', 'buddypress' ); ?></label>
 					<textarea name="topic_text" id="topic_text"></textarea>
 
-					<label><?php _e( 'Tags (comma separated):', 'buddypress' ); ?></label>
+					<label for="topic_tags"><?php _e( 'Tags (comma separated):', 'buddypress' ); ?></label>
 					<input type="text" name="topic_tags" id="topic_tags" value="" />
 
-					<label><?php _e( 'Post In Group Forum:', 'buddypress' ); ?></label>
+					<label for="topic_group_id"><?php _e( 'Post In Group Forum:', 'buddypress' ); ?></label>
 					<select id="topic_group_id" name="topic_group_id">
 
 						<option value=""><?php /* translators: no option picked in select box */ _e( '----', 'buddypress' ); ?></option>
@@ -187,7 +196,7 @@
 					/**
 					 * Fires before the new topic form submit actions.
 					 *
-					 * @since BuddyPress (1.0.0)
+					 * @since 1.0.0
 					 */
 					do_action( 'groups_forum_new_topic_after' ); ?>
 
@@ -218,7 +227,7 @@
 	/**
 	 * Fires after the display of the new topic form.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_after_new_topic_form' ); ?>
 
@@ -227,7 +236,7 @@
 	/**
 	 * Fires before the display of the forums content.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 */
 	do_action( 'bp_after_directory_forums_content' ); ?>
 

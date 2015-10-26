@@ -1,6 +1,6 @@
 # WDS BP Project Framework
 
-The normal method to override BuddyPress templates is to copy the BP template files over to your theme folder. This is not the best way if you ever want to change themes and not have to move files! 
+The normal method to override BuddyPress templates is to copy the BP template files over to your theme folder. This is not the best way if you ever want to change themes and not have to move files!
 
 This plugin creates a new template stack for BuddyPress. BuddyPress will look into this plugin first for its template files and if the file doesn't exist it will default to the core plugin.
 
@@ -12,7 +12,7 @@ There are also files to place custom javascript and css. Place custom javascript
 
 2) Activate from the WordPress Plugins screen.
 
-After activating the plugin you can start adding custom code, css, javascript and edit the markup of the templates. There are currently no settings, although there maybe options in the future. 
+After activating the plugin you can start adding custom code, css, javascript and edit the markup of the templates. There are currently no settings, although there maybe options in the future.
 
 # Using Sass
 

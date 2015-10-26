@@ -1,20 +1,19 @@
 {
-  "name": "WDS-BuddyPress-Project-Framework",
+  "name": "wds-buddypress-project-framework",
   "version": "1.0.0",
   "description": "A plugin boilerplate for new custom BuddyPress projects for WebDevStudios.",
   "author": "WebDevStudios",
-  "homepage": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework",
-  "bugs": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework/issues",
   "repository": {
-    "type": "git",
-    "url": "git://github.com/ebDevStudios/WDS-BuddyPress-Project-Framework.git"
-  },
-  "licenses": [
-    {
-      "type": "GPL-2.0+"
-    }
-  ],
-  "contributors": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework/graphs/contributors",
+  "type": "git",
+  "url": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework"
+},
+  "bugs": {
+  "url": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework/issues/"
+},
+  "keywords": [
+  "buddypress",
+  "wordpress"
+],
   "devDependencies": {
     "css-parse": "latest",
     "glob": "latest",
@@ -33,5 +32,6 @@
     "grunt-sass": "latest",
     "grunt-shell": "latest",
     "load-grunt-tasks": "latest"
-  }
+  },
+  "license": "GPL-2.0+"
 }

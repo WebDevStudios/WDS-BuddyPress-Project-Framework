@@ -1,22 +1,17 @@
 <?php
-
 /**
  * BuddyPress - Blogs Loop
  *
- * Querystring is set via AJAX in _inc/ajax.php - bp_legacy_theme_object_filter()
+ * Querystring is set via AJAX in _inc/ajax.php - bp_legacy_theme_object_filter().
  *
  * @package BuddyPress
  * @subpackage bp-legacy
  */
 
-?>
-
-<?php
-
 /**
  * Fires before the start of the blogs loop.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_before_blogs_loop' ); ?>
 
@@ -39,7 +34,7 @@ do_action( 'bp_before_blogs_loop' ); ?>
 	/**
 	 * Fires before the blogs directory list.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 */
 	do_action( 'bp_before_directory_blogs_list' ); ?>
 
@@ -61,7 +56,7 @@ do_action( 'bp_before_blogs_loop' ); ?>
 				/**
 				 * Fires after the listing of a blog item in the blogs loop.
 				 *
-				 * @since BuddyPress (1.2.0)
+				 * @since 1.2.0
 				 */
 				do_action( 'bp_directory_blogs_item' ); ?>
 			</div>
@@ -73,7 +68,7 @@ do_action( 'bp_before_blogs_loop' ); ?>
 				/**
 				 * Fires inside the blogs action listing area.
 				 *
-				 * @since BuddyPress (1.1.0)
+				 * @since 1.1.0
 				 */
 				do_action( 'bp_directory_blogs_actions' ); ?>
 
@@ -97,7 +92,7 @@ do_action( 'bp_before_blogs_loop' ); ?>
 	/**
 	 * Fires after the blogs directory list.
 	 *
-	 * @since BuddyPress (1.1.0)
+	 * @since 1.1.0
 	 */
 	do_action( 'bp_after_directory_blogs_list' ); ?>
 
@@ -132,6 +127,6 @@ do_action( 'bp_before_blogs_loop' ); ?>
 /**
  * Fires after the display of the blogs loop.
  *
- * @since BuddyPress (1.2.0)
+ * @since 1.2.0
  */
 do_action( 'bp_after_blogs_loop' ); ?>

@@ -1,4 +1,10 @@
 <?php
+/**
+ * BuddyPress - Members Settings Delete Account
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
 
 /** This action is documented in bp-templates/bp-legacy/buddypress/members/single/settings/profile.php */
 do_action( 'bp_before_member_settings_template' ); ?>
@@ -24,11 +30,11 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	/**
 	 * Fires before the display of the submit button for user delete account submitting.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_members_delete_account_before_submit' ); ?>
 
-	<label>
+	<label for="delete-account-understand">
 		<input type="checkbox" name="delete-account-understand" id="delete-account-understand" value="1" onclick="if(this.checked) { document.getElementById('delete-account-button').disabled = ''; } else { document.getElementById('delete-account-button').disabled = 'disabled'; }" />
 		 <?php _e( 'I understand the consequences.', 'buddypress' ); ?>
 	</label>
@@ -42,7 +48,7 @@ do_action( 'bp_before_member_settings_template' ); ?>
 	/**
 	 * Fires after the display of the submit button for user delete account submitting.
 	 *
-	 * @since BuddyPress (1.5.0)
+	 * @since 1.5.0
 	 */
 	do_action( 'bp_members_delete_account_after_submit' ); ?>
 
