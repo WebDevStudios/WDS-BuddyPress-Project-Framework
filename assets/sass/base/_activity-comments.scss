@@ -145,12 +145,6 @@ a.activity-time-since {
 	}
 }// .activity-comments
 
-//.acomment-content .time-since,
-//.acomment-content .activity-delete-link,
-//.acomment-content .comment-header {
-//	display: none;
-//}
-
 body.activity-permalink {
 
 	.activity-comments {
@@ -167,24 +161,36 @@ body.activity-permalink {
 		margin-bottom: rem(6);
 	}
 
-	.activity-list li.mini .activity-comments {
-		clear: none;
-		margin-top: 0;
+	.activity-list {
+
+		li.mini {
+
+			.activity-comments {
+				clear: none;
+				margin-top: 0;
+			}
+		}
 	}
 
-	.activity-comments ul li {
-		border-width: 1px;
-		padding: rem(10) 0 0 0;
-	}
+	.activity-comments {
 
-	.activity-comments ul li > ul {
-		margin-top: rem(10);
-	}
+		ul {
 
-	.activity-comments > ul {
-		padding: 0 rem(10) 0 rem(15);
+			li {
+				border-width: 1px;
+				padding: rem(10) 0 0 0;
+
+				> ul {
+					margin-top: rem(10);
+				}
+			}
+		}
+
+		> ul {
+			padding: 0 rem(10) 0 rem(15);
+		}
 	}
-}
+}// body.activity-permalink
 
 .ac-reply-avatar img {
 	border: 1px solid $color-silver-felt;
