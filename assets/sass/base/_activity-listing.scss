@@ -10,73 +10,67 @@
 	}
 }
 
-ul.activity-list li {
-	overflow: hidden;
-	padding: rem(15) 0 0;
-	list-style: none;
+ul.activity-list {
+
+	li {
+		overflow: hidden;
+		padding: rem(15) 0 0;
+		list-style: none;
+
+		&.has-comments {
+			padding-bottom: rem(15);
+		}
+
+		.activity-content {
+			position: relative;
+		}
+
+		.activity-inreplyto {
+			color: $color-jumbo;
+			font-size: 80%;
+
+			> p {
+				margin: 0;
+				display: inline;
+			}
+		}
+	}// li
+
+	li.mini {
+		font-size: 80%;
+		position: relative;
+
+		.activity-avatar {
+
+			img {
+				&.avatar,
+				&.FB_profile_pic {
+					height: rem(20);
+					margin-left: rem(30);
+					width: rem(20);
+				}
+			}// img
+		}// .activity-avatar
+
+		.activity-content {
+
+			p {
+				margin: 0;
+			}
+		}
+
+		.activity-comments {
+			clear: both;
+			font-size: 120%;
+		}
+	}// li.mini
+
+	.activity-avatar {
+		float: left;
+	}
 }
 
-.activity-list .activity-avatar {
-	float: left;
-}
-
-ul.item-list.activity-list li.has-comments {
-	padding-bottom: rem(15);
-}
-
-body.activity-permalink ul.activity-list li.has-comments {
-	padding-bottom: 0;
-}
-
-.activity-list li.mini {
-	font-size: 80%;
-	position: relative;
-}
-
-.activity-list li.mini .activity-avatar img.avatar,
-.activity-list li.mini .activity-avatar img.FB_profile_pic {
-	height: rem(20);
-	margin-left: rem(30);
-	width: rem(20);
-}
-
-.activity-permalink .activity-list li.mini .activity-avatar img.avatar,
-.activity-permalink .activity-list li.mini .activity-avatar img.FB_profile_pic {
-	height: auto;
-	margin-left: 0;
-	width: auto;
-}
-
-body.activity-permalink .activity-list > li:first-child {
-	padding-top: 0;
-}
-
-.activity-list li .activity-content {
-	position: relative;
-}
-
-.activity-list li.mini .activity-content p {
-	margin: 0;
-}
-
-.activity-list li.mini .activity-comments {
-	clear: both;
-	font-size: 120%;
-}
-
-body.activity-permalink li.mini .activity-meta {
-	margin-top: rem(4);
-}
-
-.activity-list li .activity-inreplyto {
-	color: $color-jumbo;
-	font-size: 80%;
-}
-
-.activity-list li .activity-inreplyto > p {
-	margin: 0;
-	display: inline;
-}
+// ENDED HERE / START HERE!!
 
 .activity-list li .activity-inreplyto blockquote,
 .activity-list li .activity-inreplyto div.activity-inner {
@@ -92,19 +86,7 @@ body.activity-permalink li.mini .activity-meta {
 	margin: 0 0 0 rem(70);
 }
 
-body.activity-permalink .activity-list li .activity-content {
-	border: none;
-	font-size: 100%;
-	line-height: 150%;
-	margin-left: rem(170);
-	margin-right: 0;
-	padding: 0;
-}
 
-body.activity-permalink .activity-list li .activity-header > p {
-	margin: 0;
-	padding: rem(5) 0 0 0;
-}
 
 .activity-list .activity-content .activity-header,
 .activity-list .activity-content .comment-header {
@@ -189,4 +171,37 @@ body.activity-permalink .activity-content blockquote {
 .activity-list li.load-more a,
 .activity-list li.load-newest a {
 	color: $color-ship-gray;
+}
+
+body.activity-permalink li.mini .activity-meta {
+	margin-top: rem(4);
+}
+
+body.activity-permalink ul.activity-list li.has-comments {
+	padding-bottom: 0;
+}
+
+.activity-permalink .activity-list li.mini .activity-avatar img.avatar,
+.activity-permalink .activity-list li.mini .activity-avatar img.FB_profile_pic {
+	height: auto;
+	margin-left: 0;
+	width: auto;
+}
+
+body.activity-permalink .activity-list > li:first-child {
+	padding-top: 0;
+}
+
+body.activity-permalink .activity-list li .activity-content {
+	border: none;
+	font-size: 100%;
+	line-height: 150%;
+	margin-left: rem(170);
+	margin-right: 0;
+	padding: 0;
+}
+
+body.activity-permalink .activity-list li .activity-header > p {
+	margin: 0;
+	padding: rem(5) 0 0 0;
 }
