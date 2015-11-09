@@ -101,6 +101,10 @@ a.activity-time-since {
 	.acomment-meta {
 		color: $color-jumbo;
 		font-size: 80%;
+
+		a {
+			text-decoration: none;
+		}
 	}
 
 	// Comment form

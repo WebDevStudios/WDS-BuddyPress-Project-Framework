@@ -21,20 +21,96 @@ ul.activity-list {
 			padding-bottom: rem(15);
 		}
 
-		.activity-content {
-			position: relative;
-		}
+		&.load-more,
+		&.load-newest {
+			background: $color-alabaster;
+			font-size: 110%;
+			margin: rem(15) 0;
+			padding: rem(10) rem(15);
+			text-align: center;
 
-		.activity-inreplyto {
-			color: $color-jumbo;
-			font-size: 80%;
-
-			> p {
-				margin: 0;
-				display: inline;
+			a {
+				color: $color-ship-gray;
 			}
 		}
 	}// li
+
+	// Activity Content
+	.activity-content {
+		margin: 0 0 0 rem(70);
+		position: relative;
+
+		blockquote {
+			margin: rem(10) rem(10) rem(5) 0;
+			overflow: hidden;
+		}
+
+		.thumbnail {
+			border: 2px solid $color-silver-felt;
+			float: left;
+			margin: 0 rem(10) rem(5) 0;
+		}
+	}
+
+	// Activity Header
+	.activity-header {
+		color: $color-jumbo;
+		line-height: 220%;
+		margin-right: rem(20);
+
+		a {
+			text-decoration: none;
+		}
+
+		.avatar {
+			float: none !important;
+			margin: 0 rem(5) rem(-8) 0 !important;
+		}
+	}
+
+	// Activity Inner
+	.activity-inner {
+		margin: rem(10) rem(10) rem(5) 0;
+		overflow: hidden;
+
+		> p {
+			word-wrap: break-word;
+		}
+
+		> blockquote {
+			margin: 0;
+		}
+	}
+
+	// Activity Meta
+	.activity-meta {
+
+		a.bp-secondary-action {
+			margin-right: rem(5);
+			text-decoration: none;
+		}
+	}
+
+	// Activity InReplyTo
+	.activity-inreplyto {
+		color: $color-jumbo;
+		font-size: 80%;
+
+		> p {
+			margin: 0;
+			display: inline;
+		}
+
+		blockquote,
+		.activity-inner {
+			@include margin-padding-reset;
+
+			background: none;
+			border: none;
+			display: inline;
+			overflow: hidden;
+		}
+	}// .activity-inreplyto
 
 	li.mini {
 		font-size: 80%;
@@ -65,51 +141,27 @@ ul.activity-list {
 		}
 	}// li.mini
 
+	li.new_forum_post,
+	li.new_forum_topic {
+
+		.activity-inner {
+			border-left: 2px solid $color-lily-white;
+			margin-left: rem(5);
+			padding-left: rem(10);
+		}
+	}
+
 	.activity-avatar {
 		float: left;
 	}
 }
 
-// ENDED HERE / START HERE!!
 
-.activity-list li .activity-inreplyto blockquote,
-.activity-list li .activity-inreplyto div.activity-inner {
-	@include margin-padding-reset;
-
-	background: none;
-	border: none;
-	display: inline;
-	overflow: hidden;
-}
-
-.activity-list .activity-content {
-	margin: 0 0 0 rem(70);
-}
-
-
-
-.activity-list .activity-content .activity-header,
-.activity-list .activity-content .comment-header {
-	color: $color-jumbo;
-	line-height: 220%;
-}
-
-.activity-header {
-	margin-right: rem(20);
-}
-
-.activity-header a,
-.comment-meta a,
-.acomment-meta a {
+// @todo These are some global elements eventually need to be 'put somewhere'
+.comment-meta a {
 	text-decoration: none;
 }
 
-.activity-list .activity-content .activity-header img.avatar {
-	float: none !important;
-	margin: 0 rem(5) rem(-8) 0 !important;
-}
-
-a.bp-secondary-action,
 span.highlight {
 	font-size: 80%;
 	padding: 0;
@@ -117,91 +169,65 @@ span.highlight {
 	text-decoration: none;
 }
 
-.activity-list .activity-content .activity-inner,
-.activity-list .activity-content blockquote {
-	margin: rem(10) rem(10) rem(5) 0;
-	overflow: hidden;
-}
+// @todo - need to nail down what activity-permalink targets and refactor accordingly
+body.activity-permalink {
 
-.activity-list li.new_forum_post .activity-content .activity-inner,
-.activity-list li.new_forum_topic .activity-content .activity-inner {
-	border-left: 2px solid $color-lily-white;
-	margin-left: rem(5);
-	padding-left: rem(10);
-}
+	.activity-list {
 
-body.activity-permalink .activity-content .activity-inner,
-body.activity-permalink .activity-content blockquote {
-	margin-left: 0;
-	margin-top: rem(5);
-}
+		> li:first-child {
+			padding-top: 0;
+		}
 
-.activity-inner > p {
-	word-wrap: break-word;
-}
+		li {
 
-.activity-inner > .activity-inner {
-	margin: 0;
-}
+			&.has-comments {
+				padding-bottom: 0;
+			}
+		}
 
-.activity-inner > blockquote {
-	margin: 0;
-}
+		.activity-content {
+			border: none;
+			font-size: 100%;
+			line-height: 150%;
+			margin-left: rem(170);
+			margin-right: 0;
+			padding: 0;
+		}
 
-.activity-list .activity-content img.thumbnail {
-	border: 2px solid $color-silver-felt;
-	float: left;
-	margin: 0 rem(10) rem(5) 0;
-}
+		.activity-header {
+
+			> p {
+				margin: 0;
+				padding: rem(5) 0 0 0;
+			}
+		}
+
+		li.mini {
+
+			.activity-meta {
+				margin-top: rem(4);
+			}
+
+			.activity-avatar {
+
+				.avatar,
+				.FB_profile_pic {
+					height: auto;
+					margin-left: 0;
+					width: auto;
+				}
+			}
+		}// li.mini
+	}// .activity-list
+
+	.activity-inner,
+	blockquote {
+		margin-left: 0;
+		margin-top: rem(5);
+	}
+}// body.activity-permalink
 
 .activity-read-more {
 	margin-left: rem(16);
 	white-space: nowrap;
-}
-
-.activity-list li.load-more,
-.activity-list li.load-newest {
-	background: $color-alabaster;
-	font-size: 110%;
-	margin: rem(15) 0;
-	padding: rem(10) rem(15);
-	text-align: center;
-}
-
-.activity-list li.load-more a,
-.activity-list li.load-newest a {
-	color: $color-ship-gray;
-}
-
-body.activity-permalink li.mini .activity-meta {
-	margin-top: rem(4);
-}
-
-body.activity-permalink ul.activity-list li.has-comments {
-	padding-bottom: 0;
-}
-
-.activity-permalink .activity-list li.mini .activity-avatar img.avatar,
-.activity-permalink .activity-list li.mini .activity-avatar img.FB_profile_pic {
-	height: auto;
-	margin-left: 0;
-	width: auto;
-}
-
-body.activity-permalink .activity-list > li:first-child {
-	padding-top: 0;
-}
-
-body.activity-permalink .activity-list li .activity-content {
-	border: none;
-	font-size: 100%;
-	line-height: 150%;
-	margin-left: rem(170);
-	margin-right: 0;
-	padding: 0;
-}
-
-body.activity-permalink .activity-list li .activity-header > p {
-	margin: 0;
-	padding: rem(5) 0 0 0;
 }
