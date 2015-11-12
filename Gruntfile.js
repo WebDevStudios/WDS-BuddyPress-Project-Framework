@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 
 			css: {
 				files: ['assets/sass/**/*.scss'],
-				tasks: ['sass'],
+				tasks: ['styles'],
 				options: {
 					spawn: false,
 					livereload: true,
@@ -109,7 +109,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('styles', ['sass', 'cmq', 'cssnano']);
+	grunt.registerTask('styles', ['sass', 'postcss', 'cmq', 'cssnano']);
 	grunt.registerTask('scripts', ['concat', 'uglify']);
 	grunt.registerTask('default', ['styles', 'scripts']);
 
