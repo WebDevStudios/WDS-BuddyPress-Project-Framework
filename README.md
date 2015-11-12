@@ -1,10 +1,17 @@
 # WDS BP Project Framework
 
-The normal method to override BuddyPress templates is to copy the BP template files over to your theme folder. This is not the best way if you ever want to change themes and not have to move files!
+The normal method to override BuddyPress templates is to copy the BP template files over to your theme folder. This is NOT the best way if you ever want to change themes!
 
-This plugin creates a new template stack for BuddyPress. BuddyPress will look into this plugin first for its template files and if the file doesn't exist it will default to the core plugin.
+This plugin, creates a new template stack for BuddyPress. BuddyPress will look here first - and if the file doesn't exist? It will default to the core plugin, allowing you to totally customize BuddyPress without loosing changes.
 
-There are also files to place custom javascript and css. Place custom javascript in bp-custom.js and css in bp-custom.css. There are also some files in ```/inc``` that are there for code placement convenience. ```bp-custom.php``` has some example code that BuddyPress contains that allows easy customization. You can customize any file in ```templates/buddypress/```. These override BuddyPress core plugin templates.
+# Features
+* Bourbon
+* Neat
+* Grunt
+* Sass
+* PostCSS
+* Live Reload
+* Javascript linting and concatenation
 
 # Install BP Project Framework
 
@@ -12,11 +19,11 @@ There are also files to place custom javascript and css. Place custom javascript
 
 2) Activate from the WordPress Plugins screen.
 
-After activating the plugin you can start adding custom code, css, javascript and edit the markup of the templates. There are currently no settings, although there maybe options in the future.
+After activating the plugin, you can add custom code, css, javascript and edit the markup of the templates. There are currently no settings, although there maybe options in the future.
 
 # Using Sass
 
-The WDS BP Project Framework now includes [Bourbon](https://github.com/thoughtbot/bourbon), [Neat](https://github.com/thoughtbot/neat), and [Grunt](https://github.com/gruntjs/grunt).
+The plugin includes [Bourbon](https://github.com/thoughtbot/bourbon), [Neat](https://github.com/thoughtbot/neat), [Grunt](https://github.com/gruntjs/grunt) and [PostCSS](https://github.com/postcss/postcss).
 
 Basic knowledge of the command line and the following dependencies are required:
 
