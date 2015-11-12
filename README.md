@@ -13,15 +13,7 @@ This plugin, creates a new template stack for BuddyPress. BuddyPress will look h
 * LiveReload
 * Javascript linting and concatenation
 
-# Install BP Project Framework
-
-1) Like any other WordPress plugin, upload ```wds-bp-project-framework``` to your ```wp-content/plugins``` directory
-
-2) Activate from the WordPress Plugins screen.
-
-After activating the plugin, you can add custom code, css, javascript and edit the markup of the templates. There are currently no settings, although there maybe options in the future.
-
-# Pre-Installation
+## Pre-Installation
 
 Basic knowledge of the command line and the following dependencies are required:
 
@@ -31,12 +23,20 @@ Basic knowledge of the command line and the following dependencies are required:
 * [Bower](http://bower.io/) - `npm install -g bower`
 * [Sass](http://sass-lang.com/install) - `gem install sass`
 
-## Installation
+## Install and Active Plugin
+
+1) Like any other WordPress plugin, upload ```wds-bp-project-framework``` to your ```wp-content/plugins``` directory
+
+2) Activate from the WordPress Plugins screen.
+
+After activating the plugin, you can add custom code, css, javascript and edit the markup of the templates. There are currently no settings, although there maybe options in the future.
+
+## Local Development Setup
 
 1) From the command line, change directories to your new theme directory
 
 ```bash
-cd /your-project/wordpress/wp-content/plugins/wds-bp-project-framework
+cd /your-project/wp-content/plugins/wds-bp-project-framework
 ```
 
 2) Install dependencies
