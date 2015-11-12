@@ -46,5 +46,5 @@ When NPM and Bower are finished, you are ready to compile Sass using Grunt. Comm
 
 * Watch Sass files for changes, and compile automatically: ```grunt watch```
 * Compile all styles on demand: ```grunt styles```
-* Compile javascript on demand: ```grunt javascript```
+* Compile javascript on demand: ```grunt scripts```
 * Do it all: ```grunt```
