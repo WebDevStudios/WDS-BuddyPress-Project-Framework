@@ -4,7 +4,7 @@ The normal method to override BuddyPress templates is to copy the BP template fi
 
 This plugin, creates a new template stack for BuddyPress. BuddyPress will look here first - and if the file doesn't exist? It will default to the core plugin, allowing you to totally customize BuddyPress without loosing changes.
 
-# Features
+## Features
 * [Bourbon](https://github.com/thoughtbot/bourbon)
 * [Neat](https://github.com/thoughtbot/neat)
 * [Grunt](https://github.com/gruntjs/grunt)
