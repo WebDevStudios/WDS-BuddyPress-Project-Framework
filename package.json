@@ -4,33 +4,28 @@
   "description": "A plugin boilerplate for new custom BuddyPress projects for WebDevStudios.",
   "author": "WebDevStudios",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework"
-},
+    "type": "git",
+    "url": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework"
+  },
   "bugs": {
-  "url": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework/issues/"
-},
+    "url": "https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework/issues/"
+  },
   "keywords": [
-  "buddypress",
-  "wordpress"
-],
+    "buddypress",
+    "wordpress"
+  ],
   "devDependencies": {
-    "css-parse": "latest",
+    "autoprefixer": "latest",
     "glob": "latest",
     "grunt": "latest",
-    "grunt-autoprefixer": "latest",
     "grunt-combine-media-queries": "latest",
-    "grunt-contrib-clean": "latest",
     "grunt-contrib-concat": "latest",
-    "grunt-contrib-connect": "latest",
-    "grunt-contrib-cssmin": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-csscomb": "latest",
+    "grunt-cssnano": "latest",
     "grunt-githooks": "latest",
-    "grunt-newer": "latest",
+    "grunt-postcss": "latest",
     "grunt-sass": "latest",
-    "grunt-shell": "latest",
     "load-grunt-tasks": "latest"
   },
   "license": "GPL-2.0+"

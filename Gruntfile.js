@@ -18,8 +18,8 @@ module.exports = function(grunt) {
 				style: 'expanded',
 				lineNumbers: true,
 				includePaths: [
-					'bower_components/bourbon/app/assets/stylesheets',
-					'bower_components/neat/app/assets/stylesheets'
+					'assets/bower/bourbon/app/assets/stylesheets',
+					'assets/bower/neat/app/assets/stylesheets'
 				]
 			},
 			dist: {
@@ -29,16 +29,14 @@ module.exports = function(grunt) {
 			}
 		},
 
-		autoprefixer: {
+		postcss: {
 			options: {
-				browsers: ['last 2 versions', 'ie 9'],
-				map: {
-					inline: false,
-					sourcesContent: false
-				}
-			},
+				map: true,
+				processors: [
+					require('autoprefixer')({ browsers: ['last 2 versions'] }),
+			]},
 			dist: {
-				src: ['templates/css/buddypress.css']
+				src: 'templates/css/buddypress.css'
 			}
 		},
 
@@ -53,24 +51,16 @@ module.exports = function(grunt) {
 			}
 		},
 
-		cssmin: {
-			minify: {
-				expand: true,
-				cwd: '',
-				src: ['templates/css/buddypress.css', '!*.min.css'],
-				dest: '',
-				ext: '.min.css'
-			}
-		},
-
-		csscomb: {
+		cssnano: {
+			options: {
+				sourcemap: true,
+				autoprefixer: false,
+				zindex: false
+			},
 			dist: {
-				files: [{
-					expand: true,
-					cwd: '',
-					src: ['templates/css/buddypress.css'],
-					dest: '',
-				}]
+				files: {
+					'templates/css/buddypress.min.css': 'templates/css/buddypress.css'
+				}
 			}
 		},
 
@@ -90,7 +80,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'assets/js/',
 					src: ['**/*.js', '!**/*.min.js', '!concat/*.js'],
-					dest: 'js/',
+					dest: 'assets/js/',
 					ext: '.min.js'
 				}]
 			}
@@ -106,22 +96,21 @@ module.exports = function(grunt) {
 					livereload: true,
 				},
 			},
-		},
 
-		shell: {
-			grunt: {
-				command: '',
-			}
+			scripts: {
+				files: ['assets/js/**/*.js'],
+				tasks: ['scripts'],
+				options: {
+					spawn: false,
+					livereload: true,
+				},
+			},
 		},
-
-		clean: {
-			css: ['templates/css/buddypress.css', 'templates/css/buddypress.min.css']
-		}
 
 	});
 
-	grunt.registerTask('styles', ['sass', 'autoprefixer', 'cmq', 'csscomb', 'cssmin']);
-	grunt.registerTask('javascript', ['concat', 'uglify']);
-	grunt.registerTask('default', ['styles', 'javascript']);
+	grunt.registerTask('styles', ['sass', 'cmq', 'cssnano']);
+	grunt.registerTask('scripts', ['concat', 'uglify']);
+	grunt.registerTask('default', ['styles', 'scripts']);
 
 };
