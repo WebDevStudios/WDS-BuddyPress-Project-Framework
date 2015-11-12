@@ -5,12 +5,12 @@ The normal method to override BuddyPress templates is to copy the BP template fi
 This plugin, creates a new template stack for BuddyPress. BuddyPress will look here first - and if the file doesn't exist? It will default to the core plugin, allowing you to totally customize BuddyPress without loosing changes.
 
 # Features
-* Bourbon
-* Neat
-* Grunt
-* Sass
-* PostCSS
-* Live Reload
+* [Bourbon](https://github.com/thoughtbot/bourbon)
+* [Neat](https://github.com/thoughtbot/neat)
+* [Grunt](https://github.com/gruntjs/grunt)
+* [LibSass](https://github.com/sindresorhus/grunt-sass)
+* [PostCSS](https://github.com/postcss/postcss)
+* LiveReload
 * Javascript linting and concatenation
 
 # Install BP Project Framework
@@ -21,9 +21,7 @@ This plugin, creates a new template stack for BuddyPress. BuddyPress will look h
 
 After activating the plugin, you can add custom code, css, javascript and edit the markup of the templates. There are currently no settings, although there maybe options in the future.
 
-# Using Sass
-
-The plugin includes [Bourbon](https://github.com/thoughtbot/bourbon), [Neat](https://github.com/thoughtbot/neat), [Grunt](https://github.com/gruntjs/grunt) and [PostCSS](https://github.com/postcss/postcss).
+# Pre-Installation
 
 Basic knowledge of the command line and the following dependencies are required:
 
