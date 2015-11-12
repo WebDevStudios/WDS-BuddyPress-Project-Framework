@@ -2,6 +2,7 @@ assets/bower/
 node_modules/
 .idea/
 
+.DS_Store
 .htaccess
 .sass-cache
 compass_app_log.txt
