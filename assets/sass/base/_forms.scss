@@ -2,53 +2,187 @@
 // Forms
 //--------------------------------------------------------------
 
-.standard-form textarea,
-.standard-form input[type=text],
-.standard-form input[type=text],
-.standard-form input[type=color],
-.standard-form input[type=date],
-.standard-form input[type=datetime],
-.standard-form input[type=datetime-local],
-.standard-form input[type=email],
-.standard-form input[type=month],
-.standard-form input[type=number],
-.standard-form input[type=range],
-.standard-form input[type=search],
-.standard-form input[type=tel],
-.standard-form input[type=time],
-.standard-form input[type=url],
-.standard-form input[type=week],
-.standard-form select,
-.standard-form input[type=password],
-.dir-search input[type=search],
-.dir-search input[type=text],
-.groups-members-search input[type=search],
-.groups-members-search input[type=text] {
-	background: $color-alabaster;
-	border-radius: 0;
-	border: 1px solid $color-iron;
-	color: $color-jumbo;
-	font-size: 100%;
-	font: inherit;
-	padding: rem(6);
+.standard-form  {
+
+	textarea,
+	input[type=text],
+	input[type=color],
+	input[type=date],
+	input[type=datetime],
+	input[type=datetime-local],
+	input[type=email],
+	input[type=month],
+	input[type=number],
+	input[type=range],
+	input[type=search],
+	input[type=tel],
+	input[type=time],
+	input[type=url],
+	input[type=week],
+	select,
+	input[type=password] {
+		background: $color-alabaster;
+		border-radius: 0;
+		border: 1px solid $color-iron;
+		color: $color-jumbo;
+		font-size: 100%;
+		font: inherit;
+		padding: rem(6);
+	}
+
+	select {
+		padding: rem(3);
+	}
+
+	input[type=password] {
+		margin-bottom: rem(5);
+	}
+
+	label,
+	span.label {
+		display: block;
+		font-weight: 700;
+		margin: rem(15) 0 rem(5) 0;
+		width: auto;
+	}
+
+	input[type=text] {
+		width: 75%;
+	}
+
+	textarea {
+		@include size(75% rem(120));
+
+		&#message_content {
+			height: rem(200);
+		}
+	}
+
+	p {
+
+		&.description {
+			color: $color-jumbo;
+			font-size: 80%;
+			margin: rem(5) 0;
+		}
+
+		&.submit {
+			margin-bottom: 0;
+			padding: rem(15) 0 0 0;
+		}
+	}
+
+	a {
+
+		&.clear-value {
+			display: block;
+			margin-top: rem(5);
+			outline: none;
+		}
+	}
+
+
+	#basic-details-section,
+	#blog-details-section,
+	#profile-details-section {
+		float: left;
+		width: 48%;
+	}
+
+	#profile-details-section {
+		float: right;
+	}
+
+	#blog-details-section,
+	#notifications-bulk-management {
+		clear: left;
+	}
+
+	#sidebar-login-form {
+
+		input[type=text],
+		input[type=password] {
+			padding: rem(4);
+			width: 95%;
+		}
+
+		label {
+			margin-top: rem(5);
+		}
+	}
+
+	#basic-details-section,
+	#blog-details-section {
+
+		input[type=password],
+		#signup_blog_url {
+			width: 35%;
+		}
+	}
+
+	#signup_form,
+	.form-allowed-tags,
+	#commentform {
+
+		input[type=text],
+		textarea {
+			width: 90%;
+		}
+	}
+
+	#signup_form {
+
+		div.submit {
+			float: right;
+		}
+	}
+
+	#signup-avatar {
+
+		img {
+			margin: 0 rem(15) rem(10) 0;
+		}
+	}
+
+	#send-reply {
+
+		textarea {
+			width: 97.5%;
+		}
+	}
+}// .standard-form
+
+// Dir search
+.dir-search {
+
+	input[type=search],
+	input[type=text] {
+		background: $color-alabaster;
+		border-radius: 0;
+		border: 1px solid $color-iron;
+		color: $color-jumbo;
+		font-size: 100%;
+		font: inherit;
+		padding: rem(6);
+	}
 }
 
-.standard-form select {
-	padding: rem(3);
+// Group members search
+.groups-members-search {
+
+	input[type=search],
+	input[type=text] {
+		background: $color-alabaster;
+		border-radius: 0;
+		border: 1px solid $color-iron;
+		color: $color-jumbo;
+		font-size: 100%;
+		font: inherit;
+		padding: rem(6);
+	}
 }
 
-.standard-form input[type=password] {
-	margin-bottom: rem(5);
-}
-
-.standard-form label,
-.standard-form span.label {
-	display: block;
-	font-weight: 700;
-	margin: rem(15) 0 rem(5) 0;
-	width: auto;
-}
-
+// Start Here
 .standard-form div.checkbox label:nth-child(n+2),
 .standard-form div.radio div label {
 	color: $color-jumbo;
@@ -57,66 +191,8 @@
 	margin: rem(5) 0 0 0;
 }
 
-.standard-form#sidebar-login-form label {
-	margin-top: rem(5);
-}
-
-.standard-form input[type=text] {
-	width: 75%;
-}
-
-.standard-form#sidebar-login-form input[type=text],
-.standard-form#sidebar-login-form input[type=password] {
-	padding: rem(4);
-	width: 95%;
-}
-
-.standard-form #basic-details-section input[type=password],
-.standard-form #blog-details-section input#signup_blog_url {
-	width: 35%;
-}
-
-.standard-form#signup_form input[type=text],
-.standard-form#signup_form textarea,
-.form-allowed-tags,
-#commentform input[type=text],
-#commentform textarea {
-	width: 90%;
-}
-
-.standard-form#signup_form div.submit {
-	float: right;
-}
-
-div#signup-avatar img {
-	margin: 0 rem(15) rem(10) 0;
-}
-
-.standard-form textarea {
-	@include size(75% rem(120));
-}
-
-.standard-form textarea#message_content {
-	height: rem(200);
-}
-
-.standard-form#send-reply textarea {
-	width: 97.5%;
-}
-
-.standard-form p.description {
-	color: $color-jumbo;
-	font-size: 80%;
-	margin: rem(5) 0;
-}
-
 .standard-form div.submit {
 	clear: both;
-	padding: rem(15) 0 0 0;
-}
-
-.standard-form p.submit {
-	margin-bottom: 0;
 	padding: rem(15) 0 0 0;
 }
 
@@ -131,28 +207,6 @@ div#signup-avatar img {
 
 .standard-form div.radio ul li {
 	margin-bottom: rem(5);
-}
-
-.standard-form a.clear-value {
-	display: block;
-	margin-top: rem(5);
-	outline: none;
-}
-
-.standard-form #basic-details-section,
-.standard-form #blog-details-section,
-.standard-form #profile-details-section {
-	float: left;
-	width: 48%;
-}
-
-.standard-form #profile-details-section {
-	float: right;
-}
-
-.standard-form #blog-details-section,
-#notifications-bulk-management {
-	clear: left;
 }
 
 body.no-js #notifications-bulk-management #select-all-notifications,
