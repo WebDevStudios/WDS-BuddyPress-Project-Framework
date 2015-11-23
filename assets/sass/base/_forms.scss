@@ -150,37 +150,11 @@
 			width: 97.5%;
 		}
 	}
+
+	div {
+
+	}
 }// .standard-form
-
-// Dir search
-.dir-search {
-
-	input[type=search],
-	input[type=text] {
-		background: $color-alabaster;
-		border-radius: 0;
-		border: 1px solid $color-iron;
-		color: $color-jumbo;
-		font-size: 100%;
-		font: inherit;
-		padding: rem(6);
-	}
-}
-
-// Group members search
-.groups-members-search {
-
-	input[type=search],
-	input[type=text] {
-		background: $color-alabaster;
-		border-radius: 0;
-		border: 1px solid $color-iron;
-		color: $color-jumbo;
-		font-size: 100%;
-		font: inherit;
-		padding: rem(6);
-	}
-}
 
 // Start Here
 .standard-form div.checkbox label:nth-child(n+2),
@@ -238,42 +212,7 @@ div#invite-list {
 	padding: rem(5);
 }
 
-button,
-a.button,
-input[type=submit],
-input[type=button],
-input[type=reset],
-ul.button-nav li a,
-div.generic-button a,
-.comment-reply-link,
-a.bp-title-button {
-	background: $color-white; // old browsers
-	border: 1px solid $color-iron;
-	color: $color-monsoon;
-	cursor: pointer;
-	font-size: small;
-	outline: none;
-	padding: rem(4) rem(10);
-	text-align: center;
-	text-decoration: none;
-}
 
-button:hover,
-a.button:hover,
-a.button:focus,
-input[type=submit]:hover,
-input[type=button]:hover,
-input[type=reset]:hover,
-ul.button-nav li a:hover,
-ul.button-nav li.current a,
-div.generic-button a:hover,
-.comment-reply-link:hover {
-	background: $color-warped-lace;
-	border: 1px solid $color-silver-sand;
-	color: $color-dark-gray;
-	outline: none;
-	text-decoration: none;
-}
 
 form.standard-form {
 
@@ -322,4 +261,34 @@ form *[disabled="disabled"]{
 .bp-screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute;
+}
+
+// Dir search
+.dir-search {
+
+	input[type=search],
+	input[type=text] {
+		background: $color-alabaster;
+		border-radius: 0;
+		border: 1px solid $color-iron;
+		color: $color-jumbo;
+		font-size: 100%;
+		font: inherit;
+		padding: rem(6);
+	}
+}
+
+// Group members search
+.groups-members-search {
+
+	input[type=search],
+	input[type=text] {
+		background: $color-alabaster;
+		border-radius: 0;
+		border: 1px solid $color-iron;
+		color: $color-jumbo;
+		font-size: 100%;
+		font: inherit;
+		padding: rem(6);
+	}
 }
