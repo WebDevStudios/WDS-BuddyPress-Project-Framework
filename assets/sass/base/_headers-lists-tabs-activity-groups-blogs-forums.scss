@@ -6,13 +6,8 @@
 	margin: rem(20) 0;
 }
 
-.activity {
-	display: block;
-	font-size: small;
-	opacity: 0.8;
-	padding: 0;
-}
-
+// Used in member header cover image template
+// Should eventually be moved
 .user-nicename {
 	color: $color-monsoon;
 	display: inline-block;
