@@ -1,5 +1,6 @@
 //--------------------------------------------------------------
 // Forms
+// Has been refactored
 //--------------------------------------------------------------
 
 .standard-form  {
@@ -55,6 +56,16 @@
 
 		&#message_content {
 			height: rem(200);
+		}
+	}
+
+	input,
+	textarea,
+	select {
+
+		&:focus {
+			background: $color-alabaster;
+			color: $color-dark-gray;
 		}
 	}
 
@@ -151,37 +162,73 @@
 		}
 	}
 
-	div {
+	// Form elements are inside divs with classes such as .checkbox .submit
+	// The below classes target the divs and the form elements they contain
+	.checkbox,
+	.radio {
 
+		label:nth-child(n+2),
+		div label {
+			color: $color-jumbo;
+			font-size: 100%;
+			font-weight: normal;
+			margin: rem(5) 0 0 0;
+		}
+		input {
+			margin-right: rem(10);
+		}
 	}
+
+	.radio { // form div
+
+		ul {
+			margin: rem(10) 0 rem(15) rem(38);
+			list-style: disc;
+
+			li {
+				margin-bottom: rem(5);
+			}
+		}
+	}// .radio
+
+	.submit { // form div
+		clear: both;
+		padding: rem(15) 0 0 0;
+
+		input {
+			margin-right: rem(15);
+		}
+	}// .submit
+
+	.left-menu {
+		float: left;
+
+		#invite-list {
+
+			ul {
+				margin: 1%;
+				list-style: none;
+
+				li {
+					margin: 0 0 0 1%;
+				}
+			}// ul
+		}// #invite-list
+	}// .left-menu
+
+	.main-column {
+		margin-left: rem(190);
+
+		#friend-list {
+			clear: none;
+			float: left;
+
+			h4 {
+				clear: none;
+			}
+		}
+	}// .main-column
 }// .standard-form
-
-// Start Here
-.standard-form div.checkbox label:nth-child(n+2),
-.standard-form div.radio div label {
-	color: $color-jumbo;
-	font-size: 100%;
-	font-weight: normal;
-	margin: rem(5) 0 0 0;
-}
-
-.standard-form div.submit {
-	clear: both;
-	padding: rem(15) 0 0 0;
-}
-
-.standard-form div.submit input {
-	margin-right: rem(15);
-}
-
-.standard-form div.radio ul {
-	margin: rem(10) 0 rem(15) rem(38);
-	list-style: disc;
-}
-
-.standard-form div.radio ul li {
-	margin-bottom: rem(5);
-}
 
 body.no-js #notifications-bulk-management #select-all-notifications,
 body.no-js label[for="message-type-select"],
@@ -192,18 +239,11 @@ body.no-js #messages-bulk-management #select-all-messages {
 	display: none;
 }
 
-.standard-form input:focus,
-.standard-form textarea:focus,
-.standard-form select:focus {
-	background: $color-alabaster;
-	color: $color-dark-gray;
-}
-
-form#send-invite-form {
+#send-invite-form {
 	margin-top: rem(20);
 }
 
-div#invite-list {
+#invite-list {
 	@include size(rem(160) rem(400));
 
 	background: $color-white-smoke;
@@ -212,44 +252,16 @@ div#invite-list {
 	padding: rem(5);
 }
 
-
-
-form.standard-form {
-
-	.left-menu {
-		float: left;
-	}
-
-	.left-menu #invite-list ul{
-		margin: 1%;
-		list-style: none;
-	}
-
-	.left-menu #invite-list ul li {
-		margin: 0 0 0 1%;
-	}
-
-	.main-column {
-		margin-left: rem(190);
-	}
-
-	.main-column ul#friend-list {
-		clear: none;
-		float: left;
-	}
-
-	.main-column ul#friend-list h4 {
-		clear: none;
-	}
-}
-
 // Overrides for embedded WP editors
-.wp-editor-wrap a.button,
-.wp-editor-wrap button,
-.wp-editor-wrap input[type=submit],
-.wp-editor-wrap input[type=button],
-.wp-editor-wrap input[type=reset] {
-	padding: 0 rem(10) rem(1);
+.wp-editor-wrap {
+
+	a.button,
+	button,
+	input[type=submit],
+	input[type=button],
+	input[type=reset] {
+		padding: 0 rem(10) rem(1);
+	}
 }
 
 // Form classes & generic attr styling
