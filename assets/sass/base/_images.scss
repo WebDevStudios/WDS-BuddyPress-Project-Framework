@@ -1,13 +1,17 @@
 //------------------------------------------------------------------------------
 // Images
+// Has been refactored
 //------------------------------------------------------------------------------
 
-img.wp-smiley {
-	border: none !important;
-	clear: none !important;
-	float: none !important;
-	margin: 0 !important;
-	padding: 0 !important;
+img {
+
+	&.wp-smiley {
+		border: none !important;
+		clear: none !important;
+		float: none !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
 }
 
 .clear {
