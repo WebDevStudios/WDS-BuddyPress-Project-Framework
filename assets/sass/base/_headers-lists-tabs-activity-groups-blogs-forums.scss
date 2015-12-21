@@ -29,11 +29,6 @@ ul.single-line li {
 	border: none;
 }
 
-body.activity-permalink ul.item-list,
-body.activity-permalink ul.item-list li.activity-item {
-	border: none;
-}
-
 ul.item-list {
 	@include list-reset;
 
@@ -94,21 +89,36 @@ ul.item-list {
 			font-size: 80%;
 			font-weight: normal;
 		}
+	}// li
+}// ul.item-list
+
+body.activity-permalink {
+
+	ul.item-list {
+		border: none;
+
+		li.activity-item {
+			border: none;
+		}
 	}
 }
 
+.item-list-tabs {
+
+	&#object-nav {
+		margin-top: 0;
+	}
+
+	&#subnav {
+		background: transparent;
+		margin: rem(10) 0 rem(10);
+		overflow: hidden;
+	}
+}
+
+// Some one-off styles - need refactored/placed at some point
 #item-nav ul li.loading a {
 	background-position: 88% 50%;
-}
-
-.item-list-tabs#object-nav {
-	margin-top: 0;
-}
-
-.item-list-tabs#subnav {
-	background: transparent;
-	margin: rem(10) 0 rem(10);
-	overflow: hidden;
 }
 
 #admins-list li,
