@@ -1,0 +1,130 @@
+//-------------------------------------------------------------------------
+// Headers, Lists and Tabs - Activity, Groups, Blogs, Forums, Profiles
+// Has been refactored
+//-------------------------------------------------------------------------
+
+.item-body {
+	margin: rem(20) 0;
+}
+
+// Used in member header cover image template
+// Should eventually be moved
+.user-nicename {
+	color: $color-monsoon;
+	display: inline-block;
+	font-size: 120%;
+	font-weight: 700;
+}
+
+#message p,
+#sitewide-notice p {
+	background-color: $color-pink-lace;
+	border: 1px solid ;
+	color: $color-loulou;
+	font-weight: normal;
+	margin-top: rem(3);
+	text-decoration: none;
+}
+
+ul.single-line li {
+	border: none;
+}
+
+ul.item-list {
+	@include list-reset;
+
+	border-top: 1px solid $color-lily-white;
+	width: 100%;
+
+	li {
+		border-bottom: 1px solid $color-lily-white;
+		list-style: none;
+		margin: 0;
+		padding: rem(15) 0;
+		position: relative;
+
+		img.avatar {
+			float: left;
+			margin: 0 rem(10) 0 0;
+		}
+
+		.item-title,
+		h4 {
+			font-size: 90%;
+			font-weight: normal;
+			margin: 0;
+			width: 75%;
+		}
+
+		.item-title span {
+			color: $color-aluminum;
+			font-size: 80%;
+		}
+
+		.item-desc {
+			color: $color-jumbo;
+			font-size: 80%;
+			margin: rem(10) 0 0 rem(60);
+			width: 50%;
+		}
+
+		&.group-no-avatar .item-desc {
+			margin-left: 0;
+		}
+
+		.action {
+			position: absolute;
+			right: 0;
+			text-align: right;
+			top: rem(15);
+		}
+
+		.meta {
+			color: $color-jumbo;
+			font-size: 80%;
+			margin-top: rem(10);
+		}
+
+		h5 span.small {
+			float: right;
+			font-size: 80%;
+			font-weight: normal;
+		}
+	}// li
+}// ul.item-list
+
+body.activity-permalink {
+
+	ul.item-list {
+		border: none;
+
+		li.activity-item {
+			border: none;
+		}
+	}
+}
+
+.item-list-tabs {
+
+	&#object-nav {
+		margin-top: 0;
+	}
+
+	&#subnav {
+		background: transparent;
+		margin: rem(10) 0 rem(10);
+		overflow: hidden;
+	}
+}
+
+// Some one-off styles - need refactored/placed at some point
+#item-nav ul li.loading a {
+	background-position: 88% 50%;
+}
+
+#admins-list li,
+#mods-list li,
+#members-list li {
+	list-style: none;
+	overflow: auto;
+}

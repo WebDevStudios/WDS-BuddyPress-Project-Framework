@@ -1,0 +1,234 @@
+//--------------------------------------------------------------
+// Activity Listing
+// Has been refactored
+//--------------------------------------------------------------
+
+#activity-stream {
+	margin-top: rem(-5);
+
+	p {
+		margin: rem(5) 0;
+	}
+}
+
+ul.activity-list {
+
+	li {
+		overflow: hidden;
+		padding: rem(15) 0 0;
+		list-style: none;
+
+		&.has-comments {
+			padding-bottom: rem(15);
+		}
+
+		&.load-more,
+		&.load-newest {
+			background: $color-alabaster;
+			font-size: 110%;
+			margin: rem(15) 0;
+			padding: rem(10) rem(15);
+			text-align: center;
+
+			a {
+				color: $color-ship-gray;
+			}
+		}
+	}// li
+
+	// Activity Content
+	.activity-content {
+		margin: 0 0 0 rem(70);
+		position: relative;
+
+		blockquote {
+			margin: rem(10) rem(10) rem(5) 0;
+			overflow: hidden;
+		}
+
+		.thumbnail {
+			border: 2px solid $color-silver-felt;
+			float: left;
+			margin: 0 rem(10) rem(5) 0;
+		}
+	}
+
+	// Activity Header
+	.activity-header {
+		color: $color-jumbo;
+		line-height: 220%;
+		margin-right: rem(20);
+
+		a {
+			text-decoration: none;
+		}
+
+		.avatar {
+			float: none !important;
+			margin: 0 rem(5) rem(-8) 0 !important;
+		}
+	}
+
+	// Activity Inner
+	.activity-inner {
+		margin: rem(10) rem(10) rem(5) 0;
+		overflow: hidden;
+
+		> p {
+			word-wrap: break-word;
+		}
+
+		> blockquote {
+			margin: 0;
+		}
+	}
+
+	// Activity Meta
+	.activity-meta {
+
+		a.bp-secondary-action {
+			margin-right: rem(5);
+			text-decoration: none;
+		}
+	}
+
+	// Activity InReplyTo
+	.activity-inreplyto {
+		color: $color-jumbo;
+		font-size: 80%;
+
+		> p {
+			margin: 0;
+			display: inline;
+		}
+
+		blockquote,
+		.activity-inner {
+			@include margin-padding-reset;
+
+			background: none;
+			border: none;
+			display: inline;
+			overflow: hidden;
+		}
+	}// .activity-inreplyto
+
+	li.mini {
+		font-size: 80%;
+		position: relative;
+
+		.activity-avatar {
+
+			img {
+				&.avatar,
+				&.FB_profile_pic {
+					height: rem(20);
+					margin-left: rem(30);
+					width: rem(20);
+				}
+			}// img
+		}// .activity-avatar
+
+		.activity-content {
+
+			p {
+				margin: 0;
+			}
+		}
+
+		.activity-comments {
+			clear: both;
+			font-size: 120%;
+		}
+	}// li.mini
+
+	li.new_forum_post,
+	li.new_forum_topic {
+
+		.activity-inner {
+			border-left: 2px solid $color-lily-white;
+			margin-left: rem(5);
+			padding-left: rem(10);
+		}
+	}
+
+	.activity-avatar {
+		float: left;
+	}
+}
+
+
+// @todo These are some global elements eventually need to be 'put somewhere'
+.comment-meta a {
+	text-decoration: none;
+}
+
+span.highlight {
+	font-size: 80%;
+	padding: 0;
+	margin-right: rem(5);
+	text-decoration: none;
+}
+
+// @todo - need to nail down what activity-permalink targets and refactor accordingly
+body.activity-permalink {
+
+	.activity-list {
+
+		> li:first-child {
+			padding-top: 0;
+		}
+
+		li {
+
+			&.has-comments {
+				padding-bottom: 0;
+			}
+		}
+
+		.activity-content {
+			border: none;
+			font-size: 100%;
+			line-height: 150%;
+			margin-left: rem(170);
+			margin-right: 0;
+			padding: 0;
+		}
+
+		.activity-header {
+
+			> p {
+				margin: 0;
+				padding: rem(5) 0 0 0;
+			}
+		}
+
+		li.mini {
+
+			.activity-meta {
+				margin-top: rem(4);
+			}
+
+			.activity-avatar {
+
+				.avatar,
+				.FB_profile_pic {
+					height: auto;
+					margin-left: 0;
+					width: auto;
+				}
+			}
+		}// li.mini
+	}// .activity-list
+
+	.activity-inner,
+	blockquote {
+		margin-left: 0;
+		margin-top: rem(5);
+	}
+}// body.activity-permalink
+
+.activity-read-more {
+	margin-left: rem(16);
+	white-space: nowrap;
+}

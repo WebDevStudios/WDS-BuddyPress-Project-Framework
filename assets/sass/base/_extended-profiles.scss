@@ -1,0 +1,65 @@
+//--------------------------------------------------------------
+// Extended Profiles
+//--------------------------------------------------------------
+
+div.profile h4 {
+	margin-bottom: auto;
+	margin-top: rem(15);
+}
+
+#profile-edit-form ul.button-nav {
+	margin-top: rem(15);
+}
+
+body.no-js .field-visibility-settings-toggle,
+body.no-js .field-visibility-settings-close {
+	display: none;
+}
+
+.field-visibility-settings {
+	display: none;
+	margin-top: rem(10);
+}
+
+body.no-js .field-visibility-settings {
+	display: block;
+}
+
+.current-visibility-level {
+	font-style: normal;
+	font-weight: 700;
+}
+
+.field-visibility-settings,
+.field-visibility-settings-toggle,
+.field-visibility-settings-notoggle {
+	color: $color-jumbo;
+}
+
+.field-visibility-settings-toggle a,
+.field-visibility-settings a {
+	font-size: 80%;
+}
+
+body.register div.page ul {
+	list-style: none;
+}
+
+.standard-form .field-visibility-settings label {
+	font-weight: normal;
+	margin: 0;
+}
+
+.field-visibility-settings legend,
+.field-visibility-settings-toggle {
+	font-style: italic;
+}
+
+.field-visibility-settings .radio {
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.field-visibility select {
+	margin: 0;
+}

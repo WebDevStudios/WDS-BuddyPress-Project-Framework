@@ -1,0 +1,20 @@
+/*
+Template Name: WDS BP Project Framework
+Template URI: https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework
+Author: WebDevStudios
+Author URI: http://webdevstudios.com
+Description: Custom buddypress theme for NPS: CLP
+Version: 2.3.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@import "bourbon";
+@import "utilities/variables/index";
+@import "neat";
+@import "utilities/mixins/index";
+
+.buddypress {
+	@import "base/index";
+	@import "views/index";
+}

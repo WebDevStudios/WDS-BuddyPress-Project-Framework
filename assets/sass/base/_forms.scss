@@ -1,0 +1,306 @@
+//--------------------------------------------------------------
+// Forms
+// Has been refactored
+//--------------------------------------------------------------
+
+.standard-form  {
+
+	textarea,
+	input[type=text],
+	input[type=color],
+	input[type=date],
+	input[type=datetime],
+	input[type=datetime-local],
+	input[type=email],
+	input[type=month],
+	input[type=number],
+	input[type=range],
+	input[type=search],
+	input[type=tel],
+	input[type=time],
+	input[type=url],
+	input[type=week],
+	select,
+	input[type=password] {
+		background: $color-alabaster;
+		border-radius: 0;
+		border: 1px solid $color-iron;
+		color: $color-jumbo;
+		font-size: 100%;
+		font: inherit;
+		padding: rem(6);
+	}
+
+	select {
+		padding: rem(3);
+	}
+
+	input[type=password] {
+		margin-bottom: rem(5);
+	}
+
+	label,
+	span.label {
+		display: block;
+		font-weight: 700;
+		margin: rem(15) 0 rem(5) 0;
+		width: auto;
+	}
+
+	input[type=text] {
+		width: 75%;
+	}
+
+	textarea {
+		@include size(75% rem(120));
+
+		&#message_content {
+			height: rem(200);
+		}
+	}
+
+	input,
+	textarea,
+	select {
+
+		&:focus {
+			background: $color-alabaster;
+			color: $color-dark-gray;
+		}
+	}
+
+	p {
+
+		&.description {
+			color: $color-jumbo;
+			font-size: 80%;
+			margin: rem(5) 0;
+		}
+
+		&.submit {
+			margin-bottom: 0;
+			padding: rem(15) 0 0 0;
+		}
+	}
+
+	a {
+
+		&.clear-value {
+			display: block;
+			margin-top: rem(5);
+			outline: none;
+		}
+	}
+
+
+	#basic-details-section,
+	#blog-details-section,
+	#profile-details-section {
+		float: left;
+		width: 48%;
+	}
+
+	#profile-details-section {
+		float: right;
+	}
+
+	#blog-details-section,
+	#notifications-bulk-management {
+		clear: left;
+	}
+
+	#sidebar-login-form {
+
+		input[type=text],
+		input[type=password] {
+			padding: rem(4);
+			width: 95%;
+		}
+
+		label {
+			margin-top: rem(5);
+		}
+	}
+
+	#basic-details-section,
+	#blog-details-section {
+
+		input[type=password],
+		#signup_blog_url {
+			width: 35%;
+		}
+	}
+
+	#signup_form,
+	.form-allowed-tags,
+	#commentform {
+
+		input[type=text],
+		textarea {
+			width: 90%;
+		}
+	}
+
+	#signup_form {
+
+		div.submit {
+			float: right;
+		}
+	}
+
+	#signup-avatar {
+
+		img {
+			margin: 0 rem(15) rem(10) 0;
+		}
+	}
+
+	#send-reply {
+
+		textarea {
+			width: 97.5%;
+		}
+	}
+
+	// Form elements are inside divs with classes such as .checkbox .submit
+	// The below classes target the divs and the form elements they contain
+	.checkbox,
+	.radio {
+
+		label:nth-child(n+2),
+		div label {
+			color: $color-jumbo;
+			font-size: 100%;
+			font-weight: normal;
+			margin: rem(5) 0 0 0;
+		}
+		input {
+			margin-right: rem(10);
+		}
+	}
+
+	.radio { // form div
+
+		ul {
+			margin: rem(10) 0 rem(15) rem(38);
+			list-style: disc;
+
+			li {
+				margin-bottom: rem(5);
+			}
+		}
+	}// .radio
+
+	.submit { // form div
+		clear: both;
+		padding: rem(15) 0 0 0;
+
+		input {
+			margin-right: rem(15);
+		}
+	}// .submit
+
+	.left-menu {
+		float: left;
+
+		#invite-list {
+
+			ul {
+				margin: 1%;
+				list-style: none;
+
+				li {
+					margin: 0 0 0 1%;
+				}
+			}// ul
+		}// #invite-list
+	}// .left-menu
+
+	.main-column {
+		margin-left: rem(190);
+
+		#friend-list {
+			clear: none;
+			float: left;
+
+			h4 {
+				clear: none;
+			}
+		}
+	}// .main-column
+}// .standard-form
+
+body.no-js #notifications-bulk-management #select-all-notifications,
+body.no-js label[for="message-type-select"],
+body.no-js #message-type-select,
+body.no-js #delete_inbox_messages,
+body.no-js #delete_sentbox_messages,
+body.no-js #messages-bulk-management #select-all-messages {
+	display: none;
+}
+
+#send-invite-form {
+	margin-top: rem(20);
+}
+
+#invite-list {
+	@include size(rem(160) rem(400));
+
+	background: $color-white-smoke;
+	margin: 0 0 rem(10);
+	overflow: auto;
+	padding: rem(5);
+}
+
+// Overrides for embedded WP editors
+.wp-editor-wrap {
+
+	a.button,
+	button,
+	input[type=submit],
+	input[type=button],
+	input[type=reset] {
+		padding: 0 rem(10) rem(1);
+	}
+}
+
+// Form classes & generic attr styling
+form *[disabled="disabled"]{
+	cursor: default;
+	opacity: .4;
+}
+
+.bp-screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+}
+
+// Dir search
+.dir-search {
+
+	input[type=search],
+	input[type=text] {
+		background: $color-alabaster;
+		border-radius: 0;
+		border: 1px solid $color-iron;
+		color: $color-jumbo;
+		font-size: 100%;
+		font: inherit;
+		padding: rem(6);
+	}
+}
+
+// Group members search
+.groups-members-search {
+
+	input[type=search],
+	input[type=text] {
+		background: $color-alabaster;
+		border-radius: 0;
+		border: 1px solid $color-iron;
+		color: $color-jumbo;
+		font-size: 100%;
+		font: inherit;
+		padding: rem(6);
+	}
+}

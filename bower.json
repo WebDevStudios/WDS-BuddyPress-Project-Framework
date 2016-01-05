@@ -3,12 +3,11 @@
   "description": "A plugin boilerplate for new custom BuddyPress projects for WebDevStudios.",
   "version": "1.0.0",
   "main": [
-    "templates/sass/index.scss",
-    "templates/css/bp-custom.css"
+    "assets/sass/buddypress.scss"
   ],
   "ignore": [
     "node_modules",
-    "bower_components"
+    "assets/bower"
   ],
   "dependencies": {
     "bourbon": "latest",

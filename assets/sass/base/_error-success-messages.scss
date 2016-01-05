@@ -1,0 +1,129 @@
+//--------------------------------------------------------------
+// Errors / Success Messages
+//--------------------------------------------------------------
+
+#message {
+	margin: 0 0 rem(15);
+
+	.info {
+		margin-bottom: 0;
+	}
+
+	.updated {
+		clear: both;
+		display: block;
+	}
+
+	p,
+	#sitewide-notice p {
+		display: block;
+		font-size: 90%;
+		padding: rem(10) rem(15);
+	}
+
+	.error p {
+		background-color: $color-pink-lace;
+		border: 1px solid $color-red-berry;
+		clear: left;
+		color: $color-red-oxide;
+	}
+
+	.warning p {
+		background-color: $color-peach-yellow;
+		border: 1px solid $color-pink-lace;
+		clear: left;
+		color: $color-red-oxide;
+	}
+
+	.updated p {
+		background-color: $color-pale-lavendar;
+		border: 1px solid $color-purple;
+		color: $color-cherry-pie;
+	}
+}
+
+#pass-strength-result {
+	background-color: $color-silver-felt;
+	border-width: 1px sold $color-gainsboro;
+	display: none;
+	margin: rem(5) rem(5) rem(5) 0;
+	padding: rem(5);
+	text-align: center;
+	width: rem(150);
+
+	.error,
+	.bad {
+		background-color: $color-tacao;
+		border-color: $color-cadmium-orange !important;
+		display: block;
+	}
+
+	.good {
+		background-color: $color-yellow;
+		border-color: $color-hot-magenta !important;
+		display: block;
+	}
+
+	.short {
+		background-color: $color-sea-pink;
+		border-color: $color-cinnabar !important;
+		display: block;
+	}
+
+	.strong {
+		background-color: $color-sulu;
+		border-color: $color-spring-bud !important;
+		display: block;
+	}
+}
+
+.standard-form {
+
+	#basic-details-section #pass-strength-result {
+		width: 35%;
+	}
+
+	#signup_form div div.error {
+		background: $color-sundown;
+		color: $color-red-berry;
+		margin: 0 0 rem(10) 0;
+		padding: rem(6);
+		width: 90%;
+	}
+}
+
+div.accept,
+div.reject {
+	float: left;
+	margin-left: rem(10);
+}
+
+ul.button-nav li {
+	float: left;
+	list-style: none;
+	margin: 0 rem(10) rem(10) 0;
+}
+
+ul.button-nav li.current a {
+	font-weight: 700;
+}
+
+#sitewide-notice {
+
+	#message {
+		left: 2%;
+		position: fixed;
+		top: rem(16);
+		width: 96%;
+		z-index: 9999;
+	}
+
+	.admin-bar-on #message {
+		top: rem(53);
+	}
+
+	strong {
+		display: block;
+		margin-bottom: rem(-16);
+	}
+}

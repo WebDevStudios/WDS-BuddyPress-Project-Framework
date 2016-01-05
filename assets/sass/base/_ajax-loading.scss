@@ -1,0 +1,71 @@
+//--------------------------------------------------------------
+// Ajax Loading
+//--------------------------------------------------------------
+
+a.loading,
+input.loading {
+	-webkit-animation: loader-pulsate .5s infinite ease-in-out alternate;
+	-moz-animation: loader-pulsate .5s infinite ease-in-out alternate;
+	border-color: $color-light-gray;
+}
+
+@-webkit-keyframes loader-pulsate {
+	from {
+		-webkit-box-shadow: 0 0 rem(6) $color-iron;
+		border-color: $color-light-gray;
+		box-shadow: 0 0 rem(6) $color-iron;
+	}
+	to {
+		-webkit-box-shadow: 0 0 rem(6) $color-desert-storm;
+		border-color: $color-iron;
+		box-shadow: 0 0 rem(6) $color-desert-storm;
+	}
+}
+
+@-moz-keyframes loader-pulsate {
+	from {
+		-moz-box-shadow: 0 0 rem(6) $color-iron;
+		border-color: $color-light-gray;
+		box-shadow: 0 0 rem(6) $color-iron;
+	}
+	to {
+		-moz-box-shadow: 0 0 rem(6) $color-desert-storm;
+		border-color: $color-iron;
+		box-shadow: 0 0 rem(6) $color-desert-storm;
+	}
+}
+
+a.loading:hover,
+input.loading:hover {
+    color: $color-monsoon;
+}
+
+input[type="submit"].pending,
+input[type="button"].pending,
+input[type="reset"].pending,
+input[type="submit"].disabled,
+input[type="button"].disabled,
+input[type="reset"].disabled,
+input[type="submit"][disabled=disabled],
+button.pending,
+button.disabled,
+div.pending a,
+a.disabled {
+    border-color: $color-silver-felt;
+    color: $color-silver-sand;
+    cursor: default;
+}
+
+input[type="submit"]:hover.pending,
+input[type="button"]:hover.pending,
+input[type="reset"]:hover.pending,
+input[type="submit"]:hover.disabled,
+input[type="button"]:hover.disabled,
+input[type="reset"]:hover.disabled,
+button.pending:hover,
+button.disabled:hover,
+div.pending a:hover,
+a.disabled:hover {
+	border-color: $color-silver-felt;
+    color: $color-silver-sand;
+}

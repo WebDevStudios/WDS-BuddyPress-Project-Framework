@@ -1,0 +1,257 @@
+//--------------------------------------------------------------
+// To, Tables and Topics
+//--------------------------------------------------------------
+
+ul#topic-post-list {
+	margin: 0;
+	width: auto;
+
+	li {
+		padding: rem(15);
+		position: relative;
+
+		.alt {
+			background: $color-white-smoke;
+		}
+
+		.poster-meta {
+			color: $color-jumbo;
+			margin-bottom: rem(10);
+		}
+
+		.post-content {
+			margin-left: rem(54);
+		}
+	}
+}
+
+.topic-tags {
+	font-size: 80%;
+}
+
+.admin-links {
+	color: $color-jumbo;
+	font-size: 80%;
+	position: absolute;
+	top: rem(15);
+	right: (25);
+}
+
+#topic-meta {
+	margin: 0;
+	padding: rem(5) rem(19) rem(30);
+	position: relative;
+
+	.admin-links {
+		right: rem(19);
+		top: rem(-36);
+	}
+
+	h3 {
+		margin: rem(5) 0;
+	}
+}
+
+#new-topic-post {
+	display: none;
+	margin: rem(20) 0 0 0;
+	padding: rem(1) 0 0 0;
+}
+
+table.notifications,
+table.notifications-settings,
+table.profile-settings,
+table.profile-fields,
+table.wp-profile-fields,
+table.messages-notices,
+{
+	width: 100%;
+
+	thead tr {
+		background: $color-lily-white;
+	}
+}
+
+table#message-threads {
+	clear: both;
+}
+
+table.profile-fields {
+	margin-bottom: rem(20);
+}
+
+table.profile-fields:last-child {
+	margin-bottom: 0;
+}
+
+table.profile-fields p {
+	margin: 0;
+}
+
+table.profile-fields p:last-child {
+	margin-top: 0;
+}
+
+table.notifications tr td,
+table.notifications-settings tr td,
+table.profile-settings tr td,
+table.profile-fields tr td,
+table.wp-profile-fields tr td,
+table.messages-notices tr td,
+tr td,
+table.notifications tr th,
+table.notifications-settings tr th,
+table.profile-fields tr th,
+table.wp-profile-fields tr th,
+table.messages-notices tr th,
+tr th {
+	padding: rem(8);
+	vertical-align: middle;
+}
+
+table.notifications tr td.label,
+table.notifications-settings tr td.label,
+table.profile-fields tr td.label,
+table.wp-profile-fields tr td.label,
+table.messages-notices tr td.label,
+tr td.label {
+	border-right: 1px solid $color-lily-white;
+	font-weight: 700;
+	width: 25%;
+}
+
+#message-threads .thread-info {
+	min-width: 40%;
+}
+
+table tr td.thread-info p {
+	margin: 0;
+}
+
+table tr td.thread-info p.thread-excerpt {
+	color: $color-jumbo;
+	font-size: 80%;
+	margin-top: rem(3);
+}
+
+td {
+	text-align: center;
+}
+
+table.notifications tr.alt td,
+table.notifications-settings tr.alt td,
+table.profile-settings tr.alt td,
+table.profile-fields tr.alt td,
+table.wp-profile-fields tr.alt td,
+table.messages-notices tr.alt td,
+tr.alt td {
+	background: $color-white-smoke;
+}
+
+table.notification-settings {
+	margin-bottom: rem(20);
+	text-align: left;
+}
+
+#groups-notification-settings {
+	margin-bottom: 0;
+}
+
+table.notifications th.icon,
+table.notifications td:first-child,
+table.notification-settings th.icon,
+table.notification-settings td:first-child {
+	display: none;
+}
+
+table.notification-settings th.title,
+table.profile-settings th.title {
+	width: 80%;
+}
+
+table.notification-settings .yes,
+table.notification-settings .no {
+	text-align: center;
+	width: rem(40);
+}
+
+table.forum {
+	margin: 0;
+	width: auto;
+	clear: both;
+
+	tr.sticky td {
+		font-size: 110%;
+		background: $color-citrine-white;
+		border-top: 1px solid $color-girvy;
+		border-bottom: 1px solid $color-girvy;
+	}
+
+	tr.closed td.td-title {
+		padding-left: rem(35);
+	}
+
+	td p.topic-text {
+		color: $color-jumbo;
+		font-size: 100%;
+	}
+
+	tr > td:first-child,
+	tr > th:first-child {
+		padding-left: rem(15);
+	}
+
+	tr > td:last-child,
+	tr > th:last-child {
+		padding-right: rem(15);
+	}
+
+	tr th#th-title,
+	tr th#th-poster,
+	tr th#th-group,
+	td.td-poster,
+	td.td-group,
+	td.td-title {
+		text-align: left;
+	}
+
+	tr td.td-title a.topic-title {
+		font-size: 110%;
+	}
+
+	td.td-freshness {
+		white-space: nowrap;
+	}
+
+	td.td-freshness span.time-since {
+		font-size: 80%;
+		color: $color-jumbo;
+	}
+
+	td img.avatar {
+		float: none;
+		margin: 0 rem(5) rem(-8) 0;
+	}
+
+	td.td-poster,
+	td.td-group {
+		min-width: rem(140);
+	}
+
+	th#th-title {
+		width: 80%;
+	}
+
+	th#th-freshness {
+		width: 25%;
+	}
+
+	th#th-postcount {
+		width: 15%;
+	}
+
+	p.topic-meta {
+		font-size: 80%;
+		margin: rem(5) 0 0 0;
+	}
+}

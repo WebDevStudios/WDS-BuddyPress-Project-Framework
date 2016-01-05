@@ -1,1799 +1,2209 @@
-/*--------------------------------------------------------------
-Hello, this is the BuddyPress Legacy stylesheet.
-
-----------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-1.0 - Navigation
-	1.1 - Pagination
-2.0 - WordPress
-	2.1 - Images
-3.0 - BuddyPress
-	3.1 - Activity
-		3.1.1 - Activity Listing
-		3.1.2 - Activity Comments
-	3.2 - Toolbar
-	3.3 - Directories - Members, Groups, Blogs, Forums
-	3.4 - Error / Success Messages
-	3.5 - Forms
-	3.6 - Ajax Loading
-	3.7 - Topics and Tables - Forums and General
-	3.8 - Headers, Lists and Tabs - Activity, Groups, Blogs, Forums
-		3.8.1 - Cover Image
-	3.9 - Private Messaging Threads
-	3.10 - Extended Profiles
-	3.11 - Widgets
-4.0 - Media Queries
-	4.1 - Smartphones Landscape
-	4.2 - Smartphones Portrait
-	4.3 - Smartphones - smaller screen sizes
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-1 - Navigation
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-1.1 - Pagination
---------------------------------------------------------------*/
-#buddypress div.pagination {
-	background: transparent;
-	border: none;
-	color: #888;
-	font-size: small;
-	margin: 0;
-	position: relative;
-	display: block;
-	float: left;
-	width: 100%;
-	padding: 10px 0;
-}
-#buddypress div.pagination .pag-count {
-	float: left;
-	margin-left: 10px;
-}
-#buddypress div.pagination .pagination-links {
-	float: right;
-	margin-right: 10px;
-}
-#buddypress div.pagination .pagination-links span,
-#buddypress div.pagination .pagination-links a {
-	font-size: 90%;
-	padding: 0 5px;
-}
-#buddypress div.pagination .pagination-links a:hover {
-	font-weight: bold;
-}
-#buddypress noscript div.pagination {
-	margin-bottom: 15px;
-}
-#buddypress #nav-above {
-	display: none;
-}
-#buddypress .paged #nav-above {
-	display: block;
-}
-/*--------------------------------------------------------------
-2 - WordPress
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-2.1 - Images
---------------------------------------------------------------*/
-#buddypress img.wp-smiley {
-	border: none !important;
-	clear: none !important;
-	float: none !important;
-	margin: 0 !important;
-	padding: 0 !important;
-}
-#buddypress .clear {
-	clear: left;
+/*
+Template Name: WDS BP Project Framework
+Template URI: https://github.com/WebDevStudios/WDS-BuddyPress-Project-Framework
+Author: WebDevStudios
+Author URI: http://webdevstudios.com
+Description: Custom buddypress theme for NPS: CLP
+Version: 2.3.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+/* line 4, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/bower/neat/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
 }
 
-/*--------------------------------------------------------------
-3.0 - BuddyPress
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-3.1 - Activity
---------------------------------------------------------------*/
-#buddypress #activity-stream {
-	margin-top: -5px;
+/* line 9, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/bower/neat/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
 }
 
-#buddypress #activity-stream p {
-	margin: 5px 0;
+/* line 5, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_navigation.scss */
+.buddypress .pagination {
+  background: transparent;
+  border: none;
+  color: #888888;
+  display: block;
+  float: left;
+  font-size: small;
+  margin: 0;
+  padding: 0.625rem 0;
+  position: relative;
+  width: 100%;
 }
 
-#buddypress #item-body form#whats-new-form {
-	margin: 0;
-	padding: 0;
-}
-#buddypress .home-page form#whats-new-form {
-	border-bottom: none;
-	padding-bottom: 0;
-}
-#buddypress form#whats-new-form #whats-new-avatar {
-	float: left;
-}
-#buddypress form#whats-new-form #whats-new-content {
-	margin-left: 55px;
-	padding: 0 0 20px 20px;
-}
-#buddypress form#whats-new-form p.activity-greeting {
-	line-height: 0.5em;
-	margin-bottom: 15px;
-	margin-left: 75px;
-}
-#buddypress form#whats-new-form textarea {
-	background: #fff;
-	color: #555;
-	font-family: inherit;
-	font-size: medium;
-	height: 20px;
-	padding: 6px;
-	width: 98%;
-}
-body.no-js #buddypress form#whats-new-form textarea {
-	height: 50px;
-}
-#buddypress form#whats-new-form #whats-new-options select {
-	max-width: 200px;
-	margin-top: 12px;
-}
-#buddypress form#whats-new-form #whats-new-submit {
-	float: right;
-	margin-top: 12px;
-}
-#buddypress #whats-new-options {
-	overflow: auto;
-	height: 0;
-}
-body.no-js #buddypress #whats-new-options {
-	height: auto;
-}
-#buddypress #whats-new:focus {
-	border-color: rgba(31, 179, 221, 0.9) !important;
-	outline-color: rgba(31, 179, 221, 0.9);
+/* line 17, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_navigation.scss */
+.buddypress .pagination .pag-count {
+  float: left;
+  margin-left: 0.625rem;
 }
 
-/*--------------------------------------------------------------
-3.1.1 - Activity Listing
---------------------------------------------------------------*/
-#buddypress ul.activity-list li {
-	overflow: hidden;
-	padding: 15px 0 0;
-	list-style: none;
-}
-#buddypress .activity-list .activity-avatar {
-	float: left;
-}
-#buddypress ul.item-list.activity-list li.has-comments {
-	padding-bottom: 15px;
-}
-body.activity-permalink #buddypress ul.activity-list li.has-comments {
-	padding-bottom: 0;
-}
-#buddypress .activity-list li.mini {
-	font-size: 80%;
-	position: relative;
-}
-#buddypress .activity-list li.mini .activity-avatar img.avatar,
-#buddypress .activity-list li.mini .activity-avatar img.FB_profile_pic {
-	height: 20px;
-	margin-left: 30px;
-	width: 20px;
-}
-#buddypress .activity-permalink .activity-list li.mini .activity-avatar img.avatar,
-#buddypress .activity-permalink .activity-list li.mini .activity-avatar img.FB_profile_pic {
-	height: auto;
-	margin-left: 0;
-	width: auto;
-}
-body.activity-permalink #buddypress .activity-list > li:first-child {
-	padding-top: 0;
-}
-#buddypress .activity-list li .activity-content {
-	position: relative;
-}
-#buddypress .activity-list li.mini .activity-content p {
-	margin: 0;
-}
-#buddypress .activity-list li.mini .activity-comments {
-	clear: both;
-	font-size: 120%;
-}
-body.activity-permalink #buddypress li.mini .activity-meta {
-	margin-top: 4px;
-}
-#buddypress .activity-list li .activity-inreplyto {
-	color: #888;
-	font-size: 80%;
-}
-#buddypress .activity-list li .activity-inreplyto > p {
-	margin: 0;
-	display: inline;
-}
-#buddypress .activity-list li .activity-inreplyto blockquote,
-#buddypress .activity-list li .activity-inreplyto div.activity-inner {
-	background: none;
-	border: none;
-	display: inline;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-}
-#buddypress .activity-list .activity-content {
-	margin: 0 0 0 70px;
-}
-body.activity-permalink #buddypress .activity-list li .activity-content {
-	border: none;
-	font-size: 100%;
-	line-height: 150%;
-	margin-left: 170px;
-	margin-right: 0;
-	padding: 0;
-}
-body.activity-permalink #buddypress .activity-list li .activity-header > p {
-	margin: 0;
-	padding: 5px 0 0 0;
-}
-#buddypress .activity-list .activity-content .activity-header,
-#buddypress .activity-list .activity-content .comment-header {
-	color: #888;
-	line-height: 220%;
-}
-#buddypress .activity-header {
-	margin-right: 20px;
-}
-#buddypress .activity-header a,
-#buddypress .comment-meta a,
-#buddypress .acomment-meta a {
-	text-decoration: none;
-}
-#buddypress .activity-list .activity-content .activity-header img.avatar {
-	float: none !important;
-	margin: 0 5px -8px 0 !important;
-}
-#buddypress a.bp-secondary-action,
-#buddypress span.highlight {
-	font-size: 80%;
-	padding: 0;
-	margin-right: 5px;
-	text-decoration: none;
-}
-#buddypress .activity-list .activity-content .activity-inner,
-#buddypress .activity-list .activity-content blockquote {
-	margin: 10px 10px 5px 0;
-	overflow: hidden;
-}
-#buddypress .activity-list li.new_forum_post .activity-content .activity-inner,
-#buddypress .activity-list li.new_forum_topic .activity-content .activity-inner {
-	border-left: 2px solid #EAEAEA;
-	margin-left: 5px;
-	padding-left: 10px;
-}
-body.activity-permalink #buddypress .activity-content .activity-inner,
-body.activity-permalink #buddypress .activity-content blockquote {
-	margin-left: 0;
-	margin-top: 5px;
-}
-#buddypress .activity-inner > p {
-	word-wrap: break-word;
-}
-#buddypress .activity-inner > .activity-inner {
-	margin: 0;
-}
-#buddypress .activity-inner > blockquote {
-	margin: 0;
-}
-#buddypress .activity-list .activity-content img.thumbnail {
-	border: 2px solid #eee;
-	float: left;
-	margin: 0 10px 5px 0;
-}
-#buddypress .activity-read-more {
-	margin-left: 1em;
-	white-space: nowrap;
-}
-#buddypress .activity-list li.load-more,
-#buddypress .activity-list li.load-newest {
-	background: #f0f0f0;
-	font-size: 110%;
-	margin: 15px 0;
-	padding: 10px 15px;
-	text-align: center;
-}
-#buddypress .activity-list li.load-more a,
-#buddypress .activity-list li.load-newest a {
-	color: #4D4D4D;
+/* line 22, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_navigation.scss */
+.buddypress .pagination .pagination-links {
+  float: right;
+  margin-right: 0.625rem;
 }
 
-
-/*--------------------------------------------------------------
-3.1.2 - Activity Comments
---------------------------------------------------------------*/
-#buddypress div.activity-meta {
-	margin: 18px 0 0;
-}
-body.activity-permalink #buddypress div.activity-meta {
-	margin-bottom: 6px;
-}
-#buddypress div.activity-meta a {
-	padding: 4px 8px;
-}
-#buddypress a.activity-time-since {
-	color: #aaa;
-	text-decoration: none;
-}
-#buddypress a.activity-time-since:hover {
-	color: #888;
-	text-decoration: underline;
-}
-#buddypress a.bp-primary-action,
-#buddypress #reply-title small a {
-	font-size: 80%;
-	margin-right: 5px;
-	text-decoration: none;
-}
-#buddypress a.bp-primary-action span,
-#buddypress #reply-title small a span {
-	background: #999;
-	color: #fff;
-	font-size: 90%;
-	margin-left: 2px;
-	padding: 0 5px;
-}
-#buddypress a.bp-primary-action:hover span,
-#buddypress #reply-title small a:hover span {
-	background: #555;
-	color: #fff;
-}
-#buddypress div.activity-comments {
-	margin: 0 0 0 70px;
-	overflow: hidden; /* IE fix */
-	position: relative;
-	width: auto;
-	clear: both;
-}
-body.activity-permalink #buddypress div.activity-comments {
-	background: none;
-	margin-left: 170px;
-	width: auto;
-}
-#buddypress div.activity-comments > ul {
-	padding: 0 0 0 10px;
-}
-#buddypress div.activity-comments ul,
-#buddypress div.activity-comments ul li {
-	border: none;
-	list-style: none;
-}
-#buddypress div.activity-comments ul {
-	clear: both;
-	margin: 0;
-}
-#buddypress div.activity-comments ul li {
-	border-top: 1px solid #eee;
-	padding: 10px 0 0;
-}
-body.activity-permalink #buddypress .activity-list li.mini .activity-comments {
-	clear: none;
-	margin-top: 0;
-}
-body.activity-permalink #buddypress div.activity-comments ul li {
-	border-width: 1px;
-	padding: 10px 0 0 0;
-}
-#buddypress div.activity-comments > ul > li:first-child {
-	border-top: none;
-}
-#buddypress div.activity-comments ul li:last-child {
-	margin-bottom: 0;
-}
-#buddypress div.activity-comments ul li > ul {
-	margin-left: 30px;
-	margin-top: 0;
-	padding-left: 10px;
-}
-body.activity-permalink #buddypress div.activity-comments ul li > ul {
-	margin-top: 10px;
-}
-body.activity-permalink #buddypress div.activity-comments > ul {
-	padding: 0 10px 0 15px;
-}
-#buddypress div.activity-comments div.acomment-avatar img {
-	border-width: 1px;
-	float: left;
-	height: 25px;
-	margin-right: 10px;
-	width: 25px;
-}
-#buddypress div.activity-comments div.acomment-content {
-	font-size: 80%;
-	margin: 5px 0 0 40px;
-}
-#buddypress div.acomment-content .time-since,
-#buddypress div.acomment-content .activity-delete-link,
-#buddypress div.acomment-content .comment-header {
-	display: none;
-}
-body.activity-permalink #buddypress div.activity-comments div.acomment-content {
-	font-size: 90%;
-}
-#buddypress div.activity-comments div.acomment-meta {
-	color: #888;
-	font-size: 80%;
-}
-#buddypress div.activity-comments form.ac-form {
-	display: none;
-	padding: 10px;
-}
-#buddypress div.activity-comments li form.ac-form {
-	margin-right: 15px;
-	clear: both;
-}
-#buddypress div.activity-comments form.root {
-	margin-left: 0;
-}
-#buddypress div.activity-comments div#message {
-	margin-top: 15px;
-	margin-bottom: 0;
-}
-#buddypress div.activity-comments form .ac-textarea {
-	background: #fff;
-	border: 1px inset #ccc;
-	margin-bottom: 10px;
-	padding: 8px;
-}
-#buddypress div.activity-comments form textarea {
-	border: none;
-	background: transparent;
-	box-shadow: none;
-	outline: none;
-	color: #555;
-	font-family: inherit;
-	font-size: 100%;
-	height: 60px;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-}
-#buddypress div.activity-comments form input {
-	margin-top: 5px;
-}
-#buddypress div.activity-comments form div.ac-reply-avatar {
-	float: left;
-}
-#buddypress div.ac-reply-avatar img {
-	border: 1px solid #eee;
-}
-#buddypress div.activity-comments form div.ac-reply-content {
-	color: #888;
-	margin-left: 50px;
-	padding-left: 15px;
-}
-#buddypress div.activity-comments form div.ac-reply-content a {
-	text-decoration: none;
-}
-#buddypress .acomment-options {
-	float: left;
-	margin: 5px 0 5px 40px;
-}
-#buddypress .acomment-options a {
-	color: #999;
-}
-#buddypress .acomment-options a:hover {
-	color: inherit;
+/* line 26, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_navigation.scss */
+.buddypress .pagination .pagination-links span,
+.buddypress .pagination .pagination-links a {
+  font-size: 90%;
+  padding: 0 0.3125rem;
 }
 
-/*--------------------------------------------------------------
-3.3 - Directories - Members, Groups, Blogs, Forums
---------------------------------------------------------------*/
-#buddypress div.dir-search {
-	float: right;
-	margin: -39px 0 0 0;
-}
-#buddypress div.dir-search input[type=text],
-#buddypress li.groups-members-search input[type=text] {
-	font-size: 90%;
-	padding: 1px 3px;
-}
-#buddypress .current-member-type {
-	font-style: italic;
-}
-#buddypress .dir-form {
-	clear: both;
+/* line 32, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_navigation.scss */
+.buddypress .pagination .pagination-links a:hover {
+  font-weight: 700;
 }
 
-/*--------------------------------------------------------------
-3.4 - Errors / Success Messages
---------------------------------------------------------------*/
-#buddypress div#message {
-	margin: 0 0 15px;
-}
-#buddypress #message.info {
-	margin-bottom: 0;
-}
-#buddypress div#message.updated {
-	clear: both;
-	display: block;
-}
-#buddypress div#message p,
-#sitewide-notice p {
-	font-size: 90%;
-	display: block;
-	padding: 10px 15px;
-}
-#buddypress div#message.error p {
-	background-color: #fdc;
-	border: 1px solid #a00;
-	clear: left;
-	color: #800;
-}
-#buddypress div#message.warning p {
-	background-color: #ffe0af;
-	border: 1px solid #ffd087;
-	clear: left;
-	color: #800;
-}
-#buddypress div#message.updated p {
-	background-color: #efc;
-	border: 1px solid #591;
-	color: #250;
-}
-#buddypress #pass-strength-result {
-	background-color: #eee;
-	border-color: #ddd;
-	border-style: solid;
-	border-width: 1px;
-	display: none;
-	margin: 5px 5px 5px 0;
-	padding: 5px;
-	text-align: center;
-	width: 150px;
-}
-#buddypress .standard-form #basic-details-section #pass-strength-result {
-	width: 35%;
-}
-#buddypress #pass-strength-result.error,
-#buddypress #pass-strength-result.bad {
-	background-color: #ffb78c;
-	border-color: #ff853c !important;
-	display: block;
-}
-#buddypress #pass-strength-result.good {
-	background-color: #ffec8b;
-	border-color: #fc0 !important;
-	display: block;
-}
-#buddypress #pass-strength-result.short {
-	background-color: #ffa0a0;
-	border-color: #f04040 !important;
-	display: block;
-}
-#buddypress #pass-strength-result.strong {
-	background-color: #c3ff88;
-	border-color: #8dff1c !important;
-	display: block;
-}
-#buddypress .standard-form#signup_form div div.error {
-	background: #faa;
-	color: #a00;
-	margin: 0 0 10px 0;
-	padding: 6px;
-	width: 90%;
-}
-#buddypress div.accept,
-#buddypress div.reject {
-	float: left;
-	margin-left: 10px;
-}
-#buddypress ul.button-nav li {
-	float: left;
-	margin: 0 10px 10px 0;
-	list-style: none;
-}
-#buddypress ul.button-nav li.current a {
-	font-weight: bold;
-}
-#sitewide-notice #message {
-	left: 2%;
-	position: fixed;
-	top: 1em;
-	width: 96%;
-	z-index: 9999;
-}
-#sitewide-notice.admin-bar-on #message {
-	top: 3.3em;
-}
-#sitewide-notice strong {
-	display: block;
-	margin-bottom: -1em;
+/* line 38, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_navigation.scss */
+.buddypress noscript div.pagination {
+  margin-bottom: 0.9375rem;
 }
 
-/*--------------------------------------------------------------
-3.5 - Forms
---------------------------------------------------------------*/
-#buddypress .standard-form textarea,
-#buddypress .standard-form input[type=text],
-#buddypress .standard-form input[type=text],
-#buddypress .standard-form input[type=color],
-#buddypress .standard-form input[type=date],
-#buddypress .standard-form input[type=datetime],
-#buddypress .standard-form input[type=datetime-local],
-#buddypress .standard-form input[type=email],
-#buddypress .standard-form input[type=month],
-#buddypress .standard-form input[type=number],
-#buddypress .standard-form input[type=range],
-#buddypress .standard-form input[type=search],
-#buddypress .standard-form input[type=tel],
-#buddypress .standard-form input[type=time],
-#buddypress .standard-form input[type=url],
-#buddypress .standard-form input[type=week],
-#buddypress .standard-form select,
-#buddypress .standard-form input[type=password],
-#buddypress .dir-search input[type=search],
-#buddypress .dir-search input[type=text],
-#buddypress .groups-members-search input[type=search],
-#buddypress .groups-members-search input[type=text] {
-	border: 1px solid #ccc;
-	background: #fafafa;
-	border-radius: 0;
-	color: #888;
-	font: inherit;
-	font-size: 100%;
-	padding: 6px;
-}
-#buddypress .standard-form select {
-	padding: 3px;
-}
-#buddypress .standard-form input[type=password] {
-	margin-bottom: 5px;
-}
-#buddypress .standard-form label,
-#buddypress .standard-form span.label {
-	display: block;
-	font-weight: bold;
-	margin: 15px 0 5px 0;
-	width: auto;
-}
-#buddypress .standard-form p label,
-#buddypress .standard-form #invite-list label {
-	font-weight: normal;
-	margin: auto;
-}
-#buddypress .standard-form div.checkbox label:nth-child(n+2),
-#buddypress .standard-form div.radio div label {
-	color: #888;
-	font-size: 100%;
-	font-weight: normal;
-	margin: 5px 0 0 0;
-}
-#buddypress .standard-form#sidebar-login-form label {
-	margin-top: 5px;
-}
-#buddypress .standard-form input[type=text] {
-	width: 75%;
-}
-#buddypress .standard-form#sidebar-login-form input[type=text],
-#buddypress .standard-form#sidebar-login-form input[type=password] {
-	padding: 4px;
-	width: 95%;
-}
-#buddypress .standard-form #basic-details-section input[type=password],
-#buddypress .standard-form #blog-details-section input#signup_blog_url {
-	width: 35%;
-}
-#buddypress .standard-form#signup_form input[type=text],
-#buddypress .standard-form#signup_form textarea,
-#buddypress .form-allowed-tags,
-#buddypress #commentform input[type=text],
-#buddypress #commentform textarea {
-	width: 90%;
-}
-#buddypress .standard-form#signup_form div.submit {
-	float: right;
-}
-#buddypress div#signup-avatar img {
-	margin: 0 15px 10px 0;
-}
-#buddypress .standard-form textarea {
-	width: 75%;
-	height: 120px;
-}
-#buddypress .standard-form textarea#message_content {
-	height: 200px;
-}
-#buddypress .standard-form#send-reply textarea {
-	width: 97.5%;
-}
-#buddypress .standard-form p.description {
-	color: #888;
-	font-size: 80%;
-	margin: 5px 0;
-}
-#buddypress .standard-form div.submit {
-	clear: both;
-	padding: 15px 0 0 0;
-}
-#buddypress .standard-form p.submit {
-	margin-bottom: 0;
-	padding: 15px 0 0 0;
-}
-#buddypress .standard-form div.submit input {
-	margin-right: 15px;
-}
-#buddypress .standard-form div.radio ul {
-	margin: 10px 0 15px 38px;
-	list-style: disc;
-}
-#buddypress .standard-form div.radio ul li {
-	margin-bottom: 5px;
-}
-#buddypress .standard-form a.clear-value {
-	display: block;
-	margin-top: 5px;
-	outline: none;
-}
-#buddypress .standard-form #basic-details-section,
-#buddypress .standard-form #blog-details-section,
-#buddypress .standard-form #profile-details-section {
-	float: left;
-	width: 48%;
-}
-#buddypress .standard-form #profile-details-section {
-	float: right;
-}
-#buddypress .standard-form #blog-details-section,
-#buddypress #notifications-bulk-management {
-	clear: left;
-}
-body.no-js #buddypress #notifications-bulk-management #select-all-notifications,
-body.no-js #buddypress label[for="message-type-select"],
-body.no-js #buddypress #message-type-select,
-body.no-js #buddypress #delete_inbox_messages,
-body.no-js #buddypress #delete_sentbox_messages,
-body.no-js #buddypress #messages-bulk-management #select-all-messages {
-	display: none;
-}
-#buddypress .standard-form input:focus,
-#buddypress .standard-form textarea:focus,
-#buddypress .standard-form select:focus {
-	background: #fafafa;
-	color: #555;
-}
-#buddypress form#send-invite-form {
-	margin-top: 20px;
-}
-#buddypress div#invite-list {
-	background: #f5f5f5;
-	height: 400px;
-	margin: 0 0 10px;
-	overflow: auto;
-	padding: 5px;
-	width: 160px;
-}
-#buddypress button,
-#buddypress a.button,
-#buddypress input[type=submit],
-#buddypress input[type=button],
-#buddypress input[type=reset],
-#buddypress ul.button-nav li a,
-#buddypress .generic-button a,
-#buddypress .comment-reply-link,
-a.bp-title-button {
-	background: #fff; /* Old browsers */
-	border: 1px solid #ccc;
-	color: #777;
-	font-size: small;
-	cursor: pointer;
-	outline: none;
-	padding: 4px 10px;
-	text-align: center;
-	text-decoration: none;
-}
-#buddypress button:hover,
-#buddypress a.button:hover,
-#buddypress a.button:focus,
-#buddypress input[type=submit]:hover,
-#buddypress input[type=button]:hover,
-#buddypress input[type=reset]:hover,
-#buddypress ul.button-nav li a:hover,
-#buddypress ul.button-nav li.current a,
-#buddypress div.generic-button a:hover,
-#buddypress .comment-reply-link:hover {
-	background: #ededed;
-	border: 1px solid #bbb;
-	color: #555;
-	outline: none;
-	text-decoration: none;
+/* line 42, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_navigation.scss */
+.buddypress #nav-above {
+  display: none;
 }
 
-#buddypress form.standard-form .left-menu {
-	float: left;
+/* line 46, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_navigation.scss */
+.buddypress .paged #nav-above {
+  display: block;
 }
 
-#buddypress form.standard-form .left-menu #invite-list ul{
-	margin:1%;
-	list-style: none;
+/* line 8, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_images.scss */
+.buddypress img.wp-smiley {
+  border: none !important;
+  clear: none !important;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-#buddypress form.standard-form .left-menu #invite-list ul li {
-	margin:0 0 0 1%;
+/* line 17, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_images.scss */
+.buddypress .clear {
+  clear: both;
 }
 
-#buddypress form.standard-form .main-column {
-	margin-left: 190px;
+/* line 6, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress .activity {
+  display: block;
+  font-size: small;
+  opacity: 0.8;
+  padding: 0;
 }
 
-#buddypress form.standard-form .main-column ul#friend-list {
-	clear:none;
-	float: left;
+/* line 16, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+#item-body .buddypress #whats-new-form {
+  margin: 0;
+  padding: 0;
 }
 
-#buddypress form.standard-form .main-column ul#friend-list h4 {
-	clear:none;
+/* line 20, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.home-page .buddypress #whats-new-form {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-/* Overrides for embedded WP editors */
-#buddypress .wp-editor-wrap a.button,
-#buddypress .wp-editor-wrap button,
-#buddypress .wp-editor-wrap input[type=submit],
-#buddypress .wp-editor-wrap input[type=button],
-#buddypress .wp-editor-wrap input[type=reset] {
-	padding: 0 8px 1px;
+/* line 25, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress #whats-new-form #whats-new-avatar {
+  float: left;
 }
 
-/* Form classes & generic attr styling */
-#buddypress form *[disabled="disabled"]{
-	cursor: default;
-	opacity: .4;
+/* line 29, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress #whats-new-form #whats-new-content {
+  margin-left: 3.4375rem;
+  padding: 0 0 1.25rem 1.25rem;
 }
 
-.bp-screen-reader-text {
-	position: absolute;
-	margin: -1px;
-	padding: 0;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	border: 0;
-	word-wrap: normal !important;
+/* line 34, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress #whats-new-form p.activity-greeting {
+  line-height: 0.5rem;
+  margin-bottom: 0.9375rem;
+  margin-left: 4.6875rem;
 }
 
-/*--------------------------------------------------------------
-3.6 - Ajax Loading
---------------------------------------------------------------*/
-#buddypress a.loading,
-#buddypress input.loading {
-	-webkit-animation: loader-pulsate .5s infinite ease-in-out alternate;
-	-moz-animation: loader-pulsate .5s infinite ease-in-out alternate;
-	border-color: #aaa;
-}
-@-webkit-keyframes loader-pulsate {
-	from {
-		border-color: #aaa;
-		-webkit-box-shadow: 0 0 6px #ccc;
-		box-shadow: 0 0 6px #ccc;
-	}
-	to {
-		border-color: #ccc;
-		-webkit-box-shadow: 0 0 6px #f8f8f8;
-		box-shadow: 0 0 6px #f8f8f8;
-	}
-}
-@-moz-keyframes loader-pulsate {
-	from {
-		border-color: #aaa;
-		-moz-box-shadow: 0 0 6px #ccc;
-		box-shadow: 0 0 6px #ccc;
-	}
-	to {
-		border-color: #ccc;
-		-moz-box-shadow: 0 0 6px #f8f8f8;
-		box-shadow: 0 0 6px #f8f8f8;
-	}
+/* line 40, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress #whats-new-form textarea {
+  height: 1.25rem;
+  width: 98%;
+  background: #ffffff;
+  color: #555555;
+  font-family: inherit;
+  font-size: medium;
+  padding: 0.375rem;
 }
 
-#buddypress a.loading:hover,
-#buddypress input.loading:hover {
-    color: #777;
-}
-#buddypress input[type="submit"].pending,
-#buddypress input[type="button"].pending,
-#buddypress input[type="reset"].pending,
-#buddypress input[type="submit"].disabled,
-#buddypress input[type="button"].disabled,
-#buddypress input[type="reset"].disabled,
-#buddypress input[type="submit"][disabled=disabled],
-#buddypress button.pending,
-#buddypress button.disabled,
-#buddypress div.pending a,
-#buddypress a.disabled {
-    border-color: #eee;
-    color: #bbb;
-    cursor: default;
-}
-#buddypress input[type="submit"]:hover.pending,
-#buddypress input[type="button"]:hover.pending,
-#buddypress input[type="reset"]:hover.pending,
-#buddypress input[type="submit"]:hover.disabled,
-#buddypress input[type="button"]:hover.disabled,
-#buddypress input[type="reset"]:hover.disabled,
-#buddypress button.pending:hover,
-#buddypress button.disabled:hover,
-#buddypress div.pending a:hover,
-#buddypress a.disabled:hover {
-	border-color: #eee;
-    color: #bbb;
+/* line 50, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress #whats-new-form #whats-new-options select {
+  margin-top: 0.75rem;
+  max-width: 12.5rem;
 }
 
-/*--------------------------------------------------------------
-3.7 - Forums, Tables and Topics
---------------------------------------------------------------*/
-#buddypress ul#topic-post-list {
-	margin: 0;
-	width: auto;
-}
-#buddypress ul#topic-post-list li {
-	padding: 15px;
-	position: relative;
-}
-#buddypress ul#topic-post-list li.alt {
-	background: #f5f5f5;
-}
-#buddypress ul#topic-post-list li div.poster-meta {
-	color: #888;
-	margin-bottom: 10px;
-}
-#buddypress ul#topic-post-list li div.post-content {
-	margin-left: 54px;
-}
-#buddypress div.topic-tags {
-	font-size: 80%;
-}
-#buddypress div.admin-links {
-	color: #888;
-	font-size: 80%;
-	position: absolute;
-	top: 15px;
-	right: 25px;
-}
-#buddypress div#topic-meta {
-	margin: 0;
-	padding: 5px 19px 30px;
-	position: relative;
-}
-#buddypress div#topic-meta div.admin-links {
-	right: 19px;
-	top: -36px;
-}
-#buddypress div#topic-meta h3 {
-	margin: 5px 0;
-}
-#buddypress div#new-topic-post {
-	display: none;
-	margin: 20px 0 0 0;
-	padding: 1px 0 0 0;
-}
-#buddypress table.notifications,
-#buddypress table.notifications-settings,
-#buddypress table.profile-settings,
-#buddypress table.profile-fields,
-#buddypress table.wp-profile-fields,
-#buddypress table.messages-notices,
-#buddypress table.forum {
-	width: 100%;
-}
-#buddypress table.notifications thead tr,
-#buddypress table.notifications-settings thead tr,
-#buddypress table.profile-settings thead tr,
-#buddypress table.profile-fields thead tr,
-#buddypress table.wp-profile-fields thead tr,
-#buddypress table.messages-notices thead tr,
-#buddypress table.forum thead tr {
-	background: #eaeaea;
-}
-#buddypress table#message-threads {
-	clear: both;
-}
-#buddypress table.profile-fields {
-	margin-bottom: 20px;
-}
-#buddypress table.profile-fields:last-child {
-	margin-bottom: 0;
-}
-#buddypress table.profile-fields p {
-	margin: 0;
-}
-#buddypress table.profile-fields p:last-child {
-	margin-top: 0;
-}
-#buddypress table.notifications tr td,
-#buddypress table.notifications-settings tr td,
-#buddypress table.profile-settings tr td,
-#buddypress table.profile-fields tr td,
-#buddypress table.wp-profile-fields tr td,
-#buddypress table.messages-notices tr td,
-#buddypress table.forum tr td,
-#buddypress table.notifications tr th,
-#buddypress table.notifications-settings tr th,
-#buddypress table.profile-fields tr th,
-#buddypress table.wp-profile-fields tr th,
-#buddypress table.messages-notices tr th,
-#buddypress table.forum tr th {
-	padding: 8px;
-	vertical-align: middle;
-}
-#buddypress table.notifications tr td.label,
-#buddypress table.notifications-settings tr td.label,
-#buddypress table.profile-fields tr td.label,
-#buddypress table.wp-profile-fields tr td.label,
-#buddypress table.messages-notices tr td.label,
-#buddypress table.forum tr td.label {
-	border-right: 1px solid #eaeaea;
-	font-weight: bold;
-	width: 25%;
-}
-#buddypress #message-threads .thread-info {
-	min-width: 40%;
-}
-#buddypress table tr td.thread-info p {
-	margin: 0;
-}
-#buddypress table tr td.thread-info p.thread-excerpt {
-	color: #888;
-	font-size: 80%;
-	margin-top: 3px;
-}
-#buddypress table.forum td {
-	text-align: center;
-}
-#buddypress table.notifications tr.alt td,
-#buddypress table.notifications-settings tr.alt td,
-#buddypress table.profile-settings tr.alt td,
-#buddypress table.profile-fields tr.alt td,
-#buddypress table.wp-profile-fields tr.alt td,
-#buddypress table.messages-notices tr.alt td,
-#buddypress table.forum tr.alt td {
-	background: #f5f5f5;
-}
-#buddypress table.notification-settings {
-	margin-bottom: 20px;
-	text-align: left;
-}
-#buddypress #groups-notification-settings {
-	margin-bottom: 0;
-}
-#buddypress table.notifications th.icon,
-#buddypress table.notifications td:first-child,
-#buddypress table.notification-settings th.icon,
-#buddypress table.notification-settings td:first-child {
-	display: none;
-}
-#buddypress table.notification-settings th.title,
-#buddypress table.profile-settings th.title {
-	width: 80%;
-}
-#buddypress table.notification-settings .yes,
-#buddypress table.notification-settings .no {
-	text-align: center;
-	width: 40px;
-}
-#buddypress table.forum {
-	margin: 0;
-	width: auto;
-	clear: both;
-}
-#buddypress table.forum tr.sticky td {
-	font-size: 110%;
-	background: #fff9db;
-	border-top: 1px solid #ffe8c4;
-	border-bottom: 1px solid #ffe8c4;
-}
-#buddypress table.forum tr.closed td.td-title {
-	padding-left: 35px;
-}
-#buddypress table.forum td p.topic-text {
-	color: #888;
-	font-size: 100%;
-}
-#buddypress table.forum tr > td:first-child,
-#buddypress table.forum tr > th:first-child {
-	padding-left: 15px;
-}
-#buddypress table.forum tr > td:last-child,
-#buddypress table.forum tr > th:last-child {
-	padding-right: 15px;
-}
-#buddypress table.forum tr th#th-title,
-#buddypress table.forum tr th#th-poster,
-#buddypress table.forum tr th#th-group,
-#buddypress table.forum td.td-poster,
-#buddypress table.forum td.td-group,
-#buddypress table.forum td.td-title {
-	text-align: left;
-}
-#buddypress table.forum tr td.td-title a.topic-title {
-	font-size: 110%;
-}
-#buddypress table.forum td.td-freshness {
-	white-space: nowrap;
-}
-#buddypress table.forum td.td-freshness span.time-since {
-	font-size: 80%;
-	color: #888;
-}
-#buddypress table.forum td img.avatar {
-	float: none;
-	margin: 0 5px -8px 0;
-}
-#buddypress table.forum td.td-poster,
-#buddypress table.forum td.td-group {
-	min-width: 140px;
-}
-#buddypress table.forum th#th-title {
-	width: 80%;
-}
-#buddypress table.forum th#th-freshness {
-	width: 25%;
-}
-#buddypress table.forum th#th-postcount {
-	width: 15%;
-}
-#buddypress table.forum p.topic-meta {
-	font-size: 80%;
-	margin: 5px 0 0 0;
+/* line 55, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress #whats-new-form #whats-new-submit {
+  float: right;
+  margin-top: 0.75rem;
 }
 
-/*-------------------------------------------------------------------------
-3.8 - Headers, Lists and Tabs - Activity, Groups, Blogs, Forums, Profiles
--------------------------------------------------------------------------*/
-#buddypress .item-body {
-	margin: 20px 0;
-}
-#buddypress span.activity {
-	display: inline-block;
-	font-size: small;
-	opacity: 0.8;
-	padding: 0;
-}
-#buddypress span.user-nicename {
-	color: #777;
-	display: inline-block;
-	font-size: 120%;
-	font-weight: bold;
-}
-#buddypress div#message p,
-#sitewide-notice p {
-	font-weight: normal;
-	margin-top: 3px;
-	text-decoration: none;
-	background-color: #ffd;
-	border: 1px solid #cb2;
-	color: #440;
-}
-#buddypress div#item-header {
-	overflow: hidden;
-	position: relative;
-}
-#buddypress div#item-header div#item-header-content {
-	float: left;
-	margin-left: 0;
-}
-#buddypress div#item-header h2 {
-	line-height: 120%;
-	margin: 0 0 15px 0;
-}
-#buddypress div#item-header h2 a {
-	color: #777;
-	text-decoration: none;
-}
-#buddypress div#item-header img.avatar {
-	float: left;
-	margin: 0 15px 19px 0;
-}
-#buddypress div#item-header h2 {
-	margin-bottom: 5px;
-}
-#buddypress div#item-header h2 span.highlight {
-	font-size: 60%;
-	font-weight: normal;
-	line-height: 170%;
-	vertical-align: middle;
-	display: inline-block;
-}
-#buddypress div#item-header h2 span.highlight span {
-	background: #a1dcfa;
-	color: #fff;
-	cursor: pointer;
-	font-weight: bold;
-	font-size: 80%;
-	margin-bottom: 2px;
-	padding: 1px 4px;
-	position: relative;
-	right: -2px;
-	top: -2px;
-	vertical-align: middle;
-}
-#buddypress div#item-header div#item-meta {
-	font-size: 80%;
-	color: #aaa;
-	overflow: hidden;
-	margin: 15px 0 5px 0;
-	padding-bottom: 10px;
-}
-#buddypress div#item-header div#item-actions {
-	float: right;
-	margin: 0 0 15px 15px;
-	text-align: right;
-	width: 20%;
-}
-#buddypress div#item-header div#item-actions h3 {
-	margin: 0 0 5px 0;
-}
-#buddypress div#item-header ul {
-	margin-bottom: 15px;
-	overflow: hidden;
-}
-#buddypress div#item-header ul h5,
-#buddypress div#item-header ul span,
-#buddypress div#item-header ul hr {
-	display: none;
-}
-#buddypress div#item-header ul li {
-	float: right;
-	list-style: none;
-}
-#buddypress div#item-header ul img.avatar,
-#buddypress div#item-header ul.avatars img.avatar {
-	height: 30px;
-	margin: 2px;
-	width: 30px;
-}
-#buddypress div#item-header div.generic-button,
-#buddypress div#item-header a.button {
-	float: left;
-	margin: 10px 10px 0 0;
-}
-body.no-js #buddypress div#item-header .js-self-profile-button {
-	display:none;
-}
-#buddypress div#item-header div#message.info {
-	line-height: 80%;
-}
-#buddypress ul.item-list {
-	border-top: 1px solid #eaeaea;
-	width: 100%;
-	list-style: none;
-	clear: both;
-	margin: 0;
-	padding: 0;
-}
-body.activity-permalink #buddypress ul.item-list,
-body.activity-permalink #buddypress ul.item-list li.activity-item {
-	border: none;
-}
-#buddypress ul.item-list li {
-	border-bottom: 1px solid #eaeaea;
-	padding: 15px 0;
-	margin: 0;
-	position: relative;
-	list-style: none;
-}
-#buddypress ul.single-line li {
-	border: none;
-}
-#buddypress ul.item-list li img.avatar {
-	float: left;
-	margin: 0 10px 0 0;
-}
-#buddypress ul.item-list li div.item-title,
-#buddypress ul.item-list li h4 {
-	font-weight: normal;
-	font-size: 90%;
-	margin: 0;
-	width: 75%;
-}
-#buddypress ul.item-list li div.item-title span {
-	color: #999;
-	font-size: 80%;
-}
-#buddypress ul.item-list li div.item-desc {
-	color: #888;
-	font-size: 80%;
-	margin: 10px 0 0 60px;
-	width: 50%;
-}
-#buddypress ul.item-list li.group-no-avatar div.item-desc {
-	margin-left: 0;
-}
-#buddypress ul.item-list li div.action {
-	position: absolute;
-	top: 15px;
-	right: 0;
-	text-align: right;
-}
-#buddypress ul.item-list li div.meta {
-	color: #888;
-	font-size: 80%;
-	margin-top: 10px;
-}
-#buddypress ul.item-list li h5 span.small {
-	float: right;
-	font-size: 80%;
-	font-weight: normal;
-}
-#buddypress div.item-list-tabs {
-	background: transparent;
-	clear: left;
-	overflow: hidden;
+/* line 60, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress #whats-new-form #whats-new-options {
+  height: 0;
+  overflow: auto;
 }
 
-#buddypress div.item-list-tabs ul {
-	margin: 0;
-	padding: 0;
-}
-#buddypress div.item-list-tabs ul li {
-	float: left;
-	margin: 0;
-	list-style: none;
-}
-#buddypress div.item-list-tabs#subnav ul li {
-	margin-top: 0;
-}
-#buddypress div.item-list-tabs ul li.last {
-	float: right;
-	margin: 7px 0 0;
-}
-#buddypress div.item-list-tabs#subnav ul li.last {
-	margin-top: 4px;
-}
-#buddypress div.item-list-tabs ul li.last select {
-	max-width: 185px;
-}
-#buddypress div.item-list-tabs ul li a,
-#buddypress div.item-list-tabs ul li span {
-	display: block;
-	padding: 5px 10px;
-	text-decoration: none;
-}
-#buddypress div.item-list-tabs ul li a span {
-	background: #eee;
-	border-radius: 50%;
-	border: 1px solid #ccc;
-	color: #999;
-	display: inline;
-	font-size: 70%;
-	margin-left: 2px;
-	padding: 3px 6px;
-	text-align: center;
-	vertical-align: middle;
-}
-#buddypress div.item-list-tabs ul li.selected a,
-#buddypress div.item-list-tabs ul li.current a {
-	background-color: #eee;
-	color: #555;
-	opacity: .8;
-	font-weight: bold;
-}
-#buddypress div.item-list-tabs ul li.selected a span,
-#buddypress div.item-list-tabs ul li.current a span,
-#buddypress div.item-list-tabs ul li a:hover span {
-	background-color: #eee;
-}
-#buddypress div.item-list-tabs ul li.selected a span,
-#buddypress div.item-list-tabs ul li.current a span {
-	background-color: #fff;
-}
-#buddypress div#item-nav ul li.loading a {
-	background-position: 88% 50%;
-}
-#buddypress div.item-list-tabs#object-nav {
-	margin-top: 0;
-}
-#buddypress div.item-list-tabs#subnav {
-	background: transparent;
-	margin: 10px 0 10px;
-	overflow: hidden;
-}
-#buddypress #admins-list li,
-#buddypress #mods-list li,
-#buddypress #members-list li {
-	overflow: auto;
-	list-style: none;
+/* line 64, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress #whats-new-form #whats-new-options:focus {
+  border-color: rgba(31, 179, 221, 0.9) !important;
+  outline-color: rgba(31, 179, 221, 0.9);
 }
 
-/*--------------------------------------------------------------
-3.8.1 - Cover Image
---------------------------------------------------------------*/
-
-#buddypress #header-cover-image {
-	background-color: #c5c5c5;
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border: 0;
-	display: block;
-	left: 0;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 1;
+/* line 76, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress.no-js #whats-new-form textarea {
+  height: 3.125rem;
 }
 
-#buddypress #item-header-cover-image {
-	padding: 0 1em;
-	position: relative;
-	z-index: 999;
+/* line 80, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity.scss */
+.buddypress.no-js #whats-new-form #whats-new-options {
+  height: 3.75rem;
 }
 
-/*--------------------------------------------------------------
-3.9 - Private Messaging Threads
---------------------------------------------------------------*/
-#buddypress table#message-threads tr.unread td {
-	background: #fff9db;
-	border-top: 1px solid #ffe8c4;
-	border-bottom: 1px solid #ffe8c4;
-	font-weight: bold;
-}
-#buddypress table#message-threads tr.unread td .thread-excerpt,
-#buddypress table#message-threads tr.unread td .activity,
-#buddypress table#message-threads tr.unread td.thread-options {
-	font-weight: normal;
-}
-#buddypress li span.unread-count,
-#buddypress tr.unread span.unread-count {
-	background: #dd0000;
-	color: #fff;
-	font-weight: bold;
-	padding: 2px 8px;
-}
-#buddypress div.item-list-tabs ul li a span.unread-count {
-	padding: 1px 6px;
-	color: #fff;
-}
-#buddypress div#message-thread div.message-box {
-	margin: 0;
-	padding: 15px;
-}
-#buddypress div#message-thread div.alt {
-	background: #f4f4f4;
-}
-#buddypress div#message-thread p#message-recipients {
-	margin: 10px 0 20px 0;
-}
-#buddypress div#message-thread img.avatar {
-	float: left;
-	margin: 0 10px 0 0;
-	vertical-align: middle;
-}
-#buddypress div#message-thread strong {
-	font-size: 100%;
-	margin: 0;
-}
-#buddypress div#message-thread strong a {
-	text-decoration: none;
-}
-#buddypress div#message-thread strong span.activity {
-	margin-top: 4px;
-}
-#buddypress div#message-thread div.message-metadata {
-	overflow: hidden;
-}
-#buddypress div#message-thread div.message-content {
-	margin-left: 45px;
-}
-#buddypress div#message-thread div.message-options {
-	text-align: right;
-}
-#buddypress #message-threads img.avatar {
-	max-width: none;
-}
-#buddypress div.message-search {
-	float: right;
-	margin: 0 20px;
+/* line 6, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress #activity-stream {
+  margin-top: -0.3125rem;
 }
 
-.message-metadata {
-	position: relative;
-}
-.message-star-actions {
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-#buddypress a.message-action-star,
-#buddypress a.message-action-unstar {
-	border-bottom: 0;
-	text-decoration: none;
-	outline: none;
-}
-a.message-action-star {
-	opacity: .7;
-}
-a.message-action-star:hover {
-	opacity: 1;
-}
-.message-action-star span.icon:before,
-.message-action-unstar span.icon:before {
-	font-family: dashicons;
-	font-size: 18px;
-}
-.message-action-star span.icon:before {
-	color: #aaa;
-	content: "\f154";
-}
-.message-action-unstar span.icon:before {
-	color: #FCDD77;
-	content: "\f155";
+/* line 9, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress #activity-stream p {
+  margin: 0.3125rem 0;
 }
 
-/*--------------------------------------------------------------
-3.10 - Extended Profiles
---------------------------------------------------------------*/
-
-#buddypress div.profile h4 {
-	margin-bottom: auto;
-	margin-top: 15px;
-}
-#buddypress #profile-edit-form ul.button-nav {
-	margin-top: 15px;
-}
-body.no-js #buddypress .field-visibility-settings-toggle,
-body.no-js #buddypress .field-visibility-settings-close {
-	display: none;
-}
-#buddypress .field-visibility-settings {
-	display: none;
-	margin-top: 10px;
-}
-	body.no-js #buddypress .field-visibility-settings {
-		display: block;
-	}
-#buddypress .current-visibility-level {
-	font-weight: bold;
-	font-style: normal;
-}
-#buddypress .field-visibility-settings,
-#buddypress .field-visibility-settings-toggle,
-#buddypress .field-visibility-settings-notoggle {
-	color: #888;
-}
-#buddypress .field-visibility-settings-toggle a,
-#buddypress .field-visibility-settings a {
-	font-size: 80%;
-}
-body.register #buddypress div.page ul {
-	list-style: none;
-}
-#buddypress .standard-form .field-visibility-settings label {
-	margin: 0;
-	font-weight: normal;
-}
-#buddypress .field-visibility-settings legend,
-#buddypress .field-visibility-settings-toggle {
-	font-style: italic;
-}
-#buddypress .field-visibility-settings .radio {
-	list-style: none;
-	margin-bottom: 0;
-}
-#buddypress .field-visibility select {
-	margin: 0;
-}
-#buddypress .wp-editor-container {
-	border: 1px solid #dedede;
-}
-#buddypress .html-active button.switch-html {
-	border-bottom-color: transparent;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	background: #f5f5f5;
-}
-#buddypress .tmce-active button.switch-tmce {
-	border-bottom-color: transparent;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-	background: #f5f5f5;
-}
-#buddypress .standard-form .wp-editor-container textarea {
-	width: 100%;
-	padding-top: 0;
-	padding-bottom: 0;
+/* line 16, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li {
+  overflow: hidden;
+  padding: 0.9375rem 0 0;
+  list-style: none;
 }
 
-/*--------------------------------------------------------------
-3.11 - Widgets
---------------------------------------------------------------*/
-
-.widget.buddypress div.item-avatar img.avatar {
-	float: left;
-	margin: 0 10px 15px 0;
+/* line 21, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li.has-comments {
+  padding-bottom: 0.9375rem;
 }
 
-.widget.buddypress span.activity {
-	display: inline-block;
-	font-size: small;
-	opacity: 0.8;
-	padding: 0;
+/* line 25, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li.load-more, .buddypress ul.activity-list li.load-newest {
+  background: #fafafa;
+  font-size: 110%;
+  margin: 0.9375rem 0;
+  padding: 0.625rem 0.9375rem;
+  text-align: center;
 }
 
-.widget.buddypress div.item-options {
-	font-size: 90%;
-	margin: 0 0 1em 0;
-	padding: 1em 0;
+/* line 33, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li.load-more a, .buddypress ul.activity-list li.load-newest a {
+  color: #4d4d4d;
 }
 
-.widget.buddypress div.item{
-	margin:0 0 1em 0;
+/* line 40, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-content {
+  margin: 0 0 0 4.375rem;
+  position: relative;
 }
 
-.widget.buddypress div.item-meta,
-.widget.buddypress div.item-content {
-	font-size: 11px;
-	margin-left: 50px;
+/* line 44, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-content blockquote {
+  margin: 0.625rem 0.625rem 0.3125rem 0;
+  overflow: hidden;
 }
 
-.widget.buddypress ul.item-list img.avatar {
-	height: 40px;
-	margin-right: 10px;
-	width: 40px;
-}
-.widget.buddypress div.item-avatar img {
-	height: 40px;
-	margin: 1px;
-	width: 40px;
+/* line 49, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-content .thumbnail {
+  border: 2px solid #eeeeee;
+  float: left;
+  margin: 0 0.625rem 0.3125rem 0;
 }
 
-.widget.buddypress div.avatar-block{
-	overflow: hidden;
+/* line 57, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-header {
+  color: #888888;
+  line-height: 220%;
+  margin-right: 1.25rem;
 }
 
-.widget.buddypress #bp-login-widget-form label {
-	display: block;
-	margin: 1rem 0 .5rem;
+/* line 62, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-header a {
+  text-decoration: none;
 }
 
-.widget.buddypress #bp-login-widget-form #bp-login-widget-submit {
-	margin-right: 10px;
+/* line 66, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-header .avatar {
+  float: none !important;
+  margin: 0 0.3125rem -0.5rem 0 !important;
 }
 
-.widget.buddypress .bp-login-widget-user-avatar {
-	float: left;
+/* line 73, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-inner {
+  margin: 0.625rem 0.625rem 0.3125rem 0;
+  overflow: hidden;
 }
 
-.bp-login-widget-user-avatar img.avatar {
-	height: 40px;
-	width: 40px;
+/* line 77, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-inner > p {
+  word-wrap: break-word;
 }
 
-.widget.buddypress .bp-login-widget-user-links > div {
-	padding-left: 60px;
+/* line 81, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-inner > blockquote {
+  margin: 0;
 }
 
-.widget.buddypress .bp-login-widget-user-links > div {
-	margin-bottom: .5rem;
+/* line 89, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-meta a.bp-secondary-action {
+  margin-right: 0.3125rem;
+  text-decoration: none;
 }
 
-.widget.buddypress .bp-login-widget-user-links > div.bp-login-widget-user-link a {
-	font-weight: bold;
+/* line 96, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-inreplyto {
+  color: #888888;
+  font-size: 80%;
 }
 
-.widget.buddypress #groups-list,
-.widget.buddypress #members-list,
-.widget.buddypress #friends-list {
-	margin-left: 0;
-	padding-left: 0;
+/* line 100, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-inreplyto > p {
+  margin: 0;
+  display: inline;
 }
 
-.widget.buddypress #groups-list li,
-.widget.buddypress #members-list li,
-.widget.buddypress #friends-list li {
-	clear: both;
-	list-style-type: none;
+/* line 105, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-inreplyto blockquote,
+.buddypress ul.activity-list .activity-inreplyto .activity-inner {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  display: inline;
+  overflow: hidden;
 }
 
-/*--------------------------------------------------------------
-4.0 - Media Queries
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-4.1 - Smartphones - landscape
---------------------------------------------------------------*/
-@media only screen and (max-width: 480px ){
-	#buddypress div.dir-search {
-		float: right;
-		margin-top: -50px;
-		text-align: right;
-	}
-	#buddypress div.dir-search input[type="text"] {
-		margin-bottom: 1em;
-		width: 50%;
-	}
-	a.bp-title-button {
-		margin-left: 10px;
-	}
-	#buddypress form.standard-form .main-column div.action{
-		position: relative;
-		margin-bottom:1em;
-	}
-	#buddypress form.standard-form .main-column ul#friend-list h4{
-		width:100%;
-	}
+/* line 116, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li.mini {
+  font-size: 80%;
+  position: relative;
 }
 
-/*--------------------------------------------------------------
-4.2 - Smartphones - portrait
---------------------------------------------------------------*/
-@media only screen and (max-width: 320px) {
-	#buddypress div.dir-search {
-		clear: left;
-		float: left;
-		margin-top: 0;
-		text-align: left;
-	}
-	#buddypress li#groups-order-select {
-		clear: left;
-		float: left;
-	}
-	#buddypress ul.item-list li div.action {
-		clear: left;
-		float: left;
-		margin-top: 0;
-		margin-left: 70px;
-		position: relative;
-		top: 0;
-		right: 0;
-		text-align: left;
-	}
-	#buddypress ul.item-list li div.item-desc {
-		clear: left;
-		float: left;
-		margin: 10px 0 0;
-		width: auto;
-	}
-	#buddypress li div.item {
-		margin-left: 70px;
-		width: auto;
-	}
-	#buddypress ul.item-list li div.meta {
-		margin-top: 0;
-	}
-	#buddypress .item-desc p {
-		margin: 0 0 10px;
-	}
-	#buddypress div.pagination .pag-count {
-		margin-left: 0;
-	}
+/* line 123, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li.mini .activity-avatar img.avatar, .buddypress ul.activity-list li.mini .activity-avatar img.FB_profile_pic {
+  height: 1.25rem;
+  margin-left: 1.875rem;
+  width: 1.25rem;
 }
 
-/*--------------------------------------------------------------
-4.2 - Smartphones - smaller screen sizes
---------------------------------------------------------------*/
-@media only screen and (max-width: 240px) {
-	#buddypress div.dir-search {
-		float: left;
-		margin: 0;
-	}
-	#buddypress div.dir-search input[type="text"] {
-		width: 50%;
-	}
-	#buddypress li#groups-order-select {
-		float: left;
-	}
-	#buddypress ul.item-list li img.avatar {
-		width: 30px;
-		height: auto;
-	}
-	#buddypress ul.item-list li div.action,
-	#buddypress li div.item{
-		margin-left: 45px;
-	}
-	h1 a.bp-title-button {
-		clear: left;
-		float: left;
-		margin: 10px 0 20px;
-	}
+/* line 134, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li.mini .activity-content p {
+  margin: 0;
 }
+
+/* line 139, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li.mini .activity-comments {
+  clear: both;
+  font-size: 120%;
+}
+
+/* line 148, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list li.new_forum_post .activity-inner,
+.buddypress ul.activity-list li.new_forum_topic .activity-inner {
+  border-left: 2px solid #eaeaea;
+  margin-left: 0.3125rem;
+  padding-left: 0.625rem;
+}
+
+/* line 155, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress ul.activity-list .activity-avatar {
+  float: left;
+}
+
+/* line 162, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress .comment-meta a {
+  text-decoration: none;
+}
+
+/* line 166, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress span.highlight {
+  font-size: 80%;
+  padding: 0;
+  margin-right: 0.3125rem;
+  text-decoration: none;
+}
+
+/* line 178, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress body.activity-permalink .activity-list > li:first-child {
+  padding-top: 0;
+}
+
+/* line 184, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress body.activity-permalink .activity-list li.has-comments {
+  padding-bottom: 0;
+}
+
+/* line 189, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress body.activity-permalink .activity-list .activity-content {
+  border: none;
+  font-size: 100%;
+  line-height: 150%;
+  margin-left: 10.625rem;
+  margin-right: 0;
+  padding: 0;
+}
+
+/* line 200, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress body.activity-permalink .activity-list .activity-header > p {
+  margin: 0;
+  padding: 0.3125rem 0 0 0;
+}
+
+/* line 208, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress body.activity-permalink .activity-list li.mini .activity-meta {
+  margin-top: 0.25rem;
+}
+
+/* line 214, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress body.activity-permalink .activity-list li.mini .activity-avatar .avatar,
+.buddypress body.activity-permalink .activity-list li.mini .activity-avatar .FB_profile_pic {
+  height: auto;
+  margin-left: 0;
+  width: auto;
+}
+
+/* line 224, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress body.activity-permalink .activity-inner,
+.buddypress body.activity-permalink blockquote {
+  margin-left: 0;
+  margin-top: 0.3125rem;
+}
+
+/* line 231, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-listing.scss */
+.buddypress .activity-read-more {
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+/* line 6, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-meta {
+  margin: 1.125rem 0 0;
+}
+
+/* line 9, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-meta a {
+  padding: 0.25rem 0.5rem;
+}
+
+/* line 14, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress a.activity-time-since {
+  color: #aaaaaa;
+  text-decoration: none;
+}
+
+/* line 18, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress a.activity-time-since:hover {
+  color: #888888;
+  text-decoration: underline;
+}
+
+/* line 24, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments {
+  clear: both;
+  margin: 0 0 0 4.375rem;
+  overflow: hidden;
+  position: relative;
+  width: auto;
+}
+
+/* line 31, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments > ul {
+  padding: 0 0 0 0.625rem;
+}
+
+/* line 36, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments > ul > li:first-child {
+  border-top: none;
+}
+
+/* line 42, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments ul {
+  border: none;
+  clear: both;
+  list-style: none;
+  margin: 0;
+}
+
+/* line 48, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments ul li {
+  border: none;
+  border-top: 1px solid #eeeeee;
+  list-style: none;
+  padding: 0.625rem 0 0;
+}
+
+/* line 54, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* line 58, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments ul li > ul {
+  margin-left: 1.875rem;
+  margin-top: 0;
+  padding-left: 0.625rem;
+}
+
+/* line 68, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .acomment-avatar img {
+  height: 1.5625rem;
+  width: 1.5625rem;
+  border-width: 1px;
+  float: left;
+  margin-right: 0.625rem;
+}
+
+/* line 77, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .acomment-content {
+  font-size: 80%;
+  margin: 0.3125rem 0 0 2.5rem;
+}
+
+/* line 81, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .acomment-content .time-since,
+.buddypress .activity-comments .acomment-content .activity-delete-link,
+.buddypress .activity-comments .acomment-content .comment-header {
+  display: none;
+}
+
+/* line 88, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .acomment-options {
+  float: left;
+  margin: 0.3125rem 0 0.3125rem 2.5rem;
+}
+
+/* line 92, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .acomment-options a {
+  color: #999999;
+}
+
+/* line 95, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .acomment-options a:hover {
+  color: inherit;
+}
+
+/* line 101, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .acomment-meta {
+  color: #888888;
+  font-size: 80%;
+}
+
+/* line 105, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .acomment-meta a {
+  text-decoration: none;
+}
+
+/* line 111, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-form {
+  display: none;
+  padding: 0.625rem;
+  clear: both;
+  margin-right: 0.9375rem;
+}
+
+/* line 117, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-form.root {
+  margin-left: 0;
+}
+
+/* line 121, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-form .ac-textarea {
+  background: #ffffff;
+  border: 1px inset #cccccc;
+  margin-bottom: 0.625rem;
+  padding: 0.5rem;
+}
+
+/* line 128, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-form textarea {
+  margin: 0;
+  padding: 0;
+  height: 3.75rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #555555;
+  font-family: inherit;
+  font-size: 100%;
+  outline: none;
+}
+
+/* line 141, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-form input {
+  margin-top: 0.3125rem;
+}
+
+/* line 145, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-form .ac-reply-avatar {
+  float: left;
+}
+
+/* line 149, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-form .ac-reply-content {
+  color: #888888;
+  margin-left: 3.125rem;
+  padding-left: 0.9375rem;
+}
+
+/* line 154, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-form .ac-reply-content a {
+  text-decoration: none;
+}
+
+/* line 160, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments div#message {
+  margin-bottom: 0;
+  margin-top: 0.9375rem;
+}
+
+/* line 167, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress .activity-comments .ac-reply-avatar img {
+  border: 1px solid #eeeeee;
+}
+
+/* line 175, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress body.activity-permalink .activity-comments {
+  background: none;
+  margin-left: 10.625rem;
+  width: auto;
+}
+
+/* line 180, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress body.activity-permalink .activity-comments .acomment-content {
+  font-size: 90%;
+}
+
+/* line 185, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress body.activity-permalink .activity-meta {
+  margin-bottom: 0.375rem;
+}
+
+/* line 193, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress body.activity-permalink .activity-list li.mini .activity-comments {
+  clear: none;
+  margin-top: 0;
+}
+
+/* line 204, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress body.activity-permalink .activity-comments ul li {
+  border-width: 1px;
+  padding: 0.625rem 0 0 0;
+}
+
+/* line 208, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress body.activity-permalink .activity-comments ul li > ul {
+  margin-top: 0.625rem;
+}
+
+/* line 214, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress body.activity-permalink .activity-comments > ul {
+  padding: 0 0.625rem 0 0.9375rem;
+}
+
+/* line 223, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress a.bp-primary-action,
+.buddypress a small a,
+.buddypress #reply-title.bp-primary-action,
+.buddypress #reply-title small a {
+  font-size: 80%;
+  margin-right: 0.3125rem;
+  text-decoration: none;
+}
+
+/* line 230, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress a.bp-primary-action span,
+.buddypress a small a span,
+.buddypress #reply-title.bp-primary-action span,
+.buddypress #reply-title small a span {
+  background: #999999;
+  color: #ffffff;
+  font-size: 90%;
+  margin-left: 0.125rem;
+  padding: 0 0.3125rem;
+}
+
+/* line 239, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_activity-comments.scss */
+.buddypress a.bp-primary-action:hover span,
+.buddypress a small a:hover span,
+.buddypress #reply-title.bp-primary-action:hover span,
+.buddypress #reply-title small a:hover span {
+  background: #555555;
+  color: #ffffff;
+}
+
+/* line 5, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_directories-members-groups-blogs-forums.scss */
+.buddypress .dir-search {
+  float: right;
+  margin: -2.4375rem 0 0 0;
+}
+
+/* line 10, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_directories-members-groups-blogs-forums.scss */
+.buddypress .dir-search input[type=text],
+.buddypress li.groups-members-search input[type=text] {
+  font-size: 90%;
+  padding: 0.0625rem 0.1875rem;
+}
+
+/* line 16, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_directories-members-groups-blogs-forums.scss */
+.buddypress .current-member-type {
+  font-style: italic;
+}
+
+/* line 20, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_directories-members-groups-blogs-forums.scss */
+.buddypress .dir-form {
+  clear: both;
+}
+
+/* line 5, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #message {
+  margin: 0 0 0.9375rem;
+}
+
+/* line 8, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #message .info {
+  margin-bottom: 0;
+}
+
+/* line 12, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #message .updated {
+  clear: both;
+  display: block;
+}
+
+/* line 17, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #message p,
+.buddypress #message #sitewide-notice p {
+  display: block;
+  font-size: 90%;
+  padding: 0.625rem 0.9375rem;
+}
+
+/* line 24, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #message .error p {
+  background-color: #ffdffd;
+  border: 1px solid #a00a00;
+  clear: left;
+  color: #800800;
+}
+
+/* line 31, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #message .warning p {
+  background-color: #ffe0af;
+  border: 1px solid #ffdffd;
+  clear: left;
+  color: #800800;
+}
+
+/* line 38, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #message .updated p {
+  background-color: #efcefc;
+  border: 1px solid #591591;
+  color: #250250;
+}
+
+/* line 45, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #pass-strength-result {
+  background-color: #eeeeee;
+  border-width: 1px sold #dddddd;
+  display: none;
+  margin: 0.3125rem 0.3125rem 0.3125rem 0;
+  padding: 0.3125rem;
+  text-align: center;
+  width: 9.375rem;
+}
+
+/* line 54, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #pass-strength-result .error,
+.buddypress #pass-strength-result .bad {
+  background-color: #ffb78c;
+  border-color: #ff853c !important;
+  display: block;
+}
+
+/* line 61, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #pass-strength-result .good {
+  background-color: #ffec8b;
+  border-color: #fc0fc0 !important;
+  display: block;
+}
+
+/* line 67, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #pass-strength-result .short {
+  background-color: #ffa0a0;
+  border-color: #f04040 !important;
+  display: block;
+}
+
+/* line 73, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #pass-strength-result .strong {
+  background-color: #c3ff88;
+  border-color: #8dff1c !important;
+  display: block;
+}
+
+/* line 82, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress .standard-form #basic-details-section #pass-strength-result {
+  width: 35%;
+}
+
+/* line 86, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress .standard-form #signup_form div div.error {
+  background: #faafaa;
+  color: #a00a00;
+  margin: 0 0 0.625rem 0;
+  padding: 0.375rem;
+  width: 90%;
+}
+
+/* line 95, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress div.accept,
+.buddypress div.reject {
+  float: left;
+  margin-left: 0.625rem;
+}
+
+/* line 101, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress ul.button-nav li {
+  float: left;
+  list-style: none;
+  margin: 0 0.625rem 0.625rem 0;
+}
+
+/* line 107, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress ul.button-nav li.current a {
+  font-weight: 700;
+}
+
+/* line 113, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #sitewide-notice #message {
+  left: 2%;
+  position: fixed;
+  top: 1rem;
+  width: 96%;
+  z-index: 9999;
+}
+
+/* line 121, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #sitewide-notice .admin-bar-on #message {
+  top: 3.3125rem;
+}
+
+/* line 125, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_error-success-messages.scss */
+.buddypress #sitewide-notice strong {
+  display: block;
+  margin-bottom: -1rem;
+}
+
+/* line 8, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form textarea,
+.buddypress .standard-form input[type=text],
+.buddypress .standard-form input[type=color],
+.buddypress .standard-form input[type=date],
+.buddypress .standard-form input[type=datetime],
+.buddypress .standard-form input[type=datetime-local],
+.buddypress .standard-form input[type=email],
+.buddypress .standard-form input[type=month],
+.buddypress .standard-form input[type=number],
+.buddypress .standard-form input[type=range],
+.buddypress .standard-form input[type=search],
+.buddypress .standard-form input[type=tel],
+.buddypress .standard-form input[type=time],
+.buddypress .standard-form input[type=url],
+.buddypress .standard-form input[type=week],
+.buddypress .standard-form select,
+.buddypress .standard-form input[type=password] {
+  background: #fafafa;
+  border-radius: 0;
+  border: 1px solid #cccccc;
+  color: #888888;
+  font-size: 100%;
+  font: inherit;
+  padding: 0.375rem;
+}
+
+/* line 34, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form select {
+  padding: 0.1875rem;
+}
+
+/* line 38, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form input[type=password] {
+  margin-bottom: 0.3125rem;
+}
+
+/* line 42, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form label,
+.buddypress .standard-form span.label {
+  display: block;
+  font-weight: 700;
+  margin: 0.9375rem 0 0.3125rem 0;
+  width: auto;
+}
+
+/* line 50, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form input[type=text] {
+  width: 75%;
+}
+
+/* line 54, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form textarea {
+  height: 7.5rem;
+  width: 75%;
+}
+
+/* line 57, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form textarea#message_content {
+  height: 12.5rem;
+}
+
+/* line 66, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form input:focus,
+.buddypress .standard-form textarea:focus,
+.buddypress .standard-form select:focus {
+  background: #fafafa;
+  color: #555555;
+}
+
+/* line 74, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form p.description {
+  color: #888888;
+  font-size: 80%;
+  margin: 0.3125rem 0;
+}
+
+/* line 80, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form p.submit {
+  margin-bottom: 0;
+  padding: 0.9375rem 0 0 0;
+}
+
+/* line 88, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form a.clear-value {
+  display: block;
+  margin-top: 0.3125rem;
+  outline: none;
+}
+
+/* line 96, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #basic-details-section,
+.buddypress .standard-form #blog-details-section,
+.buddypress .standard-form #profile-details-section {
+  float: left;
+  width: 48%;
+}
+
+/* line 103, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #profile-details-section {
+  float: right;
+}
+
+/* line 107, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #blog-details-section,
+.buddypress .standard-form #notifications-bulk-management {
+  clear: left;
+}
+
+/* line 114, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #sidebar-login-form input[type=text],
+.buddypress .standard-form #sidebar-login-form input[type=password] {
+  padding: 0.25rem;
+  width: 95%;
+}
+
+/* line 120, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #sidebar-login-form label {
+  margin-top: 0.3125rem;
+}
+
+/* line 128, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #basic-details-section input[type=password],
+.buddypress .standard-form #basic-details-section #signup_blog_url,
+.buddypress .standard-form #blog-details-section input[type=password],
+.buddypress .standard-form #blog-details-section #signup_blog_url {
+  width: 35%;
+}
+
+/* line 138, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #signup_form input[type=text],
+.buddypress .standard-form #signup_form textarea,
+.buddypress .standard-form .form-allowed-tags input[type=text],
+.buddypress .standard-form .form-allowed-tags textarea,
+.buddypress .standard-form #commentform input[type=text],
+.buddypress .standard-form #commentform textarea {
+  width: 90%;
+}
+
+/* line 146, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #signup_form div.submit {
+  float: right;
+}
+
+/* line 153, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #signup-avatar img {
+  margin: 0 0.9375rem 0.625rem 0;
+}
+
+/* line 160, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form #send-reply textarea {
+  width: 97.5%;
+}
+
+/* line 170, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .checkbox label:nth-child(n+2),
+.buddypress .standard-form .checkbox div label,
+.buddypress .standard-form .radio label:nth-child(n+2),
+.buddypress .standard-form .radio div label {
+  color: #888888;
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0.3125rem 0 0 0;
+}
+
+/* line 177, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .checkbox input,
+.buddypress .standard-form .radio input {
+  margin-right: 0.625rem;
+}
+
+/* line 184, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .radio ul {
+  margin: 0.625rem 0 0.9375rem 2.375rem;
+  list-style: disc;
+}
+
+/* line 188, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .radio ul li {
+  margin-bottom: 0.3125rem;
+}
+
+/* line 194, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .submit {
+  clear: both;
+  padding: 0.9375rem 0 0 0;
+}
+
+/* line 198, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .submit input {
+  margin-right: 0.9375rem;
+}
+
+/* line 203, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .left-menu {
+  float: left;
+}
+
+/* line 208, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .left-menu #invite-list ul {
+  margin: 1%;
+  list-style: none;
+}
+
+/* line 212, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .left-menu #invite-list ul li {
+  margin: 0 0 0 1%;
+}
+
+/* line 219, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .main-column {
+  margin-left: 11.875rem;
+}
+
+/* line 222, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .main-column #friend-list {
+  clear: none;
+  float: left;
+}
+
+/* line 226, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .standard-form .main-column #friend-list h4 {
+  clear: none;
+}
+
+/* line 233, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress body.no-js #notifications-bulk-management #select-all-notifications,
+.buddypress body.no-js label[for="message-type-select"],
+.buddypress body.no-js #message-type-select,
+.buddypress body.no-js #delete_inbox_messages,
+.buddypress body.no-js #delete_sentbox_messages,
+.buddypress body.no-js #messages-bulk-management #select-all-messages {
+  display: none;
+}
+
+/* line 242, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress #send-invite-form {
+  margin-top: 1.25rem;
+}
+
+/* line 246, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress #invite-list {
+  height: 25rem;
+  width: 10rem;
+  background: #f5f5f5;
+  margin: 0 0 0.625rem;
+  overflow: auto;
+  padding: 0.3125rem;
+}
+
+/* line 258, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .wp-editor-wrap a.button,
+.buddypress .wp-editor-wrap button,
+.buddypress .wp-editor-wrap input[type=submit],
+.buddypress .wp-editor-wrap input[type=button],
+.buddypress .wp-editor-wrap input[type=reset] {
+  padding: 0 0.625rem 0.0625rem;
+}
+
+/* line 268, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress form *[disabled="disabled"] {
+  cursor: default;
+  opacity: .4;
+}
+
+/* line 273, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .bp-screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+}
+
+/* line 281, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .dir-search input[type=search],
+.buddypress .dir-search input[type=text] {
+  background: #fafafa;
+  border-radius: 0;
+  border: 1px solid #cccccc;
+  color: #888888;
+  font-size: 100%;
+  font: inherit;
+  padding: 0.375rem;
+}
+
+/* line 296, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_forms.scss */
+.buddypress .groups-members-search input[type=search],
+.buddypress .groups-members-search input[type=text] {
+  background: #fafafa;
+  border-radius: 0;
+  border: 1px solid #cccccc;
+  color: #888888;
+  font-size: 100%;
+  font: inherit;
+  padding: 0.375rem;
+}
+
+/* line 5, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_buttons.scss */
+.buddypress button,
+.buddypress a.button,
+.buddypress input[type=submit],
+.buddypress input[type=button],
+.buddypress input[type=reset],
+.buddypress ul.button-nav li a,
+.buddypress div.generic-button a,
+.buddypress .comment-reply-link,
+.buddypress a.bp-title-button {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  color: #777777;
+  cursor: pointer;
+  font-size: small;
+  outline: none;
+  padding: 0.25rem 0.625rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* line 25, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_buttons.scss */
+.buddypress button:hover,
+.buddypress a.button:hover,
+.buddypress a.button:focus,
+.buddypress input[type=submit]:hover,
+.buddypress input[type=button]:hover,
+.buddypress input[type=reset]:hover,
+.buddypress ul.button-nav li a:hover,
+.buddypress ul.button-nav li.current a,
+.buddypress div.generic-button a:hover,
+.buddypress .comment-reply-link:hover {
+  background: #ededed;
+  border: 1px solid #bbbbbb;
+  color: #555555;
+  outline: none;
+  text-decoration: none;
+}
+
+/* line 5, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress ul#topic-post-list {
+  margin: 0;
+  width: auto;
+}
+
+/* line 9, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress ul#topic-post-list li {
+  padding: 0.9375rem;
+  position: relative;
+}
+
+/* line 13, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress ul#topic-post-list li .alt {
+  background: #f5f5f5;
+}
+
+/* line 17, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress ul#topic-post-list li .poster-meta {
+  color: #888888;
+  margin-bottom: 0.625rem;
+}
+
+/* line 22, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress ul#topic-post-list li .post-content {
+  margin-left: 3.375rem;
+}
+
+/* line 28, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress .topic-tags {
+  font-size: 80%;
+}
+
+/* line 32, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress .admin-links {
+  color: #888888;
+  font-size: 80%;
+  position: absolute;
+  top: 0.9375rem;
+  right: 25;
+}
+
+/* line 40, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress #topic-meta {
+  margin: 0;
+  padding: 0.3125rem 1.1875rem 1.875rem;
+  position: relative;
+}
+
+/* line 45, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress #topic-meta .admin-links {
+  right: 1.1875rem;
+  top: -2.25rem;
+}
+
+/* line 50, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress #topic-meta h3 {
+  margin: 0.3125rem 0;
+}
+
+/* line 55, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress #new-topic-post {
+  display: none;
+  margin: 1.25rem 0 0 0;
+  padding: 0.0625rem 0 0 0;
+}
+
+/* line 61, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notifications,
+.buddypress table.notifications-settings,
+.buddypress table.profile-settings,
+.buddypress table.profile-fields,
+.buddypress table.wp-profile-fields,
+.buddypress table.messages-notices {
+  width: 100%;
+}
+
+/* line 70, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notifications thead tr,
+.buddypress table.notifications-settings thead tr,
+.buddypress table.profile-settings thead tr,
+.buddypress table.profile-fields thead tr,
+.buddypress table.wp-profile-fields thead tr,
+.buddypress table.messages-notices thead tr {
+  background: #eaeaea;
+}
+
+/* line 75, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table#message-threads {
+  clear: both;
+}
+
+/* line 79, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.profile-fields {
+  margin-bottom: 1.25rem;
+}
+
+/* line 83, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.profile-fields:last-child {
+  margin-bottom: 0;
+}
+
+/* line 87, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.profile-fields p {
+  margin: 0;
+}
+
+/* line 91, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.profile-fields p:last-child {
+  margin-top: 0;
+}
+
+/* line 95, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notifications tr td,
+.buddypress table.notifications-settings tr td,
+.buddypress table.profile-settings tr td,
+.buddypress table.profile-fields tr td,
+.buddypress table.wp-profile-fields tr td,
+.buddypress table.messages-notices tr td,
+.buddypress tr td,
+.buddypress table.notifications tr th,
+.buddypress table.notifications-settings tr th,
+.buddypress table.profile-fields tr th,
+.buddypress table.wp-profile-fields tr th,
+.buddypress table.messages-notices tr th,
+.buddypress tr th {
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+/* line 112, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notifications tr td.label,
+.buddypress table.notifications-settings tr td.label,
+.buddypress table.profile-fields tr td.label,
+.buddypress table.wp-profile-fields tr td.label,
+.buddypress table.messages-notices tr td.label,
+.buddypress tr td.label {
+  border-right: 1px solid #eaeaea;
+  font-weight: 700;
+  width: 25%;
+}
+
+/* line 123, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress #message-threads .thread-info {
+  min-width: 40%;
+}
+
+/* line 127, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table tr td.thread-info p {
+  margin: 0;
+}
+
+/* line 131, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table tr td.thread-info p.thread-excerpt {
+  color: #888888;
+  font-size: 80%;
+  margin-top: 0.1875rem;
+}
+
+/* line 137, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress td {
+  text-align: center;
+}
+
+/* line 141, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notifications tr.alt td,
+.buddypress table.notifications-settings tr.alt td,
+.buddypress table.profile-settings tr.alt td,
+.buddypress table.profile-fields tr.alt td,
+.buddypress table.wp-profile-fields tr.alt td,
+.buddypress table.messages-notices tr.alt td,
+.buddypress tr.alt td {
+  background: #f5f5f5;
+}
+
+/* line 151, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notification-settings {
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+/* line 156, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress #groups-notification-settings {
+  margin-bottom: 0;
+}
+
+/* line 160, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notifications th.icon,
+.buddypress table.notifications td:first-child,
+.buddypress table.notification-settings th.icon,
+.buddypress table.notification-settings td:first-child {
+  display: none;
+}
+
+/* line 167, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notification-settings th.title,
+.buddypress table.profile-settings th.title {
+  width: 80%;
+}
+
+/* line 172, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.notification-settings .yes,
+.buddypress table.notification-settings .no {
+  text-align: center;
+  width: 2.5rem;
+}
+
+/* line 178, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum {
+  margin: 0;
+  width: auto;
+  clear: both;
+}
+
+/* line 183, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum tr.sticky td {
+  font-size: 110%;
+  background: #ffe8c4;
+  border-top: 1px solid #fae9c0;
+  border-bottom: 1px solid #fae9c0;
+}
+
+/* line 190, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum tr.closed td.td-title {
+  padding-left: 2.1875rem;
+}
+
+/* line 194, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum td p.topic-text {
+  color: #888888;
+  font-size: 100%;
+}
+
+/* line 199, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum tr > td:first-child,
+.buddypress table.forum tr > th:first-child {
+  padding-left: 0.9375rem;
+}
+
+/* line 204, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum tr > td:last-child,
+.buddypress table.forum tr > th:last-child {
+  padding-right: 0.9375rem;
+}
+
+/* line 209, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum tr th#th-title,
+.buddypress table.forum tr th#th-poster,
+.buddypress table.forum tr th#th-group,
+.buddypress table.forum td.td-poster,
+.buddypress table.forum td.td-group,
+.buddypress table.forum td.td-title {
+  text-align: left;
+}
+
+/* line 218, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum tr td.td-title a.topic-title {
+  font-size: 110%;
+}
+
+/* line 222, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum td.td-freshness {
+  white-space: nowrap;
+}
+
+/* line 226, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum td.td-freshness span.time-since {
+  font-size: 80%;
+  color: #888888;
+}
+
+/* line 231, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum td img.avatar {
+  float: none;
+  margin: 0 0.3125rem -0.5rem 0;
+}
+
+/* line 236, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum td.td-poster,
+.buddypress table.forum td.td-group {
+  min-width: 8.75rem;
+}
+
+/* line 241, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum th#th-title {
+  width: 80%;
+}
+
+/* line 245, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum th#th-freshness {
+  width: 25%;
+}
+
+/* line 249, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum th#th-postcount {
+  width: 15%;
+}
+
+/* line 253, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_topics-tabels-forums-general.scss */
+.buddypress table.forum p.topic-meta {
+  font-size: 80%;
+  margin: 0.3125rem 0 0 0;
+}
+
+/* line 6, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress .item-body {
+  margin: 1.25rem 0;
+}
+
+/* line 12, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress .user-nicename {
+  color: #777777;
+  display: inline-block;
+  font-size: 120%;
+  font-weight: 700;
+}
+
+/* line 19, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress #message p,
+.buddypress #sitewide-notice p {
+  background-color: #ffdffd;
+  border: 1px solid;
+  color: #440440;
+  font-weight: normal;
+  margin-top: 0.1875rem;
+  text-decoration: none;
+}
+
+/* line 29, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.single-line li {
+  border: none;
+}
+
+/* line 33, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #eaeaea;
+  width: 100%;
+}
+
+/* line 20, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/bower/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
+.buddypress ul.item-list::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/* line 39, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li {
+  border-bottom: 1px solid #eaeaea;
+  list-style: none;
+  margin: 0;
+  padding: 0.9375rem 0;
+  position: relative;
+}
+
+/* line 46, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li img.avatar {
+  float: left;
+  margin: 0 0.625rem 0 0;
+}
+
+/* line 51, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li .item-title,
+.buddypress ul.item-list li h4 {
+  font-size: 90%;
+  font-weight: normal;
+  margin: 0;
+  width: 75%;
+}
+
+/* line 59, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li .item-title span {
+  color: #999999;
+  font-size: 80%;
+}
+
+/* line 64, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li .item-desc {
+  color: #888888;
+  font-size: 80%;
+  margin: 0.625rem 0 0 3.75rem;
+  width: 50%;
+}
+
+/* line 71, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li.group-no-avatar .item-desc {
+  margin-left: 0;
+}
+
+/* line 75, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li .action {
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0.9375rem;
+}
+
+/* line 82, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li .meta {
+  color: #888888;
+  font-size: 80%;
+  margin-top: 0.625rem;
+}
+
+/* line 88, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress ul.item-list li h5 span.small {
+  float: right;
+  font-size: 80%;
+  font-weight: normal;
+}
+
+/* line 98, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress body.activity-permalink ul.item-list {
+  border: none;
+}
+
+/* line 101, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress body.activity-permalink ul.item-list li.activity-item {
+  border: none;
+}
+
+/* line 109, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress .item-list-tabs#object-nav {
+  margin-top: 0;
+}
+
+/* line 113, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress .item-list-tabs#subnav {
+  background: transparent;
+  margin: 0.625rem 0 0.625rem;
+  overflow: hidden;
+}
+
+/* line 121, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress #item-nav ul li.loading a {
+  background-position: 88% 50%;
+}
+
+/* line 125, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_headers-lists-tabs-activity-groups-blogs-forums.scss */
+.buddypress #admins-list li,
+.buddypress #mods-list li,
+.buddypress #members-list li {
+  list-style: none;
+  overflow: auto;
+}
+
+/* line 7, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header {
+  overflow: hidden;
+}
+
+/* line 10, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header #item-header-content {
+  float: left;
+  margin-left: 0;
+}
+
+/* line 15, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header h2 {
+  line-height: 120%;
+  margin: 0 0 0.3125rem 0;
+}
+
+/* line 19, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header h2 a {
+  color: #777777;
+  text-decoration: none;
+}
+
+/* line 26, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header h2 span.highlight {
+  display: inline-block;
+  font-size: 60%;
+  font-weight: normal;
+  line-height: 170%;
+  vertical-align: middle;
+}
+
+/* line 33, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header h2 span.highlight span {
+  background: #a1dcfa;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 80%;
+  font-weight: 700;
+  margin-bottom: 0.125rem;
+  padding: 0.0625rem 0.25rem;
+  position: relative;
+  right: -0.125rem;
+  top: -0.125rem;
+  vertical-align: middle;
+}
+
+/* line 52, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header img.avatar {
+  float: left;
+  margin: 0 0.9375rem 1.1875rem 0;
+}
+
+/* line 58, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header #item-meta {
+  color: #aaaaaa;
+  font-size: 80%;
+  margin: 0.9375rem 0 0.3125rem 0;
+  overflow: hidden;
+  padding-bottom: 0.625rem;
+}
+
+/* line 66, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header #item-actions {
+  float: right;
+  margin: 0 0 0.9375rem 0.9375rem;
+  text-align: right;
+  width: 20%;
+}
+
+/* line 72, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header #item-actions h3 {
+  margin: 0 0 0.3125rem 0;
+}
+
+/* line 77, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header ul {
+  margin-bottom: 0.9375rem;
+  overflow: hidden;
+}
+
+/* line 84, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header ul h5,
+.buddypress #item-header ul span,
+.buddypress #item-header ul hr {
+  display: none;
+}
+
+/* line 90, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header ul li {
+  float: right;
+  list-style: none;
+}
+
+/* line 97, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header ul img.avatar {
+  height: 1.875rem;
+  width: 1.875rem;
+  margin: 0.125rem;
+}
+
+/* line 108, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header ul.avatars img.avatar {
+  height: 1.875rem;
+  width: 1.875rem;
+  margin: 0.125rem;
+}
+
+/* line 119, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header div.generic-button {
+  float: left;
+  margin: 0.625rem 0.625rem 0 0;
+}
+
+/* line 126, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header div#message.info {
+  line-height: 80%;
+}
+
+/* line 134, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-header.scss */
+.buddypress #item-header a.button {
+  float: left;
+  margin: 0.625rem 0.625rem 0 0;
+}
+
+/* line 5, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs {
+  background: transparent;
+  clear: left;
+  overflow: hidden;
+}
+
+/* line 10, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 13, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul li {
+  float: left;
+  list-style: none;
+  margin: 0;
+}
+
+/* line 18, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul li a,
+.buddypress .item-list-tabs ul li span {
+  display: block;
+  padding: 0.3125rem 0.625rem;
+  text-decoration: none;
+}
+
+/* line 27, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul li a span {
+  background: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 50%;
+  color: #999999;
+  display: inline;
+  font-size: 70%;
+  margin-left: 0.125rem;
+  padding: 0.1875rem 0.375rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 42, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul li a:hover span {
+  background-color: #eeeeee;
+}
+
+/* line 51, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul li.selected a, .buddypress .item-list-tabs ul li.current a {
+  background-color: #eeeeee;
+  color: #555555;
+  font-weight: 700;
+  opacity: .8;
+}
+
+/* line 57, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul li.selected a span, .buddypress .item-list-tabs ul li.current a span {
+  background-color: #ffffff;
+}
+
+/* line 63, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul li.last {
+  float: right;
+  margin: 0.4375rem 0 0;
+}
+
+/* line 67, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress .item-list-tabs ul li.last select {
+  max-width: 11.5625rem;
+}
+
+/* line 79, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress #subnav ul li {
+  margin-top: 0;
+}
+
+/* line 82, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_item-list-tabs.scss */
+.buddypress #subnav ul li.last {
+  margin-top: 0.25rem;
+}
+
+/* line 5, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress table#message-threads tr.unread td {
+  background: #ffe8c4;
+  border-top: 1px solid #fae9c0;
+  border-bottom: 1px solid #fae9c0;
+  font-weight: 700;
+}
+
+/* line 12, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress table#message-threads tr.unread td .thread-excerpt,
+.buddypress table#message-threads tr.unread td .activity,
+.buddypress table#message-threads tr.unread td.thread-options {
+  font-weight: normal;
+}
+
+/* line 18, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress li span.unread-count,
+.buddypress tr.unread span.unread-count {
+  background: #dd0000;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+}
+
+/* line 26, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div.item-list-tabs ul li a span.unread-count {
+  padding: 0.0625rem 0.375rem;
+  color: #ffffff;
+}
+
+/* line 31, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread div.message-box {
+  margin: 0;
+  padding: 0.9375rem;
+}
+
+/* line 36, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread div.alt {
+  background: #f5f5f5;
+}
+
+/* line 40, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread p#message-recipients {
+  margin: 0.625rem 0 1.25rem 0;
+}
+
+/* line 44, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread img.avatar {
+  float: left;
+  margin: 0 0.625rem 0 0;
+  vertical-align: middle;
+}
+
+/* line 50, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread strong {
+  font-size: 100%;
+  margin: 0;
+}
+
+/* line 55, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread strong a {
+  text-decoration: none;
+}
+
+/* line 59, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread strong span.activity {
+  margin-top: 0.25rem;
+}
+
+/* line 63, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread div.message-metadata {
+  overflow: hidden;
+}
+
+/* line 67, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread div.message-content {
+  margin-left: 2.8125rem;
+}
+
+/* line 71, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div#message-thread div.message-options {
+  text-align: right;
+}
+
+/* line 75, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress #message-threads img.avatar {
+  max-width: none;
+}
+
+/* line 78, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress div.message-search {
+  float: right;
+  margin: 0 1.25rem;
+}
+
+/* line 83, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress .message-metadata {
+  position: relative;
+}
+
+/* line 87, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress .message-star-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 93, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress a.message-action-star,
+.buddypress a.message-action-unstar {
+  border-bottom: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 100, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress a.message-action-star {
+  opacity: .7;
+}
+
+/* line 104, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress a.message-action-star:hover {
+  opacity: 1;
+}
+
+/* line 108, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress .message-action-star span.icon:before,
+.buddypress .message-action-unstar span.icon:before {
+  font-family: dashicons;
+  font-size: 1.125rem;
+}
+
+/* line 114, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress .message-action-star span.icon:before {
+  color: #aaaaaa;
+  content: "\f154";
+}
+
+/* line 119, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_private-messaging-threads.scss */
+.buddypress .message-action-unstar span.icon:before {
+  color: #f6d17e;
+  content: "\f155";
+}
+
+/* line 5, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress div.profile h4 {
+  margin-bottom: auto;
+  margin-top: 0.9375rem;
+}
+
+/* line 10, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress #profile-edit-form ul.button-nav {
+  margin-top: 0.9375rem;
+}
+
+/* line 14, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress body.no-js .field-visibility-settings-toggle,
+.buddypress body.no-js .field-visibility-settings-close {
+  display: none;
+}
+
+/* line 19, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress .field-visibility-settings {
+  display: none;
+  margin-top: 0.625rem;
+}
+
+/* line 24, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress body.no-js .field-visibility-settings {
+  display: block;
+}
+
+/* line 28, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress .current-visibility-level {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* line 33, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress .field-visibility-settings,
+.buddypress .field-visibility-settings-toggle,
+.buddypress .field-visibility-settings-notoggle {
+  color: #888888;
+}
+
+/* line 39, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress .field-visibility-settings-toggle a,
+.buddypress .field-visibility-settings a {
+  font-size: 80%;
+}
+
+/* line 44, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress body.register div.page ul {
+  list-style: none;
+}
+
+/* line 48, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress .standard-form .field-visibility-settings label {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* line 53, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress .field-visibility-settings legend,
+.buddypress .field-visibility-settings-toggle {
+  font-style: italic;
+}
+
+/* line 58, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress .field-visibility-settings .radio {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+/* line 63, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_extended-profiles.scss */
+.buddypress .field-visibility select {
+  margin: 0;
+}
+
+/* line 9, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .item-avatar .avatar {
+  float: left;
+  margin: 0 0.625rem 0.9375rem 0;
+}
+
+/* line 14, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .item-avatar img {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: 0.0625rem;
+}
+
+/* line 21, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .activity {
+  display: inline-block;
+  font-size: small;
+  opacity: 0.8;
+  padding: 0;
+}
+
+/* line 28, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .item-options {
+  font-size: 90%;
+  margin: 0 0 1rem 0;
+  padding: 1rem 0;
+}
+
+/* line 34, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .item {
+  margin: 0 0 1rem 0;
+}
+
+/* line 38, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .item-meta,
+.buddypress .widget.buddypress .item-content {
+  font-size: 0.6875rem;
+  margin-left: 3.125rem;
+}
+
+/* line 44, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress ul.item-list .avatar {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 0.625rem;
+}
+
+/* line 50, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .avatar-block {
+  overflow: hidden;
+}
+
+/* line 56, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress #bp-login-widget-form label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+
+/* line 61, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress #bp-login-widget-form #bp-login-widget-submit {
+  margin-right: 0.625rem;
+}
+
+/* line 66, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .bp-login-widget-user-avatar {
+  float: left;
+}
+
+/* line 69, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .bp-login-widget-user-avatar img.avatar {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+/* line 76, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .bp-login-widget-user-links > div {
+  margin-bottom: 0.5rem;
+  padding-left: 3.75rem;
+}
+
+/* line 81, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress .bp-login-widget-user-links > div.bp-login-widget-user-link a {
+  font-weight: 700;
+}
+
+/* line 86, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress #groups-list,
+.buddypress .widget.buddypress #members-list,
+.buddypress .widget.buddypress #friends-list {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 92, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_widgets.scss */
+.buddypress .widget.buddypress #groups-list li,
+.buddypress .widget.buddypress #members-list li,
+.buddypress .widget.buddypress #friends-list li {
+  clear: both;
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 30rem) {/* line 7, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress div.dir-search {
+    float: right;
+    margin-top: -3.125rem;
+    text-align: right;
+  }/* line 12, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress div.dir-search input[type="text"] {
+    margin-bottom: 1rem;
+    width: 50%;
+  }/* line 16, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress a.bp-title-button {
+    margin-left: 0.625rem;
+  }/* line 19, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress form.standard-form .main-column div.action {
+    margin-bottom: 1rem;
+    position: relative;
+  }/* line 23, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress form.standard-form .main-column ul#friend-list h4 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 20rem) {/* line 30, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress div.dir-search {
+    clear: left;
+    float: left;
+    margin-top: 0;
+    text-align: left;
+  }/* line 36, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress li#groups-order-select {
+    clear: left;
+    float: left;
+  }/* line 40, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress ul.item-list li div.action {
+    clear: left;
+    float: left;
+    margin-left: 4.375rem;
+    margin-top: 0;
+    position: relative;
+    right: 0;
+    text-align: left;
+    top: 0;
+  }/* line 50, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress ul.item-list li div.item-desc {
+    clear: left;
+    float: left;
+    margin: 0.625rem 0 0;
+    width: auto;
+  }/* line 56, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress li div.item {
+    margin-left: 4.375rem;
+    width: auto;
+  }/* line 60, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress ul.item-list li div.meta {
+    margin-top: 0;
+  }/* line 63, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress .item-desc p {
+    margin: 0 0 0.625rem;
+  }/* line 66, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress div.pagination .pag-count {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 15rem) {/* line 73, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress div.dir-search {
+    float: left;
+    margin: 0;
+  }/* line 77, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress div.dir-search input[type="text"] {
+    width: 50%;
+  }/* line 80, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress li#groups-order-select {
+    float: left;
+  }/* line 83, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress ul.item-list li img.avatar {
+    height: auto;
+    width: 1.875rem;
+  }/* line 86, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress #buddypress ul.item-list li div.action,
+  .buddypress #buddypress li div.item {
+    margin-left: 2.8125rem;
+  }/* line 90, /Users/modemlooper/Sites/wdsplugins.dev/wp-content/plugins/WDS-BuddyPress-Project-Framework/assets/sass/base/_media-queries.scss */
+  .buddypress h1 a.bp-title-button {
+    clear: left;
+    float: left;
+    margin: 0.625rem 0 1.25rem;
+  }
+}
+/*# sourceMappingURL=buddypress.css.map */

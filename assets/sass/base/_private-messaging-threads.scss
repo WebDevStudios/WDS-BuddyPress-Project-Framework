@@ -1,0 +1,122 @@
+//--------------------------------------------------------------
+// Private Messaging Threads
+//--------------------------------------------------------------
+
+table#message-threads tr.unread td {
+	background: $color-citrine-white;
+	border-top: 1px solid $color-girvy;
+	border-bottom: 1px solid $color-girvy;
+	font-weight: 700;
+}
+
+table#message-threads tr.unread td .thread-excerpt,
+table#message-threads tr.unread td .activity,
+table#message-threads tr.unread td.thread-options {
+	font-weight: normal;
+}
+
+li span.unread-count,
+tr.unread span.unread-count {
+	background: #dd0000;
+	color: $color-white;
+	font-weight: 700;
+	padding: rem(2) rem(8);
+}
+
+div.item-list-tabs ul li a span.unread-count {
+	padding: rem(1) rem(6);
+	color: $color-white;
+}
+
+div#message-thread div.message-box {
+	margin: 0;
+	padding: rem(15);
+}
+
+div#message-thread div.alt {
+	background: $color-white-smoke;
+}
+
+div#message-thread p#message-recipients {
+	margin: rem(10) 0 rem(20) 0;
+}
+
+div#message-thread img.avatar {
+	float: left;
+	margin: 0 rem(10) 0 0;
+	vertical-align: middle;
+}
+
+div#message-thread strong {
+	font-size: 100%;
+	margin: 0;
+}
+
+div#message-thread strong a {
+	text-decoration: none;
+}
+
+div#message-thread strong span.activity {
+	margin-top: rem(4);
+}
+
+div#message-thread div.message-metadata {
+	overflow: hidden;
+}
+
+div#message-thread div.message-content {
+	margin-left: rem(45);
+}
+
+div#message-thread div.message-options {
+	text-align: right;
+}
+
+#message-threads img.avatar {
+	max-width: none;
+}
+div.message-search {
+	float: right;
+	margin: 0 rem(20);
+}
+
+.message-metadata {
+	position: relative;
+}
+
+.message-star-actions {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+a.message-action-star,
+a.message-action-unstar {
+	border-bottom: 0;
+	text-decoration: none;
+	outline: none;
+}
+
+a.message-action-star {
+	opacity: .7;
+}
+
+a.message-action-star:hover {
+	opacity: 1;
+}
+
+.message-action-star span.icon:before,
+.message-action-unstar span.icon:before {
+	font-family: dashicons;
+	font-size: rem(18);
+}
+
+.message-action-star span.icon:before {
+	color: $color-light-gray;
+	content: "\f154";
+}
+
+.message-action-unstar span.icon:before {
+	color: $color-cherokee;
+	content: "\f155";
+}
