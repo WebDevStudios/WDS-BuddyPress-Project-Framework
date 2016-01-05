@@ -100,6 +100,8 @@ class BuddyPress_Project_Framework {
 	 */
 	protected $basename = '';
 
+	protected $project_framework;
+
 	/**
 	 * Singleton instance of plugin
 	 *
@@ -144,6 +146,7 @@ class BuddyPress_Project_Framework {
 	public function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
 		// $this->plugin_class = new BPPF_Plugin_Class( $this );
+		$this->project_framework = new BPPF_Loader( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -188,6 +191,9 @@ class BuddyPress_Project_Framework {
 	public function init() {
 		if ( $this->check_requirements() ) {
 			load_plugin_textdomain( 'buddypress-project-framework', false, dirname( $this->basename ) . '/languages/' );
+			//add_action( 'bp_include', '' );
+
+
 		}
 	}
 
@@ -222,7 +228,9 @@ class BuddyPress_Project_Framework {
 	public static function meets_requirements() {
 		// Do checks for required classes / functions
 		// function_exists('') & class_exists('')
-
+		if( !class_exists('BuddyPress') ) {
+			return false;
+		}
 		// We have met all requirements
 		return true;
 	}
