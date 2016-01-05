@@ -32,12 +32,10 @@ jq(document).ready( function() {
 	if ( $whats_new.length && bp_get_querystring('r') ) {
 		var $member_nicename = $whats_new.val();
 
-		jq('#whats-new-options').animate({
-			height:'50px'
-		});
+		jq('#whats-new-options').slideDown();
 
 		$whats_new.animate({
-			height:'50px'
+			height:'3.8em'
 		});
 
 		jq.scrollTo( $whats_new, 500, {
@@ -46,20 +44,23 @@ jq(document).ready( function() {
 		} );
 
 		$whats_new.val('').focus().val( $member_nicename );
+	} else {
+		jq('#whats-new-options').hide();
 	}
 
 	/**** Activity Posting ********************************************************/
 
 	/* Textarea focus */
 	$whats_new.focus( function(){
-		jq('#whats-new-options').animate({
-			height:'50px'
+		jq( '#whats-new-options' ).slideDown();
+
+		jq( this ).animate({
+			height:'3.8em'
 		});
-		jq('#whats-new-form textarea').animate({
-			height:'50px'
-		});
+
 		jq('#aw-whats-new-submit').prop('disabled', false);
 
+		jq( this ).parent().addClass( 'active' );
 		jq( '#whats-new-content' ).addClass( 'active' );
 
 		var $whats_new_form = jq('form#whats-new-form'),
@@ -83,34 +84,62 @@ jq(document).ready( function() {
 		}
 	});
 
-	/* On blur, shrink if it's empty */
-	$whats_new.blur( function(){
-		if ( document.activeElement !== this ) {
-			if (!this.value.match(/\S+/)) {
-				this.value = '';
-				jq('#whats-new-options').animate({
-					height:'0'
+	/* For the "What's New" form, do the following on focusout. */
+	jq( '#whats-new-form' ).on( 'focusout', function( e ) {
+		var elem = jq( this );
+
+		// Let child hover actions passthrough.
+		// This allows click events to go through without focusout.
+		setTimeout( function () {
+			if ( ! elem.find(':hover').length ) {
+				// Do not slide up if textarea has content.
+				if ( '' !== $whats_new.val() ) {
+					return;
+				}
+
+				$whats_new.animate({
+					height:'2.2em'
 				});
-				jq('form#whats-new-form textarea').animate({
-					height:'20px'
-				});
-				jq('#aw-whats-new-submit').prop('disabled', true);
+
+				jq( '#whats-new-options' ).slideUp();
+
+				jq('#aw-whats-new-submit').prop( 'disabled', true );
+
 				jq( '#whats-new-content' ).removeClass( 'active' );
+				$whats_new.parent().removeClass( 'active' );
 			}
-		}
-	});
+		}, 0 );
+	} );
 
 	/* New posts */
 	jq('#aw-whats-new-submit').on( 'click', function() {
 		var last_date_recorded = 0,
 			button = jq(this),
-			form   = button.closest('form#whats-new-form');
+			form   = button.closest('form#whats-new-form'),
+			inputs = {}, post_data;
 
-		form.children().each( function() {
-			if ( jq.nodeName(this, 'textarea') || jq.nodeName(this, 'input') ) {
+		// Get all inputs and organize them into an object {name: value}
+		jq.each( form.serializeArray(), function( key, input ) {
+			// Only include public extra data
+			if ( '_' !== input.name.substr( 0, 1 ) && 'whats-new' !== input.name.substr( 0, 9 ) ) {
+				if ( ! inputs[ input.name ] ) {
+					inputs[ input.name ] = input.value;
+				} else {
+					// Checkboxes/dropdown list can have multiple selected value
+					if ( ! jq.isArray( inputs[ input.name ] ) ) {
+						inputs[ input.name ] = new Array( inputs[ input.name ], input.value );
+					} else {
+						inputs[ input.name ].push( input.value );
+					}
+				}
+			}
+		} );
+
+		form.find( '*' ).each( function() {
+			if ( jq.nodeName( this, 'textarea' ) || jq.nodeName( this, 'input' ) ) {
 				jq(this).prop( 'disabled', true );
 			}
-		});
+		} );
 
 		/* Remove any errors */
 		jq('div.error').remove();
@@ -145,7 +174,7 @@ jq(document).ready( function() {
 			object = jq('#whats-new-post-object').val();
 		}
 
-		jq.post( ajaxurl, {
+		post_data = jq.extend( {
 			action: 'post_update',
 			'cookie': bp_get_cookies(),
 			'_wpnonce_post_update': jq('#_wpnonce_post_update').val(),
@@ -154,11 +183,11 @@ jq(document).ready( function() {
 			'item_id': item_id,
 			'since': last_date_recorded,
 			'_bp_as_nonce': jq('#_bp_as_nonce').val() || ''
-		},
-		function(response) {
+		}, inputs );
 
-			form.children().each( function() {
-				if ( jq.nodeName(this, 'textarea') || jq.nodeName(this, 'input') ) {
+		jq.post( ajaxurl, post_data, function( response ) {
+			form.find( '*' ).each( function() {
+				if ( jq.nodeName( this, 'textarea' ) || jq.nodeName( this, 'input' ) ) {
 					jq(this).prop( 'disabled', false );
 				}
 			});
@@ -205,17 +234,16 @@ jq(document).ready( function() {
 				jq('li.new-update').hide().slideDown( 300 );
 				jq('li.new-update').removeClass( 'new-update' );
 				jq('#whats-new').val('');
+				form.get(0).reset();
 
 				// reset vars to get newest activities
 				newest_activities = '';
 				activity_last_recorded  = 0;
 			}
 
-			jq('#whats-new-options').animate({
-				height:'0px'
-			});
+			jq('#whats-new-options').slideUp();
 			jq('#whats-new-form textarea').animate({
-				height:'20px'
+				height:'2.2em'
 			});
 			jq('#aw-whats-new-submit').prop('disabled', true).removeClass('loading');
 			jq( '#whats-new-content' ).removeClass( 'active' );
@@ -917,7 +945,7 @@ jq(document).ready( function() {
 		var target = jq(event.target),
 			el,
 			css_id, object, search_terms, pagination_id, template,
-			url_parameters,	page_number,
+			page_number,
 			$gm_search,
 			caller;
 
@@ -942,18 +970,31 @@ jq(document).ready( function() {
 			pagination_id = jq(target).closest('.pagination-links').attr('id');
 			template = null;
 
-			url_parameters = target.attr('href').split( '&' );
-			// The page number is the first parameter.
-			page_number = url_parameters[0].split( '=' );
-			page_number = page_number[1];
-
 			// Search terms
 			if ( jq('div.dir-search input').length ) {
-				search_terms =  jq('.dir-search input').val();
+				search_terms =  jq('.dir-search input');
 
-				if ( ! search_terms && bp_get_querystring('s') ) {
+				if ( ! search_terms.val() && bp_get_querystring( search_terms.attr( 'name' ) ) ) {
 					search_terms = jq('.dir-search input').prop('placeholder');
+				} else {
+					search_terms = search_terms.val();
 				}
+			}
+
+			// Page number
+			if ( jq(target).hasClass('next') || jq(target).hasClass('prev') ) {
+				page_number = jq('.pagination span.current').html();
+			} else {
+				page_number = jq(target).html();
+			}
+
+			// Remove any non-numeric characters from page number text (commas, etc.)
+			page_number = Number( page_number.replace(/\D/g,'') );
+
+			if ( jq(target).hasClass('next') ) {
+				page_number++;
+			} else if ( jq(target).hasClass('prev') ) {
+				page_number--;
 			}
 
 			// The Group Members page has a different selector for
