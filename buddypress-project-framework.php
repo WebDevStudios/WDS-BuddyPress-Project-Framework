@@ -102,6 +102,7 @@ class BuddyPress_Project_Framework {
 
 	protected $project_framework;
 
+
 	/**
 	 * Singleton instance of plugin
 	 *
@@ -193,7 +194,11 @@ class BuddyPress_Project_Framework {
 			load_plugin_textdomain( 'buddypress-project-framework', false, dirname( $this->basename ) . '/languages/' );
 			//add_action( 'bp_include', '' );
 
-
+			if ( file_exists(  __DIR__ . '/cmb2/init.php' ) ) {
+			  require_once  __DIR__ . '/cmb2/init.php';
+			} elseif ( file_exists(  __DIR__ . '/CMB2/init.php' ) ) {
+			  require_once  __DIR__ . '/CMB2/init.php';
+			}
 		}
 	}
 
