@@ -1,0 +1,46 @@
+//--------------------------------------------------------------
+// Header
+//--------------------------------------------------------------
+
+#cover-image-container {
+	position: relative;
+	z-index: 0
+}
+
+#header-cover-image {
+	@include position(absolute, 0 0 null null);
+	@include size(100% rem(225));
+
+	background-color: #c5c5c5;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 0;
+	display: block;
+	margin: 0;
+	padding: 0;
+	z-index: 1
+}
+
+#item-header-cover-image {
+	padding: 0 1em;
+	position: relative;
+	z-index: 2;
+
+	#item-header-avatar {
+		margin-top: 145px;
+		float: left;
+		overflow: visible;
+		width:auto;
+
+		a {
+			border: none;
+			text-decoration: none;
+		}
+
+		img.avatar {
+			background: rgba( 255, 255, 255, 0.8 );
+			border: solid 2px #FFF;
+		}
+	}
+}
