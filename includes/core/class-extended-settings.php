@@ -226,6 +226,20 @@ class BPPF_Admin {
 		) );
 
 		$cmb->add_field( array(
+			'name' => 'Profile Fields Auto Link',
+			'desc' => 'Disable autolinking in profile fields.',
+			'id'   => 'profile_autolink_checkbox',
+			'type' => 'checkbox'
+		) );
+
+		$cmb->add_field( array(
+			'name' => 'User @ Mentions',
+			'desc' => 'Disable User @ mentions.',
+			'id'   => 'user_mentions_checkbox',
+			'type' => 'checkbox'
+		) );
+
+		$cmb->add_field( array(
 			'name' => 'Ignore Depricated Code',
 			'desc' => 'Do not load depricated code',
 			'id'   => 'depricated_code_checkbox',

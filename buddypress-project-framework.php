@@ -331,12 +331,16 @@ function bpf() {
 add_action( 'plugins_loaded', array( bpf(), 'hooks' ) );
 
 
-
+/**
+ * bppf_run_extended_settings loads
+ *
+ * BP defines hooked to plugins loaded before BP
+ *
+ * @return void
+ */
 function bppf_run_extended_settings() {
 
 	$options = get_option('bppf_options');
-
-	//var_dump( $options );
 
 	foreach( $options as $key => $value ) {
 		switch ( $key ) {
@@ -398,3 +402,46 @@ function bppf_run_extended_settings() {
 
 }
 add_action( 'plugins_loaded', 'bppf_run_extended_settings' );
+
+/**
+ * bppf_run_bp_included_settings loads
+ *
+ * BP filter/action hooked to bp include
+ *
+ * @return void
+ */
+function bppf_run_bp_included_settings() {
+
+	$options = get_option('bppf_options');
+
+	foreach( $options as $key => $value ) {
+		switch ( $key ) {
+			case 'profile_autolink_checkbox' :
+				if( 'on' === $options[$key] )
+					add_action( 'bp_init', 'bppf_remove_xprofile_links' );
+			break;
+			case 'user_mentions_checkbox' :
+				if( 'on' === $options[$key] )
+					add_action( 'bp_init', 'bppf_remove_user_mentions' );
+			break;
+		}
+	}
+
+}
+add_action( 'bp_include', 'bppf_run_bp_included_settings' );
+
+/**
+ * bppf_remove_xprofile_links
+ * @return void
+ */
+function bppf_remove_xprofile_links() {
+	remove_filter( 'bp_get_the_profile_field_value', 'xprofile_filter_link_profile_data', 9, 2 );
+}
+
+/**
+ * bppf_remove_user_mentions
+ * @return void
+ */
+function bppf_remove_user_mentions() {
+	add_filter('bp_activity_do_mentions', '__return_false');
+}
