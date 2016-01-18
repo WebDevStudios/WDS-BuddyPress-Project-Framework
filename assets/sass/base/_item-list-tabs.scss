@@ -1,5 +1,6 @@
 //--------------------------------------------------------------
 // Item list tabs - (Tabs for all activities)
+// Refactored
 //--------------------------------------------------------------
 
 .item-list-tabs {
@@ -22,28 +23,23 @@
 				text-decoration: none;
 			}
 
-			a {
+			a span {
 
-				span {
-					background: $color-silver-felt;
-					border: 1px solid $color-iron;
-					border-radius: 50%;
-					color: $color-aluminum;
-					display: inline;
-					font-size: 70%;
-					margin-left: rem(2);
-					padding: rem(3) rem(6);
-					text-align: center;
-					vertical-align: middle;
-				}
-
-				&:hover {
-
-					span {
-						background-color: $color-silver-felt;
-					}
-				}
+				background: $color-silver-felt;
+				border: 1px solid $color-iron;
+				border-radius: 50%;
+				color: $color-aluminum;
+				display: inline;
+				font-size: 70%;
+				margin-left: rem(2);
+				padding: rem(3) rem(6);
+				text-align: center;
+				vertical-align: middle;
 			}// a
+
+			a:hover span {
+				background-color: $color-silver-felt;
+			}
 
 			&.selected,
 			&.current {
@@ -74,14 +70,12 @@
 
 #subnav {
 
-	ul {
+	ul li {
 
-		li {
-			margin-top: 0;
+		margin-top: 0;
 
-			&.last {
-				margin-top: rem(4);
-			}
-		}// li
-	}// ul
+		&.last {
+			margin-top: rem(4);
+		}
+	} // ul
 }// #subnav
