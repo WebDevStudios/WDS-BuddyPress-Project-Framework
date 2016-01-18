@@ -31,16 +31,45 @@
 		margin-top: 145px;
 		float: left;
 		overflow: visible;
-		width:auto;
+		text-align: center;
+		width: 100%;
+
+		@include wider-than(tablet-portrait) {
+			text-align: left;
+			width: auto;
+		}
 
 		a {
 			border: none;
+			display: inline-block;
 			text-decoration: none;
 		}
 
 		img.avatar {
 			background: rgba( 255, 255, 255, 0.8 );
 			border: solid 2px #FFF;
+		}
+	}
+
+	#item-header-content {
+		margin-top: 0;
+		max-width: 100%;
+
+		@include wider-than(tablet-portrait) {
+			margin-top: rem(225);
+			max-width: 50%;
+		}
+	}
+
+	#item-actions {
+		margin-top: 0;
+		max-width: 100%;
+		padding-top: rem(20);
+		width: 100%;
+
+		@include wider-than(tablet-portrait) {
+			margin-top: rem(225);
+			max-width: 20%;
 		}
 	}
 }
