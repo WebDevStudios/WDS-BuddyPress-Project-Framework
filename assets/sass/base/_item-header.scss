@@ -2,9 +2,11 @@
 // Item Header
 // This shows on /groups activity page and is the header area
 // for the group
+// Refactored
 //--------------------------------------------------------------
 
 #item-header {
+	background: blue;
 	overflow: hidden;
 
 	#item-header-content {
