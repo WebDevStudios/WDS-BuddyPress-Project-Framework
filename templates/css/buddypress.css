@@ -125,12 +125,14 @@ Hello, this is the BuddyPress Legacy stylesheet.
 }
 #buddypress form#whats-new-form textarea {
 	background: #fff;
+	box-sizing: border-box;
 	color: #555;
 	font-family: inherit;
 	font-size: medium;
-	height: 20px;
+	height: 2.2em;
+	line-height: 1.4;
 	padding: 6px;
-	width: 98%;
+	width: 100%;
 }
 body.no-js #buddypress form#whats-new-form textarea {
 	height: 50px;
@@ -143,9 +145,10 @@ body.no-js #buddypress form#whats-new-form textarea {
 	float: right;
 	margin-top: 12px;
 }
-#buddypress #whats-new-options {
-	overflow: auto;
-	height: 0;
+#buddypress #whats-new-options:after {
+	clear: both;
+	content: "";
+	display: table;
 }
 body.no-js #buddypress #whats-new-options {
 	height: auto;
@@ -1173,9 +1176,10 @@ a.bp-title-button {
 	border: 1px solid #cb2;
 	color: #440;
 }
-#buddypress div#item-header {
-	overflow: hidden;
-	position: relative;
+#buddypress #item-header:after {
+	clear: both;
+	content: "";
+	display: table;
 }
 #buddypress div#item-header div#item-header-content {
 	float: left;
@@ -1403,10 +1407,18 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	overflow: auto;
 	list-style: none;
 }
+#buddypress #item-buttons:empty {
+	display: none;
+}
 
 /*--------------------------------------------------------------
 3.8.1 - Cover Image
 --------------------------------------------------------------*/
+
+#buddypress #cover-image-container {
+	position: relative;
+	z-index: 0;
+}
 
 #buddypress #header-cover-image {
 	background-color: #c5c5c5;
@@ -1427,7 +1439,7 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 #buddypress #item-header-cover-image {
 	padding: 0 1em;
 	position: relative;
-	z-index: 999;
+	z-index: 2;
 }
 
 /*--------------------------------------------------------------

@@ -665,22 +665,33 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 				}
 
 				.item-desc {
-					margin-left: 0;
-					width: 94%;
+					margin: 0 auto;
+					width: 100%;
 				}
 
 				.item-title {
 					@include font-size(18);
 					line-height: 1.2;
+					margin: 0 auto;
+					text-align: center;
+
+					@media screen and (min-width: 38.75em) {
+						text-align: left;
+					}
+					width: 100%;
 
 					.update {
 						@include font-size(12);
+						display: block;
 
 						@media screen and (min-width: 59.6875em) {
 							@include font-size(14);
 						}
+						padding: $spacing-val-sm 0;
+						text-align: left;
 					}
-				}
+
+				} // .item-title
 
 			}
 
@@ -692,7 +703,7 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 				}
 
 				.item {
-					left: 10%;
+					left: 5%;
 					margin-left: 0;
 					position: relative;
 					width: 55%;
@@ -781,7 +792,6 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 			line-height: 1.4;
 		}
 
-		textarea {width: 100%;}
 		// corrective measure for clipped elements due to JS inline styling
 
 		@media screen and (max-width: 46.25em) {
@@ -794,9 +804,6 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 
 		#whats-new-content.active {
 			#whats-new-options[style] {
-				min-height: 6rem; // unit open to debate px value might be better.
-				overflow: visible;
-
 				#whats-new-post-in-box {
 					border: 1px solid rgba($border-color, 0.5);
 					float: left;
@@ -2146,13 +2153,16 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 
 			label {
 				float: left;
-				width: 80%;
+				width: 60%;
+				@media screen and (min-width: 46.25em) {
+					width: 80%;
+				}
 			}
 
 			input[type='text'] {
 				float: left;
 				margin: 0;
-				width: 80%;
+				width: 100%;
 			}
 
 			input[type='text'],
@@ -2173,7 +2183,12 @@ http://codex.buddypress.org/themes/buddypress-companion-stylesheets/
 				padding: 0.2em 1em;
 				text-align: center;
 				text-transform: none;
-				width: 20%;
+				width: 40%;
+
+				@media screen and (min-width: 46.25em) {
+					width: 20%;
+				}
+
 			}
 		} // close form
 
