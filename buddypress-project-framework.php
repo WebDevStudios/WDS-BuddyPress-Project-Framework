@@ -345,56 +345,63 @@ function bppf_run_extended_settings() {
 	foreach( $options as $key => $value ) {
 		switch ( $key ) {
 			case 'avatar_thumb_size_select' :
-				define ( 'BP_AVATAR_THUMB_WIDTH', (int) $options[$key] );
-				define ( 'BP_AVATAR_THUMB_HEIGHT', (int) $options[$key] );
+				if( !defined('BP_AVATAR_THUMB_WIDTH') )
+					define ( 'BP_AVATAR_THUMB_WIDTH', (int) $options[$key] );
+				if( !defined('BP_AVATAR_THUMB_HEIGHT') )
+					define ( 'BP_AVATAR_THUMB_HEIGHT', (int) $options[$key] );
 			break;
 			case 'avatar_full_size_select' :
-				define ( 'BP_AVATAR_FULL_WIDTH', (int) $options[$key] );
-				define ( 'BP_AVATAR_FULL_HEIGHT', (int) $options[$key] );
+				if( !defined('BP_AVATAR_FULL_WIDTH') )
+					define ( 'BP_AVATAR_FULL_WIDTH', (int) $options[$key] );
+				if( !defined('BP_AVATAR_FULL_HEIGHT') )
+					define ( 'BP_AVATAR_FULL_HEIGHT', (int) $options[$key] );
 			break;
 			case 'avatar_max_size_select' :
-				define ( 'BP_AVATAR_ORIGINAL_MAX_WIDTH', (int) $options[$key] );
+				if( !defined('BP_AVATAR_ORIGINAL_MAX_WIDTH') )
+					define ( 'BP_AVATAR_ORIGINAL_MAX_WIDTH', (int) $options[$key] );
 			break;
 			case 'avatar_default_image' :
-				define ( 'BP_AVATAR_DEFAULT', $options[$key] );
-				define ( 'BP_AVATAR_DEFAULT_THUMB', $options[$key] );
+				if( !defined('BP_AVATAR_DEFAULT') )
+					define ( 'BP_AVATAR_DEFAULT', $options[$key] );
+				if( !defined('BP_AVATAR_DEFAULT_THUMB') )
+					define ( 'BP_AVATAR_DEFAULT_THUMB', $options[$key] );
 			break;
 			// advanced options
 			case 'root_profiles_checkbox' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('BP_ENABLE_ROOT_PROFILES') )
 					define ( 'BP_ENABLE_ROOT_PROFILES', true );
 			break;
 			case 'cover_image_checkbox' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('BP_DTHEME_DISABLE_CUSTOM_HEADER') )
 					define ( 'BP_DTHEME_DISABLE_CUSTOM_HEADER', true );
 			break;
 			case 'group_auto_join_checkbox' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('BP_DISABLE_AUTO_GROUP_JOIN') )
 					define ( 'BP_DISABLE_AUTO_GROUP_JOIN', true );
 			break;
 			case 'ldap_username_checkbox' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('BP_ENABLE_USERNAME_COMPATIBILITY_MODE') )
 					define ( 'BP_ENABLE_USERNAME_COMPATIBILITY_MODE', true );
 			break;
 			case 'wysiwyg_editor_checkbox' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('NO_MEDIA_POST_FORM') )
 					define ( 'NO_MEDIA_POST_FORM', true );
 			break;
 			case 'all_autocomplete_checkbox' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('BP_MESSAGES_AUTOCOMPLETE_ALL') )
 					define ( 'BP_MESSAGES_AUTOCOMPLETE_ALL', true );
 			break;
 			case 'depricated_code_checkbox' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('BP_IGNORE_DEPRECATED') )
 					define ( 'BP_IGNORE_DEPRECATED', true );
 			break;
 			// multisite options
 			case 'enable_multiblog_checkbox' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('BP_ENABLE_MULTIBLOG') )
 					define ( 'BP_ENABLE_MULTIBLOG', true );
 			break;
 			case 'root_blog_select' :
-				if( 'on' === $options[$key] )
+				if( 'on' === $options[$key] && !defined('BP_ROOT_BLOG') )
 					define ( 'BP_ROOT_BLOG', (int) $options[$key] );
 			break;
 		}
