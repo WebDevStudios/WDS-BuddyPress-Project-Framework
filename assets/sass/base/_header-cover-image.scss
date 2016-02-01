@@ -54,15 +54,29 @@
 	#item-header-content {
 		margin-top: 0;
 		max-width: 100%;
+		text-align: center;
+		width: 100%;
 
 		@include wider-than(tablet-portrait) {
 			margin-top: rem(225);
 			max-width: 50%;
+			text-align: left;
+			width: auto;
 		}
 
 		h2 {
-			color: $color-white;
-			margin-bottom: rem(20);
+			color: $color-black;
+
+			@include wider-than(tablet-portrait) {
+				color: $color-white;
+				margin-bottom: rem(20);
+			}
+		}
+
+		#item-buttons {
+			@include clearfix;
+
+			margin-bottom: rem(10);
 		}
 	}
 
