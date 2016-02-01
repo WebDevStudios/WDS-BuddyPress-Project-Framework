@@ -77,6 +77,15 @@
 			@include clearfix;
 
 			margin-bottom: rem(10);
+
+			.generic-button {
+				display: inline-block;
+				float: none;
+
+				@include wider-than(tablet-portrait) {
+					float: left;
+				}
+			}
 		}
 	}
 
