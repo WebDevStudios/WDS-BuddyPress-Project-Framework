@@ -59,6 +59,11 @@
 			margin-top: rem(225);
 			max-width: 50%;
 		}
+
+		h2 {
+			color: $color-white;
+			margin-bottom: rem(20);
+		}
 	}
 
 	#item-actions {
@@ -70,6 +75,20 @@
 		@include wider-than(tablet-portrait) {
 			margin-top: rem(225);
 			max-width: 20%;
+		}
+	}
+}
+
+// Profile pages
+&.bp-user {
+
+	#item-header-cover-image {
+
+		#item-header-content {
+
+			@include wider-than(tablet-portrait) {
+				margin-top: rem(190);
+			}
 		}
 	}
 }
