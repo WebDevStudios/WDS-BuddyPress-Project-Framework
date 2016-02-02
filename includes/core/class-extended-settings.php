@@ -163,15 +163,15 @@ class BPPF_Admin {
 		) );
 
 		$cmb->add_field( array(
-		    'name'    => 'Default Avatar File',
-		    'desc'    => 'Upload an image.',
-		    'id'      => 'avatar_default_image',
-		    'type'    => 'file',
-		    // Optional:
-		    'options' => array(
-		        'url' => false, // Hide the text input for the url
-		        'add_upload_file_text' => 'Add image' // Change upload button text. Default: "Add or Upload File"
-		    ),
+			'name'	=> 'Default Avatar File',
+			'desc'	=> 'Upload an image.',
+			'id'	  => 'avatar_default_image',
+			'type'	=> 'file',
+			// Optional:
+			'options' => array(
+				'url' => false, // Hide the text input for the url
+				'add_upload_file_text' => 'Add image' // Change upload button text. Default: "Add or Upload File"
+			),
 		) );
 
 		//************* Advanced settings ***********************************************
@@ -336,18 +336,18 @@ function bppf_get_avatar_sizes( $field ) {
 		case 'avatar_thumb_size_select' :
 
 			$sizes = array(
-					'25' 		=> __( '25px x 25px', 'bppf' ),
-					'50' 		=> __( '50px x 50px', 'bppf' ),
-					'75'	 	=> __( '75px x 75px', 'bppf' ),
-					'100'	 => __( '100px x 100px', 'bppf' ),
+					'25' 	=> __( '25px x 25px', 'bppf' ),
+					'50' 	=> __( '50px x 50px', 'bppf' ),
+					'75'	=> __( '75px x 75px', 'bppf' ),
+					'100'	=> __( '100px x 100px', 'bppf' ),
 					'125' 	=> __( '125px x 125px', 'bppf' ),
-					'150'	 => __( '150px x 150px', 'bppf' ),
-					'175'	 => __( '175px x 175px', 'bppf' ),
+					'150'	=> __( '150px x 150px', 'bppf' ),
+					'175'	=> __( '175px x 175px', 'bppf' ),
 					'200' 	=> __( '200px x 200px', 'bppf' ),
-					'225'	 => __( '225px x 225px', 'bppf' ),
-					'250'	 => __( '250px x 250px', 'bppf' ),
+					'225'	=> __( '225px x 225px', 'bppf' ),
+					'250'	=> __( '250px x 250px', 'bppf' ),
 					'275' 	=> __( '275px x 275px', 'bppf' ),
-					'300'	 => __( '300px x 300px', 'bppf' ),
+					'300'	=> __( '300px x 300px', 'bppf' ),
 			);
 
 			return apply_filters( 'get_avatar_thumb_sizes', $sizes );
@@ -356,18 +356,18 @@ function bppf_get_avatar_sizes( $field ) {
 		case 'avatar_full_size_select' :
 
 			$sizes = array(
-					'100'	 => __( '100px x 100px', 'bppf' ),
+					'100'	=> __( '100px x 100px', 'bppf' ),
 					'125' 	=> __( '125px x 125px', 'bppf' ),
-					'150'	 => __( '150px x 150px', 'bppf' ),
-					'175'	 => __( '175px x 175px', 'bppf' ),
+					'150'	=> __( '150px x 150px', 'bppf' ),
+					'175'	=> __( '175px x 175px', 'bppf' ),
 					'200' 	=> __( '200px x 200px', 'bppf' ),
-					'225'	 => __( '225px x 225px', 'bppf' ),
-					'250'	 => __( '250px x 250px', 'bppf' ),
+					'225'	=> __( '225px x 225px', 'bppf' ),
+					'250'	=> __( '250px x 250px', 'bppf' ),
 					'275' 	=> __( '275px x 275px', 'bppf' ),
-					'300'	 => __( '300px x 300px', 'bppf' ),
-					'325'	 => __( '300px x 300px', 'bppf' ),
-					'350'	 => __( '300px x 300px', 'bppf' ),
-					'375'	 => __( '375px x 375px', 'bppf' ),
+					'300'	=> __( '300px x 300px', 'bppf' ),
+					'325'	=> __( '300px x 300px', 'bppf' ),
+					'350'	=> __( '300px x 300px', 'bppf' ),
+					'375'	=> __( '375px x 375px', 'bppf' ),
 			);
 
 			return apply_filters( 'get_avatar_full_sizes', $sizes );
@@ -388,10 +388,4 @@ function bppf_get_avatar_sizes( $field ) {
 
 	}
 
-
 }
-
-
-
-//define ( 'BP_AVATAR_THUMB_WIDTH', 100 );
-//define ( 'BP_AVATAR_THUMB_HEIGHT', 100 );
