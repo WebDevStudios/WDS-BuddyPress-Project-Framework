@@ -401,6 +401,10 @@ function bppf_get_avatar_sizes( $field ) {
 
 }
 
+/**
+ * bppf_get_themes returns various select options for themes
+ * @return array
+ */
 function bppf_get_themes() {
 
 	$themes = array(
