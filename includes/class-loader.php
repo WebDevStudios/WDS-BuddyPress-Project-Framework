@@ -100,7 +100,7 @@ class BPPF_Loader {
 				'components'   => array( 'xprofile' ),
 				'width'        => 940,
 				'height'       => 175,
-				'callback'     => 'clp_cover_image',
+				'callback'     => 'bp_legacy_theme_cover_image',
 				'theme_handle' => 'bp-legacy-css',
 			),
 		) );
