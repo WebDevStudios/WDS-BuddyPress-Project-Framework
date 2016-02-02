@@ -111,12 +111,12 @@ class BPPF_Admin {
 		add_action( "cmb2_save_options-page_fields_{$this->metabox_id}", array( $this, 'settings_notices' ), 10, 2 );
 
 		$cmb = new_cmb2_box( array(
-			'id'				 => $this->metabox_id,
-			'hookup'		 => false,
-			'cmb_styles' => false,
+			'id'			=> $this->metabox_id,
+			'hookup'		=> false,
+			'cmb_styles' 	=> false,
 			'show_on'		=> array(
 				// These are important, don't remove
-				'key'	 => 'options-page',
+				'key'	=> 'options-page',
 				'value' => array( $this->key, )
 			),
 		) );
@@ -124,48 +124,48 @@ class BPPF_Admin {
 		//************* Avatar settings ***********************************************
 
 		$cmb->add_field( array(
-			'name' => 'Avatar Settings',
-			'desc' => 'customize user avatar dimentions and defaults',
-			'type' => 'title',
-			'id'	 => 'avatar_title'
+			'name' 	=> 'Avatar Settings',
+			'desc' 	=> 'customize user avatar dimentions and defaults',
+			'type' 	=> 'title',
+			'id'	=> 'avatar_title'
 		) );
 
 		// Set our CMB2 fields
 
 		$cmb->add_field( array(
-				'name'						 => 'Avatar Thumb Size',
-				'desc'						 => 'Select an option',
-				'id'							 => 'avatar_thumb_size_select',
-				'type'						 => 'select',
-				'show_option_none' => false,
-				'default'					=> '50',
-				'options'					=> 'bppf_get_avatar_sizes',
+				'name'				=> 'Avatar Thumb Size',
+				'desc'				=> 'Select an option',
+				'id'				=> 'avatar_thumb_size_select',
+				'type'				=> 'select',
+				'show_option_none' 	=> false,
+				'default'			=> '50',
+				'options'			=> 'bppf_get_avatar_sizes',
 		) );
 
 		$cmb->add_field( array(
-				'name'						 => 'Avatar Full Size',
-				'desc'						 => 'Select an option',
-				'id'							 => 'avatar_full_size_select',
-				'type'						 => 'select',
-				'show_option_none' => false,
-				'default'					=> '150',
-				'options'					=> 'bppf_get_avatar_sizes',
+				'name'				=> 'Avatar Full Size',
+				'desc'				=> 'Select an option',
+				'id'				=> 'avatar_full_size_select',
+				'type'				=> 'select',
+				'show_option_none' 	=> false,
+				'default'			=> '150',
+				'options'			=> 'bppf_get_avatar_sizes',
 		) );
 
 		$cmb->add_field( array(
-				'name'						 => 'Avatar Max Size',
-				'desc'						 => 'Select an option',
-				'id'							 => 'avatar_max_size_select',
-				'type'						 => 'select',
-				'show_option_none' => false,
-				'default'					=> '640',
-				'options'					=> 'bppf_get_avatar_sizes',
+				'name'				=> 'Avatar Max Size',
+				'desc'				=> 'Select an option',
+				'id'				=> 'avatar_max_size_select',
+				'type'				=> 'select',
+				'show_option_none' 	=> false,
+				'default'			=> '640',
+				'options'			=> 'bppf_get_avatar_sizes',
 		) );
 
 		$cmb->add_field( array(
 			'name'	=> 'Default Avatar File',
 			'desc'	=> 'Upload an image.',
-			'id'	  => 'avatar_default_image',
+			'id'	=> 'avatar_default_image',
 			'type'	=> 'file',
 			// Optional:
 			'options' => array(
@@ -178,10 +178,10 @@ class BPPF_Admin {
 
 
 		$cmb->add_field( array(
-			'name' => 'Advanced Settings',
-			'desc' => 'Internal configuration settings. These settings can break your site.',
-			'type' => 'title',
-			'id'	 => 'advanced_title'
+			'name' 	=> 'Advanced Settings',
+			'desc' 	=> 'Internal configuration settings. These settings can break your site.',
+			'type' 	=> 'title',
+			'id'	=> 'advanced_title'
 		) );
 
 		$cmb->add_field( array(
