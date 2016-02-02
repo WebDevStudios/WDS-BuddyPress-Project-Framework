@@ -61,7 +61,7 @@ class BPPF_Loader {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_register_style( 'font-awesome', plugins_url( 'assets/bower/font-awesome/css/font-awesome.min.css', __FILE__ ), array(), '4.4.0' );
+		wp_register_style( 'font-awesome', plugins_url( 'themes/default/assets/bower/font-awesome/css/font-awesome.min.css', __FILE__ ), array(), '4.4.0' );
 		wp_enqueue_style( 'font-awesome' );
 	}
 
@@ -74,14 +74,20 @@ class BPPF_Loader {
 	 */
 	public function bp_custom_templatepack_work() {
 
-		bp_register_theme_package( array(
-				'id'      => 'templates',
-				'name'    => __( 'BuddyPress Templates', 'buddypress' ),
-				'version' => bp_get_version(),
-				'dir'     => bpf()->path . 'templates',
-				'url'     => bpf()->url . 'templates'
-			)
-		);
+		$options = get_option('bppf_options');
+
+		if( !empty( $options['template_theme_select'] ) && 'core' !== $options['template_theme_select'] ) {
+
+			bp_register_theme_package( array(
+					'id'      => 'themes',
+					'name'    => __( 'Default Templates', 'buddypress' ),
+					'version' => bp_get_version(),
+					'dir'     => bpf()->path . 'themes/' . $options['template_theme_select'],
+					'url'     => bpf()->url . 'themes/' . $options['template_theme_select']
+				)
+			);
+
+		}
 	}
 
 
@@ -93,7 +99,7 @@ class BPPF_Loader {
 	 * @return void
 	 */
 	public function bp_custom_templatepack_package_id( $package_id ) {
-		return 'templates';
+		return 'themes';
 	}
 
 

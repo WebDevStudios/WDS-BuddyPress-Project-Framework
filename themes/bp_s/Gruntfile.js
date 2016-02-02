@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'templates/css/buddypress.css': 'assets/sass/buddypress.scss'
+					'css/buddypress.css': 'assets/sass/buddypress.scss'
 				}
 			}
 		},
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 					require('css-mqpacker')({ sort: true }),
 			]},
 			dist: {
-				src: ['templates/css/buddypress.css', '!*.min.css']
+				src: ['css/buddypress.css', '!*.min.css']
 			}
 		},
 
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'templates/css/buddypress.min.css': 'templates/css/buddypress.css'
+					'css/buddypress.min.css': 'css/buddypress.css'
 				}
 			}
 		},

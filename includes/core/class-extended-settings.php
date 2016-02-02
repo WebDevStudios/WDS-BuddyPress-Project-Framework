@@ -176,11 +176,22 @@ class BPPF_Admin {
 
 		//************* Advanced settings ***********************************************
 
+
 		$cmb->add_field( array(
 			'name' => 'Advanced Settings',
 			'desc' => 'Internal configuration settings. These settings can break your site.',
 			'type' => 'title',
 			'id'	 => 'advanced_title'
+		) );
+
+		$cmb->add_field( array(
+			'name'				=> 'Theme',
+			'desc'				=> 'Select an theme',
+			'id'			   	=> 'template_theme_select',
+			'type'			   	=> 'select',
+			'show_option_none' 	=> false,
+			'default'			=> 'core',
+			'options'			=> 'bppf_get_themes',
 		) );
 
 		$cmb->add_field( array(
@@ -257,10 +268,10 @@ class BPPF_Admin {
 			) );
 
 			$cmb->add_field( array(
-					'name'						 => 'Root Blog ID',
-					'desc'						 => 'Enter blog ID BuddyPress will run on. Default ID is 1',
-					'id'							 => 'root_blog_select',
-					'type'						 => 'text'
+				'name'	=> 'Root Blog ID',
+				'desc'	=> 'Enter blog ID BuddyPress will run on. Default ID is 1',
+				'id'	=> 'root_blog_select',
+				'type'	=> 'text'
 			) );
 
 		}
@@ -387,5 +398,16 @@ function bppf_get_avatar_sizes( $field ) {
 		break;
 
 	}
+
+}
+
+function bppf_get_themes() {
+
+	$themes = array(
+			'core' => 'Core',
+			'bp_s' => 'bp_s',
+	);
+
+	return apply_filters( 'bppf_get_themes', $themes );
 
 }
