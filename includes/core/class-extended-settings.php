@@ -201,12 +201,6 @@ class BPPF_Admin {
 			'type' => 'checkbox'
 		) );
 
-		$cmb->add_field( array(
-			'name' => 'Profile Cover Image',
-			'desc' => 'disable cover image functionality.',
-			'id'   => 'cover_image_checkbox',
-			'type' => 'checkbox'
-		) );
 
 		$cmb->add_field( array(
 			'name' => 'Auto Group Join',

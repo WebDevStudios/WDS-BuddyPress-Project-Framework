@@ -105,7 +105,6 @@ class BPPF_Loader {
 			),
 		) );
 
-
 	}
 
 
