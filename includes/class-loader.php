@@ -34,6 +34,7 @@ class BPPF_Loader {
 
         // these are for template file overrides.
 		add_action( 'bp_register_theme_packages', array( $this, 'bp_custom_templatepack_work' ) );
+		add_action( 'bp_after_setup_theme', array( $this, 'bppf_register_feature' ) );
 		add_filter( 'pre_option__bp_theme_package_id', array( $this, 'bp_custom_templatepack_package_id' ) );
 		add_action( 'wp', array( $this, 'bp_templatepack_kill_legacy_js_and_css' ), 999 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -89,6 +90,24 @@ class BPPF_Loader {
 
 		}
 	}
+
+	// Register the Cover Image feature for Users profiles
+	public function bppf_register_feature() {
+
+		bp_set_theme_compat_feature( 'themes', array(
+			'name'     => 'cover_image',
+			'settings' => array(
+				'components'   => array( 'xprofile' ),
+				'width'        => 940,
+				'height'       => 175,
+				'callback'     => 'clp_cover_image',
+				'theme_handle' => 'bp-legacy-css',
+			),
+		) );
+
+
+	}
+
 
 
 	/**

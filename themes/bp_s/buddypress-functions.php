@@ -1926,3 +1926,134 @@ function bp_legacy_theme_cover_image( $params = array() ) {
 		}
 	';
 }
+
+function bp_copy_full_cover_image( $file, $action ) {
+
+	if ( ! empty( $_POST['bp_params'] ) ) {
+		$bp_attachments_uploads_dir = bp_attachments_uploads_dir_get();
+		$full_image = trailingslashit( $bp_attachments_uploads_dir['basedir'] ) . 'members/' . bp_displayed_user_id() . '/full.jpg';
+		copy( $file['file'], $full_image );
+		error_log( $full_image . $file['file'] );
+		error_log( print_r( $bp_attachments_uploads_dir, true ) );
+	}
+	return $file;
+}
+add_filter( 'wp_handle_upload', 'bp_copy_full_cover_image', 10, 2 );
+
+
+function bp_crop_cover_full_image( $user_id = null, $data = 'url' ) {
+
+	$file = bp_get_crop_cover_full_image( $user_id, $data );
+	if( $file && $user_id ) {
+		return $file;
+	}
+	return false;
+}
+
+function bp_get_crop_cover_full_image( $user_id, $data = 'url' ) {
+	$bp_attachments_uploads_dir = bp_attachments_uploads_dir_get();
+	$file_path = trailingslashit( $bp_attachments_uploads_dir['basedir'] ) . 'members/' . $user_id . '/full.jpg';
+	$file_url = trailingslashit( $bp_attachments_uploads_dir['baseurl'] ) . 'members/' . $user_id . '/full.jpg';
+	if(! file_exists( $file_path ) ) {
+		return false;
+	}
+	$file = 'url' === $data ? $file_url : $file_path;
+	return $file;
+}
+
+/**
+ * bp_get_cover_image_size
+ * @param  string $path
+ * @return string
+ */
+function bp_get_cover_image_size( $path ) {
+
+	if( $path ) {
+
+		$data = getimagesize( $path );
+		if( !$data ) return '';
+		$width = $data[0];
+		$height = $data[1];
+
+		return $width . ',' . $height;
+
+	}
+
+	return '';
+
+}
+
+/**
+ * bp_crop_cover_full_image_ajax
+ * @return json
+ */
+function bp_crop_cover_full_image_ajax() {
+
+	$current_cover = bp_attachments_get_attachment( 'path', array( 'item_id' => $_POST['item_id'] ) );
+
+	if( $current_cover ) {
+		@unlink( $current_cover );
+	}
+
+	$image = wp_crop_image(
+		$_POST['full_src'],
+		round( (int) $_POST['crop_x'] ),
+		round( (int) $_POST['crop_y'] ),
+		round( (int) $_POST['crop_w'] ),
+		round( (int) $_POST['crop_h'] ),
+		(int) $_POST['dst_w'],
+		(int) $_POST['dst_h'],
+		false,
+		$current_cover
+	);
+
+	return  wp_send_json( bp_attachments_get_attachment( 'url', array( 'item_id' => $_POST['item_id'] ) ) );
+}
+add_action( 'wp_ajax_crop_cover', 'bp_crop_cover_full_image_ajax' );
+add_action( 'wp_ajax_nopriv_crop_cover', 'bp_crop_cover_full_image_ajax' );
+
+/**
+ * bp_delete_full_image_delete_cover
+ * delete full image when deleting cover image
+ * @return void
+ */
+function bp_delete_full_image_delete_cover() {
+
+	// Bail if not a POST action.
+	if ( 'POST' !== strtoupper( $_SERVER['REQUEST_METHOD'] ) ) return;
+
+	// Capability check
+	if ( ! bp_attachments_current_user_can( 'edit_cover_image', $_POST ) ) return;
+
+	if( isset( $_POST['action'] ) && 'bp_cover_image_delete' === $_POST['action'] ) {
+		$bp_attachments_uploads_dir = bp_attachments_uploads_dir_get();
+		$file_path = trailingslashit( $bp_attachments_uploads_dir['basedir'] ) . 'members/' . $_POST['item_id'] . '/full.jpg';
+		@unlink( $file_path );
+	}
+
+}
+add_action( 'init', 'bp_delete_full_image_delete_cover', 999 );
+
+
+/**
+ * bp_is_tab_current
+ * adds current class to current tab
+ * @param  sting $tab
+ * @return boolean
+ */
+function bp_is_tab_current( $tab ) {
+
+	switch ( $tab ) {
+		case 'upload':
+			if( 'change-cover-image' === bp_current_action() && !bp_action_variable() ) {
+				return 'current';
+			}
+		break;
+		case 'crop':
+			if( 'change-cover-image' === bp_current_action() && 'crop' === bp_action_variable() ) {
+				return 'current';
+			}
+		break;
+	}
+
+}
