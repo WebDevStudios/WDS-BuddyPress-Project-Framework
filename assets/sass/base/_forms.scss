@@ -277,6 +277,22 @@ form *[disabled="disabled"]{
 
 // Dir search
 .dir-search {
+	float: right;
+	margin: rem(-39) 0 0 0;
+
+	@include media(max-width $phone-landscape) {
+		float: right;
+		margin-top: rem(-50);
+		text-align: right;
+	}
+
+	input[type="text"] {
+
+		@include media(max-width $phone-landscape) {
+			margin-bottom: rem(16);
+			width: 50%;
+		}
+	}
 
 	input[type=search],
 	input[type=text] {

@@ -4,15 +4,7 @@
 
 // Smartphones - landscape
 @media only screen and ( max-width: rem(480) ) {
-	#buddypress div.dir-search {
-		float: right;
-		margin-top: rem(-50);
-		text-align: right;
-	}
-	#buddypress div.dir-search input[type="text"] {
-		margin-bottom: rem(16);
-		width: 50%;
-	}
+
 	a.bp-title-button {
 		margin-left: rem(10);
 	}
