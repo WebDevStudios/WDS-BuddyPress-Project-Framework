@@ -34,7 +34,7 @@
 		text-align: center;
 		width: 100%;
 
-		@include wider-than(tablet-portrait) {
+		@include media($tablet-portrait) {
 			text-align: left;
 			width: auto;
 		}
@@ -57,7 +57,7 @@
 		text-align: center;
 		width: 100%;
 
-		@include wider-than(tablet-portrait) {
+		@include media($tablet-portrait) {
 			margin-top: rem(225);
 			max-width: 50%;
 			text-align: left;
@@ -67,7 +67,7 @@
 		h2 {
 			color: $color-black;
 
-			@include wider-than(tablet-portrait) {
+			@include media($tablet-portrait) {
 				color: $color-white;
 				margin-bottom: rem(20);
 			}
@@ -82,7 +82,7 @@
 				display: inline-block;
 				float: none;
 
-				@include wider-than(tablet-portrait) {
+				@include media($tablet-portrait) {
 					float: left;
 				}
 			}
@@ -95,7 +95,7 @@
 		padding-top: rem(20);
 		width: 100%;
 
-		@include wider-than(tablet-portrait) {
+		@include media($tablet-portrait) {
 			margin-top: rem(225);
 			max-width: 20%;
 		}
@@ -109,7 +109,7 @@
 
 		#item-header-content {
 
-			@include wider-than(tablet-portrait) {
+			@include media($tablet-portrait) {
 				margin-top: rem(190);
 			}
 		}
