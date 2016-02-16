@@ -121,18 +121,4 @@ class BPPF_Loader {
 	}
 
 
-	// Proposed BP core change: see http://buddypress.trac.wordpress.org/ticket/3741#comment:43
-	/**
-	 * templatepack_kill_legacy_js_and_css function.
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function bp_templatepack_kill_legacy_js_and_css() {
-		wp_dequeue_script( 'groups_widget_groups_list-js' );
-		wp_dequeue_script( 'bp_core_widget_members-js' );
-
-	}
-
-
 }

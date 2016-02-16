@@ -404,6 +404,7 @@ function bppf_get_themes() {
 	$themes = array(
 			'core' => 'Core',
 			'bp_s' => 'bp_s',
+			'legacy' => 'Legacy',
 	);
 
 	return apply_filters( 'bppf_get_themes', $themes );

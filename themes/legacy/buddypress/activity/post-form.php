@@ -7,6 +7,7 @@
  */
 
 ?>
+
 <form action="<?php bp_activity_post_form_action(); ?>" method="post" id="whats-new-form" name="whats-new-form" role="complementary">
 
 	<?php
