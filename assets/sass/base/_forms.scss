@@ -322,3 +322,12 @@ form *[disabled="disabled"]{
 		padding: rem(6);
 	}
 }
+
+// Groups order select
+#groups-order-select {
+	float: left;
+
+	@include media($phone-portrait) {
+		float: right;
+	}
+}

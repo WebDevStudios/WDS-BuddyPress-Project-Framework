@@ -4,10 +4,6 @@
 
 // Smartphones - portrait
 @media only screen and ( max-width: rem(320) ) {
-	#buddypress li#groups-order-select {
-		clear: left;
-		float: left;
-	}
 	#buddypress ul.item-list li div.action {
 		clear: left;
 		float: left;
@@ -41,9 +37,6 @@
 
 // Smartphones - smaller screen sizes
 @media only screen and ( max-width: rem(240) ) {
-	#buddypress li#groups-order-select {
-		float: left;
-	}
 	#buddypress ul.item-list li img.avatar {
 		@include size(rem(30) auto);
 	}
