@@ -73,10 +73,16 @@ ul.item-list {
 		}
 
 		.action {
-			position: absolute;
+			margin-bottom: rem(16);
+			position: relative;
 			right: 0;
 			text-align: right;
 			top: rem(15);
+
+			@include media($phone-landscape) {
+				margin-bottom: 0;
+				position: absolute;
+			}
 		}
 
 		.meta {

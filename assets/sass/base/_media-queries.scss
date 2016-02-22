@@ -2,21 +2,6 @@
 // Media Queries
 //--------------------------------------------------------------
 
-// Smartphones - landscape
-@media only screen and ( max-width: rem(480) ) {
-
-	a.bp-title-button {
-		margin-left: rem(10);
-	}
-	#buddypress form.standard-form .main-column div.action{
-		margin-bottom: rem(16);
-		position: relative;
-	}
-	#buddypress form.standard-form .main-column ul#friend-list h4{
-		width: 100%;
-	}
-}
-
 // Smartphones - portrait
 @media only screen and ( max-width: rem(320) ) {
 	#buddypress div.dir-search {
