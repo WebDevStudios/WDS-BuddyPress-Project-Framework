@@ -4,12 +4,6 @@
 
 // Smartphones - portrait
 @media only screen and ( max-width: rem(320) ) {
-	#buddypress div.dir-search {
-		clear: left;
-		float: left;
-		margin-top: 0;
-		text-align: left;
-	}
 	#buddypress li#groups-order-select {
 		clear: left;
 		float: left;
@@ -47,13 +41,6 @@
 
 // Smartphones - smaller screen sizes
 @media only screen and ( max-width: rem(240) ) {
-	#buddypress div.dir-search {
-		float: left;
-		margin: 0;
-	}
-	#buddypress div.dir-search input[type="text"] {
-		width: 50%;
-	}
 	#buddypress li#groups-order-select {
 		float: left;
 	}

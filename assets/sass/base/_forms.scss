@@ -281,20 +281,18 @@ form *[disabled="disabled"]{
 
 // Dir search
 .dir-search {
-	float: right;
-	margin: rem(-39) 0 0 0;
+	clear: left;
+	float: left;
 
-	@include media(max-width $phone-landscape) {
+	@include media($tablet-portrait) {
 		float: right;
 		margin-top: rem(-50);
-		text-align: right;
 	}
 
 	input[type="text"] {
 
-		@include media(max-width $phone-landscape) {
+		@include media(max-width $tablet-portrait) {
 			margin-bottom: rem(16);
-			width: 50%;
 		}
 	}
 
