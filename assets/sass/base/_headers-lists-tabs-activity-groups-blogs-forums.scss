@@ -48,6 +48,11 @@ ul.item-list {
 			margin: 0 rem(10) 0 0;
 		}
 
+		.item {
+			margin-left: rem(70);
+			width: auto;
+		}
+
 		.item-title,
 		h4 {
 			font-size: 90%;
@@ -67,7 +72,7 @@ ul.item-list {
 			float: left;
 			color: $color-jumbo;
 			font-size: 80%;
-			margin: rem(10) 0 0 rem(60);
+			margin: rem(10) 0 0 0;
 			width: auto;
 
 			@include media($phone-landscape) {
@@ -80,15 +85,18 @@ ul.item-list {
 		}
 
 		.action {
+			clear: both;
 			margin-bottom: rem(16);
+			margin-left: rem(70);
 			position: relative;
-			right: 0;
-			text-align: right;
-			top: rem(15);
 
 			@include media($phone-landscape) {
 				margin-bottom: 0;
+				margin-top: rem(10);
 				position: absolute;
+				right: 0;
+				text-align: right;
+				top: 0;
 			}
 		}
 

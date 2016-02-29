@@ -5,10 +5,6 @@
 // Smartphones - portrait
 @media only screen and ( max-width: rem(320) ) {
 
-	#buddypress li div.item {
-		margin-left: rem(70);
-		width: auto;
-	}
 	#buddypress ul.item-list li div.meta {
 		margin-top: 0;
 	}
@@ -24,9 +20,6 @@
 @media only screen and ( max-width: rem(240) ) {
 	#buddypress ul.item-list li img.avatar {
 		@include size(rem(30) auto);
-	}
-	#buddypress li div.item{
-		margin-left: rem(45);
 	}
 	h1 a.bp-title-button {
 		clear: left;
