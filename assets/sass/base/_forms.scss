@@ -230,6 +230,15 @@
 					width: 100%;
 				}
 			}
+
+			.action {
+				display: inline-block;
+				margin-left: 0;
+
+				a {
+					display: inline-block;
+				}
+			}
 		}
 	}// .main-column
 }// .standard-form

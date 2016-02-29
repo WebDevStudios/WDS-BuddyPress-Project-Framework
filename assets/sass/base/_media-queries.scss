@@ -4,16 +4,7 @@
 
 // Smartphones - portrait
 @media only screen and ( max-width: rem(320) ) {
-	#buddypress ul.item-list li div.action {
-		clear: left;
-		float: left;
-		margin-left: rem(70);
-		margin-top: 0;
-		position: relative;
-		right: 0;
-		text-align: left;
-		top: 0;
-	}
+
 	#buddypress ul.item-list li div.item-desc {
 		clear: left;
 		float: left;
@@ -40,7 +31,6 @@
 	#buddypress ul.item-list li img.avatar {
 		@include size(rem(30) auto);
 	}
-	#buddypress ul.item-list li div.action,
 	#buddypress li div.item{
 		margin-left: rem(45);
 	}
