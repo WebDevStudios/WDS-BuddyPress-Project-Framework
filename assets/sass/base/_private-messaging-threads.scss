@@ -2,17 +2,22 @@
 // Private Messaging Threads
 //--------------------------------------------------------------
 
-table#message-threads tr.unread td {
-	background: $color-citrine-white;
-	border-top: 1px solid $color-girvy;
-	border-bottom: 1px solid $color-girvy;
-	font-weight: 700;
-}
+#message-threads {
 
-table#message-threads tr.unread td .thread-excerpt,
-table#message-threads tr.unread td .activity,
-table#message-threads tr.unread td.thread-options {
-	font-weight: normal;
+	// Unread messages
+	.unread td {
+		background: $color-citrine-white;
+		border-top: 1px solid $color-girvy;
+		border-bottom: 1px solid $color-girvy;
+		font-weight: 700;
+
+		.thread-excerpt,
+		.activity,
+		&.thread-options {
+			font-weight: normal;
+		}
+	}
+
 }
 
 li span.unread-count,
