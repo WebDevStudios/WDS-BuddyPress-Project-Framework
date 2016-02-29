@@ -61,11 +61,18 @@ ul.item-list {
 			font-size: 80%;
 		}
 
+		// Group description
 		.item-desc {
+			clear: left;
+			float: left;
 			color: $color-jumbo;
 			font-size: 80%;
 			margin: rem(10) 0 0 rem(60);
-			width: 50%;
+			width: auto;
+
+			@include media($phone-landscape) {
+				width: 50%;
+			}
 		}
 
 		&.group-no-avatar .item-desc {
