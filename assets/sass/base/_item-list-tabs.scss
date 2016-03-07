@@ -35,6 +35,12 @@
 				padding: rem(3) rem(6);
 				text-align: center;
 				vertical-align: middle;
+
+				// Private Messaging
+				&.unread-count {
+					padding: rem(1) rem(6);
+					color: $color-white;
+				}
 			}// a
 
 			a:hover span {

@@ -5,85 +5,88 @@
 #message-threads {
 
 	// Unread messages
-	.unread td {
-		background: $color-citrine-white;
-		border-top: 1px solid $color-girvy;
-		border-bottom: 1px solid $color-girvy;
-		font-weight: 700;
+	.unread {
 
-		.thread-excerpt,
-		.activity,
-		&.thread-options {
-			font-weight: normal;
+		td {
+			background: $color-citrine-white;
+			border-top: 1px solid $color-girvy;
+			border-bottom: 1px solid $color-girvy;
+			font-weight: 700;
+
+			.thread-excerpt,
+			.activity,
+			&.thread-options {
+				font-weight: normal;
+			}
+		}
+
+		.unread-count {
+			background: #dd0000;
+			color: $color-white;
+			font-weight: 700;
+			padding: rem(2) rem(8);
+		}
+	}
+}
+
+// Member - Single private message
+#message-thread {
+
+	strong {
+		font-size: 100%;
+		margin: 0;
+
+		a {
+			text-decoration: none;
+		}
+
+		.activity {
+			margin-top: rem(4);
 		}
 	}
 
+	.message-box {
+		margin: 0;
+		padding: rem(15);
+	}
+
+	// Reply or alt response message
+	.alt {
+		background: $color-white-smoke;
+	}
+
+	#message-recipients {
+		margin: rem(10) 0 rem(20) 0;
+	}
+
+	// Avatar
+	.avatar {
+		float: left;
+		margin: 0 rem(10) 0 0;
+		max-width: none;
+		vertical-align: middle;
+	}
+
+	.message-metadata {
+		overflow: hidden;
+	}
+
+	.message-content {
+		margin-left: rem(45);
+	}
+
+	.message-options {
+		text-align: right;
+	}
 }
 
-li span.unread-count,
-tr.unread span.unread-count {
-	background: #dd0000;
-	color: $color-white;
-	font-weight: 700;
-	padding: rem(2) rem(8);
-}
-
-div.item-list-tabs ul li a span.unread-count {
-	padding: rem(1) rem(6);
-	color: $color-white;
-}
-
-div#message-thread div.message-box {
-	margin: 0;
-	padding: rem(15);
-}
-
-div#message-thread div.alt {
-	background: $color-white-smoke;
-}
-
-div#message-thread p#message-recipients {
-	margin: rem(10) 0 rem(20) 0;
-}
-
-div#message-thread img.avatar {
-	float: left;
-	margin: 0 rem(10) 0 0;
-	vertical-align: middle;
-}
-
-div#message-thread strong {
-	font-size: 100%;
-	margin: 0;
-}
-
-div#message-thread strong a {
-	text-decoration: none;
-}
-
-div#message-thread strong span.activity {
-	margin-top: rem(4);
-}
-
-div#message-thread div.message-metadata {
-	overflow: hidden;
-}
-
-div#message-thread div.message-content {
-	margin-left: rem(45);
-}
-
-div#message-thread div.message-options {
-	text-align: right;
-}
-
-#message-threads img.avatar {
-	max-width: none;
-}
-div.message-search {
+// Message search - shows on profile/inbox
+.message-search {
 	float: right;
 	margin: 0 rem(20);
 }
+
+// Stopped Here
 
 .message-metadata {
 	position: relative;
